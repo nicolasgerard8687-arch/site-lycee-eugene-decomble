@@ -855,6 +855,99 @@
         }
 
 
+
+        /* =========================================================
+           FORMATIONS ÉTENDUES
+        ========================================================= */
+
+        .formation-filters {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 35px auto 45px;
+            max-width: 1100px;
+        }
+
+        .formation-filter {
+            border: 1px solid rgba(255,255,255,0.12);
+            background: rgba(255,255,255,0.04);
+            color: #cfcfcf;
+            border-radius: 999px;
+            padding: 10px 16px;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.25s;
+        }
+
+        .formation-filter:hover,
+        .formation-filter.active {
+            background: var(--brown);
+            border-color: var(--brown-light);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .formation-card {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .formation-content {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .formation-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin: 18px 0 0;
+        }
+
+        .formation-tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 9px;
+            border-radius: 999px;
+            background: rgba(192,138,102,0.10);
+            border: 1px solid rgba(192,138,102,0.20);
+            color: #d8b79f;
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+        .formation-card .formation-link {
+            margin-top: auto;
+        }
+
+        .formation-card.hidden {
+            display: none;
+        }
+
+        .formation-count {
+            text-align: center;
+            color: #777;
+            font-size: 13px;
+            margin-top: -25px;
+            margin-bottom: 35px;
+        }
+
+        .formation-source {
+            max-width: 1000px;
+            margin: 45px auto 0;
+            padding: 18px 22px;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            background: rgba(255,255,255,0.025);
+            color: #777;
+            font-size: 12px;
+            line-height: 1.7;
+            text-align: center;
+        }
+
         /* =========================================================
            WHY
         ========================================================= */
@@ -2044,6 +2137,27 @@
         }
 
 
+
+        @media (max-width: 700px) {
+
+            .formation-filters {
+                justify-content: flex-start;
+                overflow-x: auto;
+                flex-wrap: nowrap;
+                padding-bottom: 6px;
+                scrollbar-width: none;
+            }
+
+            .formation-filters::-webkit-scrollbar {
+                display: none;
+            }
+
+            .formation-filter {
+                flex: 0 0 auto;
+            }
+
+        }
+
         @media (max-width: 480px) {
 
             .hero-actions {
@@ -2206,10 +2320,10 @@
 
             <div class="hero-stat">
 
-                <strong>3+</strong>
+                <strong>20</strong>
 
                 <span>
-                    domaines de formation
+                    formations et dispositifs
                 </span>
 
             </div>
@@ -2259,134 +2373,557 @@
         </div>
 
         <h2 class="section-title">
-            Des formations pour
-            <span>l'avenir.</span>
+            Toutes les formations
+            <span>du lycée.</span>
         </h2>
 
         <p class="section-description">
-
-            Découvrez les principales formations
-            professionnelles proposées et développez
-            des compétences concrètes grâce à la pratique.
-
+            Découvrez les formations et dispositifs proposés au Lycée Eugène Decomble,
+            de la 3e prépa-métiers jusqu'au BTS.
         </p>
 
     </div>
 
+    <div class="formation-filters reveal" aria-label="Filtrer les formations">
+        <button class="formation-filter active" data-filter="all">Toutes</button>
+        <button class="formation-filter" data-filter="cap">CAP</button>
+        <button class="formation-filter" data-filter="seconde">2de pro</button>
+        <button class="formation-filter" data-filter="bac">Bac pro</button>
+        <button class="formation-filter" data-filter="bts">BTS</button>
+        <button class="formation-filter" data-filter="dispositif">Dispositifs</button>
+    </div>
+
+    <div class="formation-count" id="formationCount">
+        20 formations et dispositifs référencés
+    </div>
 
     <div class="formations">
 
-
-        <!-- CIEL -->
-
-        <article class="formation-card reveal">
-
-            <div class="formation-number">
-                01
-            </div>
+        <article class="formation-card reveal" data-category="cap">
+            <div class="formation-number">01</div>
 
             <div class="formation-icon">
-                💻
+                🚜
             </div>
 
             <div class="formation-content">
+                <div class="eyebrow">CAP</div>
 
-                <h3>
-                    Bac Pro CIEL
-                </h3>
+                <h3>CAP Conducteur d'engins de travaux publics et carrières</h3>
 
                 <p>
-                    Cybersécurité, Informatique et Réseaux,
-                    Électronique. Une formation destinée aux
-                    passionnés de technologie et de numérique.
+                    Formation pratique centrée sur la conduite et l'entretien courant des engins utilisés sur les chantiers et dans les carrières.
                 </p>
 
-                <a
-                    href="#"
-                    class="formation-link"
-                    onclick="openModal('ciel'); return false;"
-                >
-                    Découvrir la formation →
-                </a>
+                <div class="formation-meta">
+                    <span class="formation-tag">Travaux publics</span><span class="formation-tag">Engins</span><span class="formation-tag">Chantier</span>
+                </div>
 
+                <div class="formation-link">
+                    2 ans • apprentissage / temps plein
+                </div>
             </div>
-
         </article>
 
-
-        <!-- MECANIQUE -->
-
-        <article class="formation-card reveal">
-
-            <div class="formation-number">
-                02
-            </div>
+        <article class="formation-card reveal" data-category="cap">
+            <div class="formation-number">02</div>
 
             <div class="formation-icon">
-                🔧
+                🚗
             </div>
 
             <div class="formation-content">
+                <div class="eyebrow">CAP</div>
 
-                <h3>
-                    Bac Pro Mécanique
-                </h3>
+                <h3>CAP Maintenance des véhicules — véhicules légers</h3>
 
                 <p>
-                    Découvrez la mécanique automobile,
-                    le diagnostic, l'entretien et les
-                    techniques de maintenance des véhicules.
+                    Apprentissage de l'entretien, du contrôle et de la maintenance des voitures, avec recherche de pannes et interventions sur les systèmes du véhicule.
                 </p>
 
-                <a
-                    href="#"
-                    class="formation-link"
-                    onclick="openModal('mecanique'); return false;"
-                >
-                    Découvrir la formation →
-                </a>
+                <div class="formation-meta">
+                    <span class="formation-tag">Automobile</span><span class="formation-tag">Maintenance</span><span class="formation-tag">Diagnostic</span>
+                </div>
 
+                <div class="formation-link">
+                    2 ans • apprentissage
+                </div>
             </div>
-
         </article>
 
-
-        <!-- ELECTRICITE -->
-
-        <article class="formation-card reveal">
-
-            <div class="formation-number">
-                03
-            </div>
+        <article class="formation-card reveal" data-category="cap">
+            <div class="formation-number">03</div>
 
             <div class="formation-icon">
                 ⚡
             </div>
 
             <div class="formation-content">
+                <div class="eyebrow">CAP</div>
 
-                <h3>
-                    Bac Pro Électricité
-                </h3>
+                <h3>CAP Électricien</h3>
 
                 <p>
-                    Apprenez à préparer, réaliser, contrôler
-                    et maintenir des installations et systèmes
-                    électriques.
+                    Découverte des installations électriques : câblage, raccordement, mise en service, contrôle et respect des règles de sécurité.
                 </p>
 
-                <a
-                    href="#"
-                    class="formation-link"
-                    onclick="openModal('electricite'); return false;"
-                >
-                    Découvrir la formation →
-                </a>
+                <div class="formation-meta">
+                    <span class="formation-tag">Électricité</span><span class="formation-tag">Installations</span><span class="formation-tag">Sécurité</span>
+                </div>
 
+                <div class="formation-link">
+                    2 ans • apprentissage / temps plein
+                </div>
             </div>
-
         </article>
 
+        <article class="formation-card reveal" data-category="seconde">
+            <div class="formation-number">04</div>
+
+            <div class="formation-icon">
+                🏗️
+            </div>
+
+            <div class="formation-content">
+                <div class="eyebrow">2DE PRO</div>
+
+                <h3>2de pro Métiers de la construction durable, du bâtiment et des travaux publics</h3>
+
+                <p>
+                    Une seconde professionnelle qui prépare aux métiers de la construction, du bâtiment et des travaux publics grâce à des compétences communes à plusieurs spécialités.
+                </p>
+
+                <div class="formation-meta">
+                    <span class="formation-tag">Construction</span><span class="formation-tag">Bâtiment</span><span class="formation-tag">Travaux publics</span>
+                </div>
+
+                <div class="formation-link">
+                    1 an • temps plein
+                </div>
+            </div>
+        </article>
+
+        <article class="formation-card reveal" data-category="seconde">
+            <div class="formation-number">05</div>
+
+            <div class="formation-icon">
+                🔧
+            </div>
+
+            <div class="formation-content">
+                <div class="eyebrow">2DE PRO</div>
+
+                <h3>2de pro Métiers de la maintenance des matériels et des véhicules</h3>
+
+                <p>
+                    Découverte de la maintenance des véhicules et des matériels : fonctionnement, entretien, diagnostic et premières interventions techniques.
+                </p>
+
+                <div class="formation-meta">
+                    <span class="formation-tag">Maintenance</span><span class="formation-tag">Véhicules</span><span class="formation-tag">Matériels</span>
+                </div>
+
+                <div class="formation-link">
+                    1 an • temps plein
+                </div>
+            </div>
+        </article>
+
+        <article class="formation-card reveal" data-category="seconde">
+            <div class="formation-number">06</div>
+
+            <div class="formation-icon">
+                ⚙️
+            </div>
+
+            <div class="formation-content">
+                <div class="eyebrow">2DE PRO</div>
+
+                <h3>2de pro Métiers de la réalisation d'ensembles mécaniques et industriels</h3>
+
+                <p>
+                    Initiation à la fabrication de pièces et d'ensembles mécaniques : préparation, usinage, contrôle et organisation de la production.
+                </p>
+
+                <div class="formation-meta">
+                    <span class="formation-tag">Usinage</span><span class="formation-tag">Mécanique</span><span class="formation-tag">Production</span>
+                </div>
+
+                <div class="formation-link">
+                    1 an • temps plein
+                </div>
+            </div>
+        </article>
+
+        <article class="formation-card reveal" data-category="seconde">
+            <div class="formation-number">07</div>
+
+            <div class="formation-icon">
+                💻
+            </div>
+
+            <div class="formation-content">
+                <div class="eyebrow">2DE PRO</div>
+
+                <h3>2de pro Métiers des transitions numérique et énergétique</h3>
+
+                <p>
+                    Une seconde orientée vers le numérique, l'électricité et les systèmes énergétiques, avec des bases en réseaux, équipements connectés et installations.
+                </p>
+
+                <div class="formation-meta">
+                    <span class="formation-tag">Numérique</span><span class="formation-tag">Énergie</span><span class="formation-tag">Électricité</span>
+                </div>
+
+                <div class="formation-link">
+                    1 an • temps plein
+                </div>
+            </div>
+        </article>
+
+        <article class="formation-card reveal" data-category="seconde">
+            <div class="formation-number">08</div>
+
+            <div class="formation-icon">
+                🤖
+            </div>
+
+            <div class="formation-content">
+                <div class="eyebrow">2DE PRO</div>
+
+                <h3>2de pro Métiers du pilotage et de la maintenance d'installations automatisées</h3>
+
+                <p>
+                    Découverte des systèmes automatisés : conduite d'installations, maintenance, réglages, diagnostic et prévention des pannes.
+                </p>
+
+                <div class="formation-meta">
+                    <span class="formation-tag">Automatisme</span><span class="formation-tag">Maintenance</span><span class="formation-tag">Industrie</span>
+                </div>
+
+                <div class="formation-link">
+                    1 an • temps plein
+                </div>
+            </div>
+        </article>
+
+        <article class="formation-card reveal" data-category="bac">
+            <div class="formation-number">09</div>
+
+            <div class="formation-icon">
+                🎨
+            </div>
+
+            <div class="formation-content">
+                <div class="eyebrow">BAC PRO</div>
+
+                <h3>Bac Pro Carrossier peintre automobile</h3>
+
+                <p>
+                    Apprentissage de la réparation et de la remise en état des carrosseries, de la préparation des surfaces jusqu'à la mise en peinture du véhicule.
+                </p>
+
+                <div class="formation-meta">
+                    <span class="formation-tag">Carrosserie</span><span class="formation-tag">Peinture</span><span class="formation-tag">Automobile</span>
+                </div>
+
+                <div class="formation-link">
+                    3 ans après la 3e • apprentissage / temps plein
+                </div>
+            </div>
+        </article>
+
+        <article class="formation-card reveal" data-category="bac">
+            <div class="formation-number">10</div>
+
+            <div class="formation-icon">
+                💻
+            </div>
+
+            <div class="formation-content">
+                <div class="eyebrow">BAC PRO</div>
+
+                <h3>Bac Pro Cybersécurité, informatique et réseaux, électronique — CIEL</h3>
+
+                <p>
+                    Formation aux réseaux, à l'informatique, à la cybersécurité et aux systèmes électroniques : installation, configuration, maintenance et diagnostic.
+                </p>
+
+                <div class="formation-meta">
+                    <span class="formation-tag">Informatique</span><span class="formation-tag">Réseaux</span><span class="formation-tag">Cybersécurité</span>
+                </div>
+
+                <div class="formation-link">
+                    2 ans après une 2de pro • apprentissage / temps plein
+                </div>
+            </div>
+        </article>
+
+        <article class="formation-card reveal" data-category="bac">
+            <div class="formation-number">11</div>
+
+            <div class="formation-icon">
+                🤖
+            </div>
+
+            <div class="formation-content">
+                <div class="eyebrow">BAC PRO</div>
+
+                <h3>Bac Pro Maintenance des systèmes de production connectés</h3>
+
+                <p>
+                    Formation à la maintenance des machines et systèmes industriels : diagnostic, intervention, prévention des pannes et suivi d'équipements connectés.
+                </p>
+
+                <div class="formation-meta">
+                    <span class="formation-tag">Industrie</span><span class="formation-tag">Maintenance</span><span class="formation-tag">Automatisation</span>
+                </div>
+
+                <div class="formation-link">
+                    2 ans après une 2de pro • apprentissage / temps plein
+                </div>
+            </div>
+        </article>
+
+        <article class="formation-card reveal" data-category="bac">
+            <div class="formation-number">12</div>
+
+            <div class="formation-icon">
+                🚘
+            </div>
+
+            <div class="formation-content">
+                <div class="eyebrow">BAC PRO</div>
+
+                <h3>Bac Pro Maintenance des véhicules — véhicules légers</h3>
+
+                <p>
+                    Formation à l'entretien, au diagnostic et à la réparation des véhicules légers, avec utilisation d'outils de mesure et de diagnostic.
+                </p>
+
+                <div class="formation-meta">
+                    <span class="formation-tag">Automobile</span><span class="formation-tag">Diagnostic</span><span class="formation-tag">Réparation</span>
+                </div>
+
+                <div class="formation-link">
+                    2 ans après une 2de pro • apprentissage / temps plein
+                </div>
+            </div>
+        </article>
+
+        <article class="formation-card reveal" data-category="bac">
+            <div class="formation-number">13</div>
+
+            <div class="formation-icon">
+                ⚡
+            </div>
+
+            <div class="formation-content">
+                <div class="eyebrow">BAC PRO</div>
+
+                <h3>Bac Pro Métiers de l'électricité et de ses environnements connectés — MELEC</h3>
+
+                <p>
+                    Préparation, réalisation, mise en service et maintenance d'installations électriques, y compris des équipements et environnements connectés.
+                </p>
+
+                <div class="formation-meta">
+                    <span class="formation-tag">Électricité</span><span class="formation-tag">Domotique</span><span class="formation-tag">Réseaux</span>
+                </div>
+
+                <div class="formation-link">
+                    2 ans après une 2de pro • apprentissage / temps plein
+                </div>
+            </div>
+        </article>
+
+        <article class="formation-card reveal" data-category="bac">
+            <div class="formation-number">14</div>
+
+            <div class="formation-icon">
+                🛠️
+            </div>
+
+            <div class="formation-content">
+                <div class="eyebrow">BAC PRO</div>
+
+                <h3>Bac Pro Technicien en réalisation de produits mécaniques — réalisation et maintenance des outillages</h3>
+
+                <p>
+                    Formation à la fabrication et à la maintenance d'outillages mécaniques, avec préparation de production, usinage et contrôle des pièces.
+                </p>
+
+                <div class="formation-meta">
+                    <span class="formation-tag">Outillage</span><span class="formation-tag">Usinage</span><span class="formation-tag">Production</span>
+                </div>
+
+                <div class="formation-link">
+                    3 ans après la 3e • apprentissage
+                </div>
+            </div>
+        </article>
+
+        <article class="formation-card reveal" data-category="bac">
+            <div class="formation-number">15</div>
+
+            <div class="formation-icon">
+                🏭
+            </div>
+
+            <div class="formation-content">
+                <div class="eyebrow">BAC PRO</div>
+
+                <h3>Bac Pro Technicien en réalisation de produits mécaniques — réalisation et suivi de productions</h3>
+
+                <p>
+                    Apprentissage de la préparation et du suivi de productions mécaniques : réglage des moyens de fabrication, contrôle des pièces et organisation du travail.
+                </p>
+
+                <div class="formation-meta">
+                    <span class="formation-tag">Productique</span><span class="formation-tag">Usinage</span><span class="formation-tag">Contrôle</span>
+                </div>
+
+                <div class="formation-link">
+                    2 ans après une 2de pro • apprentissage / temps plein
+                </div>
+            </div>
+        </article>
+
+        <article class="formation-card reveal" data-category="bac">
+            <div class="formation-number">16</div>
+
+            <div class="formation-icon">
+                🏗️
+            </div>
+
+            <div class="formation-content">
+                <div class="eyebrow">BAC PRO</div>
+
+                <h3>Bac Pro Travaux publics</h3>
+
+                <p>
+                    Formation aux travaux de chantier : préparation, organisation et réalisation d'ouvrages liés aux routes, réseaux et autres infrastructures.
+                </p>
+
+                <div class="formation-meta">
+                    <span class="formation-tag">Chantier</span><span class="formation-tag">Infrastructures</span><span class="formation-tag">Engins</span>
+                </div>
+
+                <div class="formation-link">
+                    2 ans après une 2de pro • apprentissage / temps plein
+                </div>
+            </div>
+        </article>
+
+        <article class="formation-card reveal" data-category="bts">
+            <div class="formation-number">17</div>
+
+            <div class="formation-icon">
+                📐
+            </div>
+
+            <div class="formation-content">
+                <div class="eyebrow">BTS</div>
+
+                <h3>BTS Conception des processus de réalisation de produits — option A production unitaire</h3>
+
+                <p>
+                    Formation supérieure consacrée à la conception et à la préparation des processus de fabrication de pièces mécaniques réalisées à l'unité ou en petites séries.
+                </p>
+
+                <div class="formation-meta">
+                    <span class="formation-tag">Conception</span><span class="formation-tag">Production</span><span class="formation-tag">Mécanique</span>
+                </div>
+
+                <div class="formation-link">
+                    2 ans • apprentissage / temps plein
+                </div>
+            </div>
+        </article>
+
+        <article class="formation-card reveal" data-category="bts">
+            <div class="formation-number">18</div>
+
+            <div class="formation-icon">
+                ⚙️
+            </div>
+
+            <div class="formation-content">
+                <div class="eyebrow">BTS</div>
+
+                <h3>BTS Maintenance des systèmes — option A systèmes de production</h3>
+
+                <p>
+                    Formation supérieure pour apprendre à organiser, diagnostiquer et réaliser la maintenance de systèmes de production industriels.
+                </p>
+
+                <div class="formation-meta">
+                    <span class="formation-tag">Maintenance</span><span class="formation-tag">Industrie</span><span class="formation-tag">Diagnostic</span>
+                </div>
+
+                <div class="formation-link">
+                    2 ans • apprentissage
+                </div>
+            </div>
+        </article>
+
+        <article class="formation-card reveal" data-category="dispositif">
+            <div class="formation-number">19</div>
+
+            <div class="formation-icon">
+                🧭
+            </div>
+
+            <div class="formation-content">
+                <div class="eyebrow">DISPOSITIF</div>
+
+                <h3>Classe de 3e prépa-métiers</h3>
+
+                <p>
+                    Une année destinée aux élèves volontaires qui souhaitent découvrir les métiers et la voie professionnelle, avec enseignements généraux, découverte professionnelle et périodes en milieu professionnel.
+                </p>
+
+                <div class="formation-meta">
+                    <span class="formation-tag">Orientation</span><span class="formation-tag">Métiers</span><span class="formation-tag">Découverte</span>
+                </div>
+
+                <div class="formation-link">
+                    1 an
+                </div>
+            </div>
+        </article>
+
+        <article class="formation-card reveal" data-category="dispositif">
+            <div class="formation-number">20</div>
+
+            <div class="formation-icon">
+                🤝
+            </div>
+
+            <div class="formation-content">
+                <div class="eyebrow">DISPOSITIF</div>
+
+                <h3>ULIS lycée — Unité localisée pour l'inclusion scolaire</h3>
+
+                <p>
+                    Dispositif d'accompagnement et d'inclusion pour des élèves en situation de handicap, avec un parcours adapté et un accompagnement selon les besoins de chacun.
+                </p>
+
+                <div class="formation-meta">
+                    <span class="formation-tag">Inclusion</span><span class="formation-tag">Accompagnement</span><span class="formation-tag">Parcours adapté</span>
+                </div>
+
+                <div class="formation-link">
+                    3 ans
+                </div>
+            </div>
+        </article>
+
+    </div>
+
+    <div class="formation-source">
+        Liste vérifiée à partir des formations actuellement référencées par l'Onisep
+        pour le Lycée professionnel Eugène Decomble à Chaumont.
     </div>
 
 </section>
@@ -2402,10 +2939,10 @@
 
         <div class="number reveal">
 
-            <strong>3+</strong>
+            <strong>20</strong>
 
             <span>
-                domaines professionnels
+                formations et dispositifs
             </span>
 
         </div>
@@ -2969,8 +3506,9 @@
                 </h3>
 
                 <p>
-                    Informatique, mécanique,
-                    électricité et domaines techniques.
+                    20 formations et dispositifs dans les domaines
+                    du numérique, de l'industrie, de l'automobile,
+                    de l'électricité et des travaux publics.
                 </p>
 
             </div>
@@ -3064,269 +3602,6 @@
 
 
 <!-- =========================================================
-     MODAL CIEL
-========================================================= -->
-
-<div class="modal" id="ciel">
-
-    <div class="modal-box">
-
-        <div class="modal-header">
-
-            <h2>
-                💻 Bac Pro CIEL
-            </h2>
-
-            <div
-                class="close"
-                onclick="closeModal('ciel')"
-            >
-                ×
-            </div>
-
-        </div>
-
-
-        <p>
-
-            Le Bac Pro CIEL signifie
-            <strong>
-                Cybersécurité, Informatique et Réseaux,
-                Électronique
-            </strong>.
-
-        </p>
-
-
-        <h3>
-            Ce que tu peux apprendre
-        </h3>
-
-
-        <ul>
-
-            <li>
-                Installer et configurer des ordinateurs
-            </li>
-
-            <li>
-                Configurer des réseaux informatiques
-            </li>
-
-            <li>
-                Découvrir la cybersécurité
-            </li>
-
-            <li>
-                Programmer
-            </li>
-
-            <li>
-                Diagnostiquer des problèmes informatiques
-            </li>
-
-            <li>
-                Découvrir l'électronique
-            </li>
-
-            <li>
-                Assurer la maintenance du matériel
-            </li>
-
-        </ul>
-
-
-        <h3>
-            💼 Débouchés
-        </h3>
-
-
-        <p>
-
-            Technicien informatique, technicien réseaux,
-            technicien de maintenance informatique,
-            technicien systèmes et réseaux.
-
-        </p>
-
-    </div>
-
-</div>
-
-
-<!-- =========================================================
-     MODAL MECANIQUE
-========================================================= -->
-
-<div class="modal" id="mecanique">
-
-    <div class="modal-box">
-
-        <div class="modal-header">
-
-            <h2>
-                🔧 Bac Pro Mécanique
-            </h2>
-
-            <div
-                class="close"
-                onclick="closeModal('mecanique')"
-            >
-                ×
-            </div>
-
-        </div>
-
-
-        <p>
-
-            Cette formation permet de découvrir
-            le fonctionnement des véhicules ainsi que
-            les techniques d'entretien et de maintenance.
-
-        </p>
-
-
-        <h3>
-            Ce que tu peux apprendre
-        </h3>
-
-
-        <ul>
-
-            <li>
-                Comprendre le fonctionnement d'un véhicule
-            </li>
-
-            <li>
-                Effectuer des opérations d'entretien
-            </li>
-
-            <li>
-                Rechercher une panne
-            </li>
-
-            <li>
-                Utiliser des outils de diagnostic
-            </li>
-
-            <li>
-                Intervenir sur différents systèmes
-            </li>
-
-            <li>
-                Respecter les règles de sécurité
-            </li>
-
-        </ul>
-
-
-        <h3>
-            💼 Débouchés
-        </h3>
-
-
-        <p>
-
-            Mécanicien automobile, technicien automobile
-            ou technicien de maintenance.
-
-        </p>
-
-    </div>
-
-</div>
-
-
-<!-- =========================================================
-     MODAL ELECTRICITE
-========================================================= -->
-
-<div class="modal" id="electricite">
-
-    <div class="modal-box">
-
-        <div class="modal-header">
-
-            <h2>
-                ⚡ Bac Pro Électricité
-            </h2>
-
-            <div
-                class="close"
-                onclick="closeModal('electricite')"
-            >
-                ×
-            </div>
-
-        </div>
-
-
-        <p>
-
-            Cette formation permet de découvrir les
-            installations électriques et les systèmes
-            utilisés dans différents bâtiments.
-
-        </p>
-
-
-        <h3>
-            Ce que tu peux apprendre
-        </h3>
-
-
-        <ul>
-
-            <li>
-                Lire des schémas électriques
-            </li>
-
-            <li>
-                Réaliser une installation
-            </li>
-
-            <li>
-                Installer des équipements
-            </li>
-
-            <li>
-                Effectuer des mesures
-            </li>
-
-            <li>
-                Rechercher une panne
-            </li>
-
-            <li>
-                Réaliser des opérations de maintenance
-            </li>
-
-            <li>
-                Respecter les règles de sécurité
-            </li>
-
-        </ul>
-
-
-        <h3>
-            💼 Débouchés
-        </h3>
-
-
-        <p>
-
-            Électricien, technicien d'installation
-            électrique ou technicien de maintenance.
-
-        </p>
-
-    </div>
-
-</div>
-
-
-<!-- =========================================================
      JAVASCRIPT
 ========================================================= -->
 
@@ -3399,86 +3674,6 @@
         }
 
     });
-
-
-    /* =========================
-       MODALES
-    ========================= */
-
-    function openModal(id) {
-
-        document
-            .getElementById(id)
-            .classList.add("active");
-
-        document.body.style.overflow =
-            "hidden";
-    }
-
-
-    function closeModal(id) {
-
-        document
-            .getElementById(id)
-            .classList.remove("active");
-
-        document.body.style.overflow =
-            "auto";
-    }
-
-
-    /* Fermer en cliquant autour */
-
-    document
-        .querySelectorAll(".modal")
-        .forEach(modal => {
-
-            modal.addEventListener(
-                "click",
-                function(event) {
-
-                    if (
-                        event.target === modal
-                    ) {
-
-                        modal.classList.remove(
-                            "active"
-                        );
-
-                        document.body.style.overflow =
-                            "auto";
-                    }
-
-                }
-            );
-
-        });
-
-
-    /* Fermer avec Echap */
-
-    document.addEventListener(
-        "keydown",
-        event => {
-
-            if (event.key === "Escape") {
-
-                document
-                    .querySelectorAll(".modal")
-                    .forEach(modal => {
-
-                        modal.classList.remove(
-                            "active"
-                        );
-
-                    });
-
-                document.body.style.overflow =
-                    "auto";
-            }
-
-        }
-    );
 
 
     /* =========================
