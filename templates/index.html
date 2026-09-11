@@ -1,0 +1,3548 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lycée Eugène Decomble | Chaumont</title>
+
+    <meta
+        name="description"
+        content="Découvrez le Lycée Eugène Decomble à Chaumont : formations, internat, vie scolaire et établissement."
+    >
+
+    <style>
+
+        /* =========================================================
+           VARIABLES
+        ========================================================= */
+
+        :root {
+
+            --black: #080808;
+            --black-soft: #111111;
+            --black-card: #171717;
+
+            --brown-dark: #3a2116;
+            --brown: #70442d;
+            --brown-light: #a86f4d;
+            --brown-gold: #c08a66;
+
+            --cream: #f3ede7;
+            --white: #ffffff;
+            --gray: #9c9c9c;
+            --gray-light: #d0d0d0;
+
+            --radius: 22px;
+
+            --shadow:
+                0 20px 60px rgba(0,0,0,0.25);
+
+        }
+
+
+        /* =========================================================
+           RESET
+        ========================================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+
+            font-family:
+                Inter,
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background: var(--black);
+
+            color: white;
+
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        /* =========================================================
+           SCROLLBAR
+        ========================================================= */
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #080808;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--brown);
+            border-radius: 20px;
+        }
+
+
+        /* =========================================================
+           NAVBAR
+        ========================================================= */
+
+        nav {
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 78px;
+
+            z-index: 1000;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 0 6%;
+
+            background:
+                rgba(8,8,8,0.70);
+
+            backdrop-filter:
+                blur(18px);
+
+            border-bottom:
+                1px solid rgba(255,255,255,0.08);
+
+            transition: 0.3s;
+        }
+
+
+        nav.scrolled {
+
+            background:
+                rgba(8,8,8,0.95);
+
+            box-shadow:
+                0 10px 40px rgba(0,0,0,0.3);
+        }
+
+
+        .logo {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            font-family: Georgia, serif;
+
+            font-size: 19px;
+
+            font-weight: bold;
+        }
+
+
+        .logo-icon {
+
+            width: 42px;
+            height: 42px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--brown-light),
+                    var(--brown)
+                );
+
+            font-size: 19px;
+
+            box-shadow:
+                0 5px 20px rgba(112,68,45,0.35);
+        }
+
+
+        .logo span {
+            color: var(--brown-gold);
+        }
+
+
+        .nav-links {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 32px;
+
+            list-style: none;
+        }
+
+
+        .nav-links a {
+
+            color: #d7d7d7;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            position: relative;
+
+            transition: 0.25s;
+        }
+
+
+        .nav-links a::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 50%;
+
+            bottom: -10px;
+
+            width: 0;
+
+            height: 2px;
+
+            background: var(--brown-light);
+
+            transform: translateX(-50%);
+
+            transition: 0.25s;
+        }
+
+
+        .nav-links a:hover {
+
+            color: white;
+        }
+
+
+        .nav-links a:hover::after {
+
+            width: 100%;
+        }
+
+
+        .nav-button {
+
+            padding: 11px 19px;
+
+            border-radius: 30px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--brown-light),
+                    var(--brown)
+                );
+
+            color: white !important;
+
+            box-shadow:
+                0 8px 25px rgba(112,68,45,0.25);
+        }
+
+
+        .nav-button::after {
+            display: none;
+        }
+
+
+        /* =========================================================
+           MOBILE MENU
+        ========================================================= */
+
+        .menu-button {
+
+            display: none;
+
+            width: 43px;
+            height: 43px;
+
+            border: 1px solid rgba(255,255,255,0.15);
+
+            border-radius: 12px;
+
+            background: rgba(255,255,255,0.05);
+
+            color: white;
+
+            font-size: 20px;
+
+            cursor: pointer;
+        }
+
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hero {
+
+            min-height: 100vh;
+
+            position: relative;
+
+            display: flex;
+
+            align-items: center;
+
+            overflow: hidden;
+
+            background:
+
+                linear-gradient(
+                    90deg,
+                    rgba(5,5,5,0.98) 0%,
+                    rgba(5,5,5,0.80) 43%,
+                    rgba(5,5,5,0.30) 100%
+                ),
+
+                linear-gradient(
+                    135deg,
+                    #170e0a,
+                    #5b3422
+                );
+        }
+
+
+        .hero::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+
+                radial-gradient(
+                    circle at 80% 20%,
+                    rgba(192,138,102,0.35),
+                    transparent 28%
+                ),
+
+                radial-gradient(
+                    circle at 20% 80%,
+                    rgba(112,68,45,0.22),
+                    transparent 35%
+                );
+        }
+
+
+        .hero-grid {
+
+            position: absolute;
+
+            inset: 0;
+
+            opacity: 0.08;
+
+            background-image:
+
+                linear-gradient(
+                    rgba(255,255,255,0.3) 1px,
+                    transparent 1px
+                ),
+
+                linear-gradient(
+                    90deg,
+                    rgba(255,255,255,0.3) 1px,
+                    transparent 1px
+                );
+
+            background-size: 80px 80px;
+
+            mask-image:
+                linear-gradient(
+                    to right,
+                    black,
+                    transparent
+                );
+        }
+
+
+        .hero-content {
+
+            position: relative;
+
+            z-index: 2;
+
+            width: 100%;
+
+            max-width: 1250px;
+
+            margin: auto;
+
+            padding: 150px 7% 100px;
+        }
+
+
+        .hero-badge {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            padding: 9px 16px;
+
+            border-radius: 30px;
+
+            border:
+                1px solid rgba(255,255,255,0.18);
+
+            background:
+                rgba(255,255,255,0.05);
+
+            color: #e1c1ac;
+
+            font-size: 12px;
+
+            font-weight: bold;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 25px;
+
+            animation:
+                fadeUp 0.8s ease both;
+        }
+
+
+        .hero h1 {
+
+            max-width: 850px;
+
+            font-family: Georgia, serif;
+
+            font-size:
+                clamp(48px, 8vw, 92px);
+
+            line-height: 0.98;
+
+            letter-spacing: -3px;
+
+            margin-bottom: 30px;
+
+            animation:
+                fadeUp 0.8s 0.1s ease both;
+        }
+
+
+        .hero h1 span {
+
+            color: var(--brown-gold);
+        }
+
+
+        .hero-description {
+
+            max-width: 650px;
+
+            color: #d0d0d0;
+
+            font-size: 18px;
+
+            line-height: 1.8;
+
+            animation:
+                fadeUp 0.8s 0.2s ease both;
+        }
+
+
+        .hero-actions {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 14px;
+
+            margin-top: 40px;
+
+            animation:
+                fadeUp 0.8s 0.3s ease both;
+        }
+
+
+        .btn {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 10px;
+
+            padding: 15px 24px;
+
+            border-radius: 12px;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+
+            cursor: pointer;
+        }
+
+
+        .btn-primary {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--brown-light),
+                    var(--brown)
+                );
+
+            color: white;
+
+            box-shadow:
+                0 12px 35px rgba(112,68,45,0.35);
+        }
+
+
+        .btn-primary:hover {
+
+            transform:
+                translateY(-4px);
+
+            box-shadow:
+                0 18px 40px rgba(112,68,45,0.45);
+        }
+
+
+        .btn-outline {
+
+            border:
+                1px solid rgba(255,255,255,0.25);
+
+            background:
+                rgba(255,255,255,0.04);
+
+            color: white;
+        }
+
+
+        .btn-outline:hover {
+
+            background: white;
+
+            color: black;
+
+            transform:
+                translateY(-4px);
+        }
+
+
+        /* =========================================================
+           HERO STATS
+        ========================================================= */
+
+        .hero-stats {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 40px;
+
+            margin-top: 65px;
+
+            animation:
+                fadeUp 0.8s 0.4s ease both;
+        }
+
+
+        .hero-stat strong {
+
+            display: block;
+
+            font-family: Georgia, serif;
+
+            font-size: 28px;
+
+            color: white;
+        }
+
+
+        .hero-stat span {
+
+            color: #999;
+
+            font-size: 12px;
+
+            margin-top: 5px;
+
+            display: block;
+        }
+
+
+        /* =========================================================
+           SECTION
+        ========================================================= */
+
+        .section {
+
+            padding: 110px 7%;
+
+            position: relative;
+        }
+
+
+        .section-dark {
+            background: var(--black);
+        }
+
+
+        .section-brown {
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    #24150e,
+                    #100c09
+                );
+        }
+
+
+        .section-header {
+
+            max-width: 720px;
+
+            margin-bottom: 60px;
+        }
+
+
+        .section-header.center {
+
+            text-align: center;
+
+            margin-left: auto;
+
+            margin-right: auto;
+        }
+
+
+        .eyebrow {
+
+            color: var(--brown-gold);
+
+            font-size: 11px;
+
+            font-weight: bold;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+        }
+
+
+        .section-title {
+
+            font-family: Georgia, serif;
+
+            font-size:
+                clamp(38px, 5vw, 58px);
+
+            line-height: 1.05;
+
+            margin-top: 13px;
+        }
+
+
+        .section-title span {
+
+            color: var(--brown-gold);
+        }
+
+
+        .section-description {
+
+            color: #8e8e8e;
+
+            line-height: 1.8;
+
+            margin-top: 18px;
+
+            font-size: 16px;
+        }
+
+
+        /* =========================================================
+           FORMATIONS
+        ========================================================= */
+
+        .formations {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 22px;
+
+            max-width: 1250px;
+
+            margin: auto;
+        }
+
+
+        .formation-card {
+
+            min-height: 420px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            border-radius: var(--radius);
+
+            border:
+                1px solid rgba(255,255,255,0.09);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #191919,
+                    #101010
+                );
+
+            transition:
+                transform 0.4s,
+                border-color 0.4s,
+                box-shadow 0.4s;
+        }
+
+
+        .formation-card:hover {
+
+            transform:
+                translateY(-12px);
+
+            border-color:
+                rgba(168,111,77,0.6);
+
+            box-shadow:
+                0 30px 70px rgba(0,0,0,0.45);
+        }
+
+
+        .formation-number {
+
+            position: absolute;
+
+            top: 20px;
+            right: 22px;
+
+            color: rgba(255,255,255,0.15);
+
+            font-family: Georgia, serif;
+
+            font-size: 45px;
+
+            font-weight: bold;
+        }
+
+
+        .formation-icon {
+
+            width: 70px;
+            height: 70px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            margin: 35px;
+
+            border-radius: 18px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #8b5a3d,
+                    #4b2c1d
+                );
+
+            font-size: 32px;
+
+            box-shadow:
+                0 12px 30px rgba(112,68,45,0.3);
+        }
+
+
+        .formation-content {
+
+            padding: 0 35px 35px;
+        }
+
+
+        .formation-content h3 {
+
+            font-family: Georgia, serif;
+
+            font-size: 27px;
+
+            margin-bottom: 14px;
+        }
+
+
+        .formation-content p {
+
+            color: #888;
+
+            line-height: 1.7;
+
+            font-size: 14px;
+        }
+
+
+        .formation-link {
+
+            display: inline-flex;
+
+            margin-top: 25px;
+
+            color: var(--brown-gold);
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+
+        .formation-link:hover {
+
+            transform:
+                translateX(6px);
+        }
+
+
+        /* =========================================================
+           WHY
+        ========================================================= */
+
+        .why {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1.2fr;
+
+            gap: 80px;
+
+            align-items: center;
+
+            max-width: 1250px;
+
+            margin: auto;
+        }
+
+
+        .why-left h2 {
+
+            font-family: Georgia, serif;
+
+            font-size:
+                clamp(40px, 5vw, 60px);
+
+            line-height: 1.05;
+        }
+
+
+        .why-left h2 span {
+
+            color: var(--brown-gold);
+        }
+
+
+        .why-left p {
+
+            color: #909090;
+
+            line-height: 1.8;
+
+            margin-top: 22px;
+
+            max-width: 520px;
+        }
+
+
+        .why-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 15px;
+        }
+
+
+        .why-card {
+
+            padding: 30px;
+
+            border-radius: 18px;
+
+            background:
+                rgba(255,255,255,0.045);
+
+            border:
+                1px solid rgba(255,255,255,0.07);
+
+            transition: 0.3s;
+        }
+
+
+        .why-card:hover {
+
+            background:
+                rgba(168,111,77,0.10);
+
+            transform:
+                translateY(-5px);
+        }
+
+
+        .why-icon {
+
+            font-size: 28px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .why-card h3 {
+
+            margin-bottom: 10px;
+
+            font-size: 17px;
+        }
+
+
+        .why-card p {
+
+            color: #888;
+
+            line-height: 1.6;
+
+            font-size: 13px;
+        }
+
+
+        /* =========================================================
+           INTERNAT
+        ========================================================= */
+
+        .internat {
+
+            max-width: 1250px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                0.9fr 1.1fr;
+
+            gap: 60px;
+
+            align-items: center;
+        }
+
+
+        .internat-visual {
+
+            min-height: 520px;
+
+            border-radius: 28px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    #63402c,
+                    #17100c
+                );
+
+            border:
+                1px solid rgba(255,255,255,0.1);
+
+            box-shadow:
+                var(--shadow);
+        }
+
+
+        .internat-visual::before {
+
+            content: "🏠";
+
+            position: absolute;
+
+            inset: 0;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 120px;
+
+            opacity: 0.15;
+        }
+
+
+        .internat-glass {
+
+            position: absolute;
+
+            left: 25px;
+            right: 25px;
+            bottom: 25px;
+
+            padding: 25px;
+
+            border-radius: 18px;
+
+            background:
+                rgba(0,0,0,0.55);
+
+            backdrop-filter:
+                blur(15px);
+
+            border:
+                1px solid rgba(255,255,255,0.12);
+        }
+
+
+        .internat-glass strong {
+
+            display: block;
+
+            font-family: Georgia, serif;
+
+            font-size: 25px;
+
+            margin-bottom: 7px;
+        }
+
+
+        .internat-glass span {
+
+            color: #aaa;
+
+            font-size: 13px;
+        }
+
+
+        .internat-content h2 {
+
+            font-family: Georgia, serif;
+
+            font-size:
+                clamp(40px, 5vw, 58px);
+
+            line-height: 1.05;
+
+            margin: 15px 0 20px;
+        }
+
+
+        .internat-content h2 span {
+
+            color: var(--brown-gold);
+        }
+
+
+        .internat-content > p {
+
+            color: #929292;
+
+            line-height: 1.8;
+
+            margin-bottom: 30px;
+        }
+
+
+        .internat-features {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 15px;
+        }
+
+
+        .internat-feature {
+
+            padding: 20px;
+
+            border-radius: 16px;
+
+            background:
+                rgba(255,255,255,0.045);
+
+            border:
+                1px solid rgba(255,255,255,0.08);
+        }
+
+
+        .internat-feature-icon {
+
+            font-size: 24px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .internat-feature h3 {
+
+            font-size: 15px;
+
+            margin-bottom: 5px;
+        }
+
+
+        .internat-feature p {
+
+            color: #777;
+
+            font-size: 12px;
+
+            line-height: 1.5;
+        }
+
+
+        /* =========================================================
+           COUNTER
+        ========================================================= */
+
+        .numbers {
+
+            padding: 55px 7%;
+
+            background:
+                #0c0c0c;
+
+            border-top:
+                1px solid rgba(255,255,255,0.06);
+
+            border-bottom:
+                1px solid rgba(255,255,255,0.06);
+        }
+
+
+        .numbers-grid {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+        }
+
+
+        .number {
+
+            text-align: center;
+
+            padding: 15px;
+
+            border-right:
+                1px solid rgba(255,255,255,0.08);
+        }
+
+
+        .number:last-child {
+
+            border-right: none;
+        }
+
+
+        .number strong {
+
+            display: block;
+
+            font-family: Georgia, serif;
+
+            font-size: 38px;
+
+            color: var(--brown-gold);
+        }
+
+
+        .number span {
+
+            display: block;
+
+            color: #777;
+
+            font-size: 12px;
+
+            margin-top: 7px;
+        }
+
+
+        /* =========================================================
+           GALERIE
+        ========================================================= */
+
+        .gallery {
+
+            max-width: 1250px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(12, 1fr);
+
+            grid-auto-rows: 210px;
+
+            gap: 15px;
+        }
+
+
+        .gallery-item {
+
+            position: relative;
+
+            overflow: hidden;
+
+            border-radius: 18px;
+
+            cursor: pointer;
+
+            background:
+                #222;
+        }
+
+
+        .gallery-item:nth-child(1) {
+
+            grid-column:
+                span 7;
+
+            grid-row:
+                span 2;
+        }
+
+
+        .gallery-item:nth-child(2) {
+
+            grid-column:
+                span 5;
+        }
+
+
+        .gallery-item:nth-child(3) {
+
+            grid-column:
+                span 5;
+        }
+
+
+        .gallery-item:nth-child(4) {
+
+            grid-column:
+                span 4;
+        }
+
+
+        .gallery-item:nth-child(5) {
+
+            grid-column:
+                span 4;
+        }
+
+
+        .gallery-item:nth-child(6) {
+
+            grid-column:
+                span 4;
+        }
+
+
+        .gallery-item img {
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition:
+                transform 0.6s;
+        }
+
+
+        .gallery-item:hover img {
+
+            transform:
+                scale(1.08);
+        }
+
+
+        .gallery-overlay {
+
+            position: absolute;
+
+            inset: 0;
+
+            display: flex;
+
+            align-items: flex-end;
+
+            padding: 25px;
+
+            background:
+                linear-gradient(
+                    transparent 45%,
+                    rgba(0,0,0,0.85)
+                );
+
+            opacity: 0;
+
+            transition: 0.3s;
+        }
+
+
+        .gallery-item:hover .gallery-overlay {
+
+            opacity: 1;
+        }
+
+
+        .gallery-overlay h3 {
+
+            font-family: Georgia, serif;
+
+            font-size: 20px;
+        }
+
+
+        /* =========================================================
+           CONTACT
+        ========================================================= */
+
+        .contact {
+
+            max-width: 1250px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1.3fr;
+
+            gap: 25px;
+        }
+
+
+        .contact-intro {
+
+            padding: 45px;
+
+            border-radius: 24px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #68432e,
+                    #2d1a11
+                );
+        }
+
+
+        .contact-intro h2 {
+
+            font-family: Georgia, serif;
+
+            font-size: 42px;
+
+            margin: 15px 0;
+        }
+
+
+        .contact-intro p {
+
+            color: #ddd;
+
+            line-height: 1.7;
+
+            font-size: 14px;
+        }
+
+
+        .contact-info {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 15px;
+        }
+
+
+        .contact-card {
+
+            padding: 30px;
+
+            border-radius: 18px;
+
+            background:
+                #151515;
+
+            border:
+                1px solid rgba(255,255,255,0.07);
+        }
+
+
+        .contact-card-icon {
+
+            font-size: 26px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .contact-card h3 {
+
+            margin-bottom: 8px;
+        }
+
+
+        .contact-card p {
+
+            color: #858585;
+
+            font-size: 13px;
+
+            line-height: 1.6;
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+
+            padding: 60px 7% 30px;
+
+            background:
+                #050505;
+
+            border-top:
+                1px solid rgba(255,255,255,0.07);
+        }
+
+
+        .footer-top {
+
+            max-width: 1250px;
+
+            margin: auto;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding-bottom: 40px;
+
+            border-bottom:
+                1px solid rgba(255,255,255,0.07);
+        }
+
+
+        .footer-logo {
+
+            font-family: Georgia, serif;
+
+            font-size: 22px;
+        }
+
+
+        .footer-logo span {
+
+            color: var(--brown-gold);
+        }
+
+
+        .footer-text {
+
+            color: #777;
+
+            font-size: 13px;
+
+            margin-top: 8px;
+        }
+
+
+        .footer-bottom {
+
+            max-width: 1250px;
+
+            margin: 25px auto 0;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            color: #555;
+
+            font-size: 11px;
+        }
+
+
+        /* =========================================================
+           MODAL
+        ========================================================= */
+
+        .modal {
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 3000;
+
+            display: none;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 20px;
+
+            background:
+                rgba(0,0,0,0.82);
+
+            backdrop-filter:
+                blur(12px);
+        }
+
+
+        .modal.active {
+
+            display: flex;
+        }
+
+
+        .modal-box {
+
+            width: 800px;
+
+            max-width: 100%;
+
+            max-height: 85vh;
+
+            overflow-y: auto;
+
+            padding: 40px;
+
+            border-radius: 25px;
+
+            background:
+                #151515;
+
+            border:
+                1px solid rgba(255,255,255,0.12);
+
+            box-shadow:
+                0 40px 100px rgba(0,0,0,0.6);
+
+            animation:
+                modalIn 0.35s ease;
+        }
+
+
+        .modal-header {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 25px;
+        }
+
+
+        .modal-header h2 {
+
+            font-family: Georgia, serif;
+
+            font-size: 34px;
+        }
+
+
+        .close {
+
+            width: 42px;
+            height: 42px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background:
+                rgba(255,255,255,0.06);
+
+            color: #aaa;
+
+            font-size: 25px;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+
+        .close:hover {
+
+            background:
+                #7c2d2d;
+
+            color: white;
+        }
+
+
+        .modal-box p {
+
+            color: #999;
+
+            line-height: 1.8;
+
+            margin-bottom: 18px;
+        }
+
+
+        .modal-box h3 {
+
+            color: var(--brown-gold);
+
+            margin:
+                28px 0 12px;
+        }
+
+
+        .modal-box ul {
+
+            margin-left: 20px;
+
+            color: #999;
+
+            line-height: 2;
+        }
+
+
+        /* =========================================================
+           BACK TO TOP
+        ========================================================= */
+
+        #top {
+
+            position: fixed;
+
+            right: 25px;
+
+            bottom: 25px;
+
+            width: 48px;
+            height: 48px;
+
+            border: none;
+
+            border-radius: 50%;
+
+            background:
+                var(--brown);
+
+            color: white;
+
+            font-size: 20px;
+
+            cursor: pointer;
+
+            z-index: 900;
+
+            opacity: 0;
+
+            transform:
+                translateY(20px);
+
+            pointer-events: none;
+
+            transition: 0.3s;
+
+            box-shadow:
+                0 10px 30px rgba(0,0,0,0.4);
+        }
+
+
+        #top.visible {
+
+            opacity: 1;
+
+            transform:
+                translateY(0);
+
+            pointer-events: auto;
+        }
+
+
+        /* =========================================================
+           SCROLL REVEAL
+        ========================================================= */
+
+        .reveal {
+
+            opacity: 0;
+
+            transform:
+                translateY(40px);
+
+            transition:
+                opacity 0.8s ease,
+                transform 0.8s ease;
+        }
+
+
+        .reveal.show {
+
+            opacity: 1;
+
+            transform:
+                translateY(0);
+        }
+
+
+        /* =========================================================
+           ANIMATIONS
+        ========================================================= */
+
+        @keyframes fadeUp {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(30px);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+        }
+
+
+        @keyframes modalIn {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    scale(0.92)
+                    translateY(20px);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    scale(1)
+                    translateY(0);
+            }
+        }
+
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
+
+        @media (max-width: 950px) {
+
+            .formations {
+
+                grid-template-columns:
+                    1fr 1fr;
+            }
+
+
+            .why {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .internat {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .contact {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+        }
+
+
+        @media (max-width: 750px) {
+
+            nav {
+
+                height: 68px;
+
+                padding:
+                    0 18px;
+            }
+
+
+            .logo {
+
+                font-size: 15px;
+            }
+
+
+            .logo-icon {
+
+                width: 37px;
+                height: 37px;
+            }
+
+
+            .menu-button {
+
+                display: block;
+            }
+
+
+            .nav-links {
+
+                position: absolute;
+
+                top: 68px;
+
+                left: 0;
+
+                width: 100%;
+
+                padding: 25px;
+
+                display: none;
+
+                flex-direction: column;
+
+                align-items: stretch;
+
+                gap: 20px;
+
+                background:
+                    rgba(8,8,8,0.98);
+
+                border-bottom:
+                    1px solid rgba(255,255,255,0.08);
+            }
+
+
+            .nav-links.active {
+
+                display: flex;
+            }
+
+
+            .nav-links a {
+
+                display: block;
+
+                padding: 8px;
+            }
+
+
+            .hero-content {
+
+                padding:
+                    130px 7% 80px;
+            }
+
+
+            .hero h1 {
+
+                letter-spacing: -1px;
+            }
+
+
+            .hero-description {
+
+                font-size: 16px;
+            }
+
+
+            .hero-stats {
+
+                gap: 25px;
+            }
+
+
+            .section {
+
+                padding:
+                    80px 6%;
+            }
+
+
+            .formations {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .why-grid {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .internat-features {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .numbers-grid {
+
+                grid-template-columns:
+                    1fr 1fr;
+
+                gap: 25px;
+            }
+
+
+            .number {
+
+                border-right: none;
+            }
+
+
+            .gallery {
+
+                display: grid;
+
+                grid-template-columns:
+                    1fr 1fr;
+
+                grid-auto-rows:
+                    170px;
+            }
+
+
+            .gallery-item:nth-child(n) {
+
+                grid-column:
+                    span 1;
+
+                grid-row:
+                    span 1;
+            }
+
+
+            .gallery-item:first-child {
+
+                grid-column:
+                    span 2;
+            }
+
+
+            .contact-info {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .footer-top,
+            .footer-bottom {
+
+                flex-direction: column;
+
+                gap: 20px;
+
+                align-items: flex-start;
+            }
+
+        }
+
+
+        @media (max-width: 480px) {
+
+            .hero-actions {
+
+                flex-direction: column;
+            }
+
+
+            .btn {
+
+                width: 100%;
+            }
+
+
+            .gallery {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .gallery-item:first-child {
+
+                grid-column:
+                    span 1;
+            }
+
+
+            .modal-box {
+
+                padding: 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+<nav id="navbar">
+
+    <a href="#accueil" class="logo">
+
+        <div class="logo-icon">
+            🏫
+        </div>
+
+        <div>
+            Lycée <span>Eugène Decomble</span>
+        </div>
+
+    </a>
+
+
+    <ul class="nav-links" id="navLinks">
+
+        <li>
+            <a href="#accueil">Accueil</a>
+        </li>
+
+        <li>
+            <a href="#formations">Formations</a>
+        </li>
+
+        <li>
+            <a href="#internat">Internat</a>
+        </li>
+
+        <li>
+            <a href="#galerie">Photos</a>
+        </li>
+
+        <li>
+            <a href="#contact" class="nav-button">
+                Contact
+            </a>
+        </li>
+
+    </ul>
+
+
+    <button
+        class="menu-button"
+        onclick="toggleMenu()"
+        aria-label="Menu"
+    >
+        ☰
+    </button>
+
+</nav>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero" id="accueil">
+
+    <div class="hero-grid"></div>
+
+
+    <div class="hero-content">
+
+        <div class="hero-badge">
+
+            ✦ LYCÉE PROFESSIONNEL • CHAUMONT
+
+        </div>
+
+
+        <h1>
+
+            Construisons<br>
+
+            <span>ton avenir.</span>
+
+        </h1>
+
+
+        <p class="hero-description">
+
+            Bienvenue au Lycée Eugène Decomble.
+            Un établissement tourné vers les métiers
+            techniques, les nouvelles technologies,
+            la pratique professionnelle et la réussite
+            de ses élèves.
+
+        </p>
+
+
+        <div class="hero-actions">
+
+            <a
+                href="#formations"
+                class="btn btn-primary"
+            >
+                🎓 Découvrir les formations →
+            </a>
+
+
+            <a
+                href="#contact"
+                class="btn btn-outline"
+            >
+                📍 Nous trouver
+            </a>
+
+        </div>
+
+
+        <div class="hero-stats">
+
+            <div class="hero-stat">
+
+                <strong>3+</strong>
+
+                <span>
+                    domaines de formation
+                </span>
+
+            </div>
+
+
+            <div class="hero-stat">
+
+                <strong>🏫</strong>
+
+                <span>
+                    établissement professionnel
+                </span>
+
+            </div>
+
+
+            <div class="hero-stat">
+
+                <strong>📍</strong>
+
+                <span>
+                    Chaumont
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FORMATIONS
+========================================================= -->
+
+<section
+    class="section section-dark"
+    id="formations"
+>
+
+    <div class="section-header center reveal">
+
+        <div class="eyebrow">
+            Notre enseignement
+        </div>
+
+        <h2 class="section-title">
+            Des formations pour
+            <span>l'avenir.</span>
+        </h2>
+
+        <p class="section-description">
+
+            Découvrez les principales formations
+            professionnelles proposées et développez
+            des compétences concrètes grâce à la pratique.
+
+        </p>
+
+    </div>
+
+
+    <div class="formations">
+
+
+        <!-- CIEL -->
+
+        <article class="formation-card reveal">
+
+            <div class="formation-number">
+                01
+            </div>
+
+            <div class="formation-icon">
+                💻
+            </div>
+
+            <div class="formation-content">
+
+                <h3>
+                    Bac Pro CIEL
+                </h3>
+
+                <p>
+                    Cybersécurité, Informatique et Réseaux,
+                    Électronique. Une formation destinée aux
+                    passionnés de technologie et de numérique.
+                </p>
+
+                <a
+                    href="#"
+                    class="formation-link"
+                    onclick="openModal('ciel'); return false;"
+                >
+                    Découvrir la formation →
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- MECANIQUE -->
+
+        <article class="formation-card reveal">
+
+            <div class="formation-number">
+                02
+            </div>
+
+            <div class="formation-icon">
+                🔧
+            </div>
+
+            <div class="formation-content">
+
+                <h3>
+                    Bac Pro Mécanique
+                </h3>
+
+                <p>
+                    Découvrez la mécanique automobile,
+                    le diagnostic, l'entretien et les
+                    techniques de maintenance des véhicules.
+                </p>
+
+                <a
+                    href="#"
+                    class="formation-link"
+                    onclick="openModal('mecanique'); return false;"
+                >
+                    Découvrir la formation →
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- ELECTRICITE -->
+
+        <article class="formation-card reveal">
+
+            <div class="formation-number">
+                03
+            </div>
+
+            <div class="formation-icon">
+                ⚡
+            </div>
+
+            <div class="formation-content">
+
+                <h3>
+                    Bac Pro Électricité
+                </h3>
+
+                <p>
+                    Apprenez à préparer, réaliser, contrôler
+                    et maintenir des installations et systèmes
+                    électriques.
+                </p>
+
+                <a
+                    href="#"
+                    class="formation-link"
+                    onclick="openModal('electricite'); return false;"
+                >
+                    Découvrir la formation →
+                </a>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CHIFFRES
+========================================================= -->
+
+<section class="numbers">
+
+    <div class="numbers-grid">
+
+        <div class="number reveal">
+
+            <strong>3+</strong>
+
+            <span>
+                domaines professionnels
+            </span>
+
+        </div>
+
+
+        <div class="number reveal">
+
+            <strong>💻</strong>
+
+            <span>
+                technologies
+            </span>
+
+        </div>
+
+
+        <div class="number reveal">
+
+            <strong>🏠</strong>
+
+            <span>
+                internat
+            </span>
+
+        </div>
+
+
+        <div class="number reveal">
+
+            <strong>📍</strong>
+
+            <span>
+                Chaumont
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     POURQUOI
+========================================================= -->
+
+<section class="section section-dark">
+
+    <div class="why">
+
+
+        <div class="why-left reveal">
+
+            <div class="eyebrow">
+                Nos atouts
+            </div>
+
+            <h2>
+
+                Plus qu'un lycée,
+                <span>un tremplin.</span>
+
+            </h2>
+
+            <p>
+
+                L'objectif est de permettre aux élèves
+                de développer leurs connaissances,
+                leurs compétences pratiques et leur
+                projet professionnel.
+
+            </p>
+
+            <br>
+
+            <a
+                href="#contact"
+                class="btn btn-primary"
+            >
+                En savoir plus →
+            </a>
+
+        </div>
+
+
+        <div class="why-grid">
+
+
+            <div class="why-card reveal">
+
+                <div class="why-icon">
+                    🧑‍🏫
+                </div>
+
+                <h3>
+                    Accompagnement
+                </h3>
+
+                <p>
+                    Un suivi pédagogique pour progresser
+                    et construire son projet.
+                </p>
+
+            </div>
+
+
+            <div class="why-card reveal">
+
+                <div class="why-icon">
+                    🛠️
+                </div>
+
+                <h3>
+                    Pratique
+                </h3>
+
+                <p>
+                    Des apprentissages orientés vers
+                    les situations professionnelles.
+                </p>
+
+            </div>
+
+
+            <div class="why-card reveal">
+
+                <div class="why-icon">
+                    💡
+                </div>
+
+                <h3>
+                    Technologie
+                </h3>
+
+                <p>
+                    Des domaines liés aux technologies
+                    et aux métiers techniques.
+                </p>
+
+            </div>
+
+
+            <div class="why-card reveal">
+
+                <div class="why-icon">
+                    🤝
+                </div>
+
+                <h3>
+                    Professionnel
+                </h3>
+
+                <p>
+                    Une préparation au monde professionnel
+                    et à la poursuite d'études.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     INTERNAT
+========================================================= -->
+
+<section
+    class="section section-brown"
+    id="internat"
+>
+
+    <div class="internat">
+
+
+        <div class="internat-visual reveal">
+
+            <div class="internat-glass">
+
+                <strong>
+                    Vie au lycée
+                </strong>
+
+                <span>
+                    Un environnement adapté aux élèves internes.
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="internat-content reveal">
+
+            <div class="eyebrow">
+                Vie scolaire
+            </div>
+
+            <h2>
+
+                Un internat
+                <span>moderne.</span>
+
+            </h2>
+
+            <p>
+
+                Le Lycée Eugène Decomble dispose d'un internat
+                permettant aux élèves qui habitent loin de
+                l'établissement d'être hébergés au lycée.
+
+                <br><br>
+
+                Il permet également de profiter d'un cadre
+                adapté à la vie scolaire et à la vie collective.
+
+            </p>
+
+
+            <div class="internat-features">
+
+
+                <div class="internat-feature">
+
+                    <div class="internat-feature-icon">
+                        🛏️
+                    </div>
+
+                    <h3>
+                        Hébergement
+                    </h3>
+
+                    <p>
+                        Un espace dédié aux élèves internes.
+                    </p>
+
+                </div>
+
+
+                <div class="internat-feature">
+
+                    <div class="internat-feature-icon">
+                        📚
+                    </div>
+
+                    <h3>
+                        Travail
+                    </h3>
+
+                    <p>
+                        Un cadre adapté au travail scolaire.
+                    </p>
+
+                </div>
+
+
+                <div class="internat-feature">
+
+                    <div class="internat-feature-icon">
+                        🤝
+                    </div>
+
+                    <h3>
+                        Vie collective
+                    </h3>
+
+                    <p>
+                        Partager le quotidien avec d'autres élèves.
+                    </p>
+
+                </div>
+
+
+                <div class="internat-feature">
+
+                    <div class="internat-feature-icon">
+                        🌙
+                    </div>
+
+                    <h3>
+                        Vie scolaire
+                    </h3>
+
+                    <p>
+                        Un environnement pensé pour les internes.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     GALERIE
+========================================================= -->
+
+<section
+    class="section section-dark"
+    id="galerie"
+>
+
+    <div class="section-header reveal">
+
+        <div class="eyebrow">
+            L'établissement
+        </div>
+
+        <h2 class="section-title">
+            Le lycée en
+            <span>images.</span>
+        </h2>
+
+        <p class="section-description">
+            Découvrez quelques vues du Lycée Eugène Decomble.
+        </p>
+
+    </div>
+
+
+    <div class="gallery">
+
+
+        <div
+            class="gallery-item reveal"
+            onclick="openImage(this)"
+        >
+
+            <img
+                src="https://3.bp.blogspot.com/-JaMNypNi3vo/V580AZS8_3I/AAAAAAAAu3g/aXdcCH89w1wT1Hj5_bcxVcWjWX6ENHf5ACLcB/s1600/DSC05825.JPG"
+                alt="Lycée Eugène Decomble"
+            >
+
+            <div class="gallery-overlay">
+                <h3>
+                    🏫 L'établissement
+                </h3>
+            </div>
+
+        </div>
+
+
+        <div
+            class="gallery-item reveal"
+            onclick="openImage(this)"
+        >
+
+            <img
+                src="https://cortex.persona.co/w/1000/q/67/i/ad1334a602c11139dccaa4c3b0ab4d9e48f3f25eece175da4b5d8a66f36e2d15/Decomble_Home_Tegami.jpg"
+                alt="Lycée Eugène Decomble"
+            >
+
+            <div class="gallery-overlay">
+                <h3>
+                    🏢 Architecture
+                </h3>
+            </div>
+
+        </div>
+
+
+        <div
+            class="gallery-item reveal"
+            onclick="openImage(this)"
+        >
+
+            <img
+                src="https://static.wixstatic.com/media/788563_79bb7afece7d4aeabe1691344cb5c546~mv2.jpg"
+                alt="Lycée Eugène Decomble"
+            >
+
+            <div class="gallery-overlay">
+                <h3>
+                    🌳 Extérieur
+                </h3>
+            </div>
+
+        </div>
+
+
+        <div class="gallery-item reveal">
+
+            <div
+                style="
+                width:100%;
+                height:100%;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                background:linear-gradient(135deg,#503020,#15100d);
+                font-size:60px;
+                "
+            >
+                💻
+            </div>
+
+            <div class="gallery-overlay">
+                <h3>
+                    Technologie
+                </h3>
+            </div>
+
+        </div>
+
+
+        <div class="gallery-item reveal">
+
+            <div
+                style="
+                width:100%;
+                height:100%;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                background:linear-gradient(135deg,#3e281b,#17110d);
+                font-size:60px;
+                "
+            >
+                🔧
+            </div>
+
+            <div class="gallery-overlay">
+                <h3>
+                    Atelier
+                </h3>
+            </div>
+
+        </div>
+
+
+        <div class="gallery-item reveal">
+
+            <div
+                style="
+                width:100%;
+                height:100%;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                background:linear-gradient(135deg,#65432c,#17100c);
+                font-size:60px;
+                "
+            >
+                ⚡
+            </div>
+
+            <div class="gallery-overlay">
+                <h3>
+                    Électricité
+                </h3>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section
+    class="section section-brown"
+    id="contact"
+>
+
+    <div class="contact">
+
+
+        <div class="contact-intro reveal">
+
+            <div class="eyebrow">
+                Informations
+            </div>
+
+            <h2>
+                Une question ?
+            </h2>
+
+            <p>
+
+                Besoin d'informations sur l'établissement,
+                les formations ou l'internat ?
+
+                <br><br>
+
+                Retrouvez ici les principales informations
+                pour nous trouver.
+
+            </p>
+
+            <br>
+
+            <a
+                href="https://www.google.com/maps/search/?api=1&query=Lycée+Eugène+Decomble+Chaumont"
+                target="_blank"
+                class="btn btn-primary"
+            >
+                📍 Ouvrir dans Google Maps →
+            </a>
+
+        </div>
+
+
+        <div class="contact-info">
+
+
+            <div class="contact-card reveal">
+
+                <div class="contact-card-icon">
+                    📍
+                </div>
+
+                <h3>
+                    Adresse
+                </h3>
+
+                <p>
+                    47 avenue d'Ashton Under Lyne<br>
+                    52000 Chaumont
+                </p>
+
+            </div>
+
+
+            <div class="contact-card reveal">
+
+                <div class="contact-card-icon">
+                    🏫
+                </div>
+
+                <h3>
+                    Établissement
+                </h3>
+
+                <p>
+                    Lycée Eugène Decomble
+                </p>
+
+            </div>
+
+
+            <div class="contact-card reveal">
+
+                <div class="contact-card-icon">
+                    🎓
+                </div>
+
+                <h3>
+                    Formations
+                </h3>
+
+                <p>
+                    Informatique, mécanique,
+                    électricité et domaines techniques.
+                </p>
+
+            </div>
+
+
+            <div class="contact-card reveal">
+
+                <div class="contact-card-icon">
+                    🏠
+                </div>
+
+                <h3>
+                    Internat
+                </h3>
+
+                <p>
+                    Hébergement disponible pour les élèves
+                    concernés.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <div class="footer-top">
+
+        <div>
+
+            <div class="footer-logo">
+
+                🏫 Lycée
+                <span>Eugène Decomble</span>
+
+            </div>
+
+            <div class="footer-text">
+
+                Construisons ensemble ton avenir professionnel.
+
+            </div>
+
+        </div>
+
+
+        <a
+            href="#accueil"
+            class="btn btn-outline"
+        >
+            Retour à l'accueil ↑
+        </a>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 Lycée Eugène Decomble
+        </span>
+
+        <span>
+            Chaumont • Haute-Marne
+        </span>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================================================
+     BOUTON TOP
+========================================================= -->
+
+<button
+    id="top"
+    onclick="window.scrollTo({top:0, behavior:'smooth'})"
+>
+    ↑
+</button>
+
+
+<!-- =========================================================
+     MODAL CIEL
+========================================================= -->
+
+<div class="modal" id="ciel">
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+
+            <h2>
+                💻 Bac Pro CIEL
+            </h2>
+
+            <div
+                class="close"
+                onclick="closeModal('ciel')"
+            >
+                ×
+            </div>
+
+        </div>
+
+
+        <p>
+
+            Le Bac Pro CIEL signifie
+            <strong>
+                Cybersécurité, Informatique et Réseaux,
+                Électronique
+            </strong>.
+
+        </p>
+
+
+        <h3>
+            Ce que tu peux apprendre
+        </h3>
+
+
+        <ul>
+
+            <li>
+                Installer et configurer des ordinateurs
+            </li>
+
+            <li>
+                Configurer des réseaux informatiques
+            </li>
+
+            <li>
+                Découvrir la cybersécurité
+            </li>
+
+            <li>
+                Programmer
+            </li>
+
+            <li>
+                Diagnostiquer des problèmes informatiques
+            </li>
+
+            <li>
+                Découvrir l'électronique
+            </li>
+
+            <li>
+                Assurer la maintenance du matériel
+            </li>
+
+        </ul>
+
+
+        <h3>
+            💼 Débouchés
+        </h3>
+
+
+        <p>
+
+            Technicien informatique, technicien réseaux,
+            technicien de maintenance informatique,
+            technicien systèmes et réseaux.
+
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     MODAL MECANIQUE
+========================================================= -->
+
+<div class="modal" id="mecanique">
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+
+            <h2>
+                🔧 Bac Pro Mécanique
+            </h2>
+
+            <div
+                class="close"
+                onclick="closeModal('mecanique')"
+            >
+                ×
+            </div>
+
+        </div>
+
+
+        <p>
+
+            Cette formation permet de découvrir
+            le fonctionnement des véhicules ainsi que
+            les techniques d'entretien et de maintenance.
+
+        </p>
+
+
+        <h3>
+            Ce que tu peux apprendre
+        </h3>
+
+
+        <ul>
+
+            <li>
+                Comprendre le fonctionnement d'un véhicule
+            </li>
+
+            <li>
+                Effectuer des opérations d'entretien
+            </li>
+
+            <li>
+                Rechercher une panne
+            </li>
+
+            <li>
+                Utiliser des outils de diagnostic
+            </li>
+
+            <li>
+                Intervenir sur différents systèmes
+            </li>
+
+            <li>
+                Respecter les règles de sécurité
+            </li>
+
+        </ul>
+
+
+        <h3>
+            💼 Débouchés
+        </h3>
+
+
+        <p>
+
+            Mécanicien automobile, technicien automobile
+            ou technicien de maintenance.
+
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     MODAL ELECTRICITE
+========================================================= -->
+
+<div class="modal" id="electricite">
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+
+            <h2>
+                ⚡ Bac Pro Électricité
+            </h2>
+
+            <div
+                class="close"
+                onclick="closeModal('electricite')"
+            >
+                ×
+            </div>
+
+        </div>
+
+
+        <p>
+
+            Cette formation permet de découvrir les
+            installations électriques et les systèmes
+            utilisés dans différents bâtiments.
+
+        </p>
+
+
+        <h3>
+            Ce que tu peux apprendre
+        </h3>
+
+
+        <ul>
+
+            <li>
+                Lire des schémas électriques
+            </li>
+
+            <li>
+                Réaliser une installation
+            </li>
+
+            <li>
+                Installer des équipements
+            </li>
+
+            <li>
+                Effectuer des mesures
+            </li>
+
+            <li>
+                Rechercher une panne
+            </li>
+
+            <li>
+                Réaliser des opérations de maintenance
+            </li>
+
+            <li>
+                Respecter les règles de sécurité
+            </li>
+
+        </ul>
+
+
+        <h3>
+            💼 Débouchés
+        </h3>
+
+
+        <p>
+
+            Électricien, technicien d'installation
+            électrique ou technicien de maintenance.
+
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+
+    /* =========================
+       MENU MOBILE
+    ========================= */
+
+    function toggleMenu() {
+
+        const menu =
+            document.getElementById("navLinks");
+
+        menu.classList.toggle("active");
+
+    }
+
+
+    /* Fermer le menu lorsqu'un lien est utilisé */
+
+    document
+        .querySelectorAll(".nav-links a")
+        .forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                document
+                    .getElementById("navLinks")
+                    .classList.remove("active");
+
+            });
+
+        });
+
+
+    /* =========================
+       NAVBAR AU SCROLL
+    ========================= */
+
+    window.addEventListener("scroll", () => {
+
+        const navbar =
+            document.getElementById("navbar");
+
+        const top =
+            document.getElementById("top");
+
+
+        if (window.scrollY > 50) {
+
+            navbar.classList.add("scrolled");
+
+        } else {
+
+            navbar.classList.remove("scrolled");
+
+        }
+
+
+        if (window.scrollY > 500) {
+
+            top.classList.add("visible");
+
+        } else {
+
+            top.classList.remove("visible");
+
+        }
+
+    });
+
+
+    /* =========================
+       MODALES
+    ========================= */
+
+    function openModal(id) {
+
+        document
+            .getElementById(id)
+            .classList.add("active");
+
+        document.body.style.overflow =
+            "hidden";
+    }
+
+
+    function closeModal(id) {
+
+        document
+            .getElementById(id)
+            .classList.remove("active");
+
+        document.body.style.overflow =
+            "auto";
+    }
+
+
+    /* Fermer en cliquant autour */
+
+    document
+        .querySelectorAll(".modal")
+        .forEach(modal => {
+
+            modal.addEventListener(
+                "click",
+                function(event) {
+
+                    if (
+                        event.target === modal
+                    ) {
+
+                        modal.classList.remove(
+                            "active"
+                        );
+
+                        document.body.style.overflow =
+                            "auto";
+                    }
+
+                }
+            );
+
+        });
+
+
+    /* Fermer avec Echap */
+
+    document.addEventListener(
+        "keydown",
+        event => {
+
+            if (event.key === "Escape") {
+
+                document
+                    .querySelectorAll(".modal")
+                    .forEach(modal => {
+
+                        modal.classList.remove(
+                            "active"
+                        );
+
+                    });
+
+                document.body.style.overflow =
+                    "auto";
+            }
+
+        }
+    );
+
+
+    /* =========================
+       ANIMATION AU SCROLL
+    ========================= */
+
+    const observer =
+        new IntersectionObserver(
+            entries => {
+
+                entries.forEach(entry => {
+
+                    if (
+                        entry.isIntersecting
+                    ) {
+
+                        entry.target
+                            .classList
+                            .add("show");
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.12
+            }
+        );
+
+
+    document
+        .querySelectorAll(".reveal")
+        .forEach(element => {
+
+            observer.observe(element);
+
+        });
+
+
+    /* =========================
+       GALERIE
+    ========================= */
+
+    function openImage(element) {
+
+        const image =
+            element.querySelector("img");
+
+        if (!image) return;
+
+        const url =
+            image.src;
+
+        window.open(
+            url,
+            "_blank"
+        );
+
+    }
+
+</script>
+
+
+</body>
+
+</html>
