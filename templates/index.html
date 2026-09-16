@@ -159,6 +159,24 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);width:min(calc(1
 
 /* ===== Fonctionnalités supplémentaires ===== */
 .feature-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.feature-btn{border:1px solid var(--line);background:rgba(255,255,255,.04);color:#eee;border-radius:10px;padding:9px 11px;font-size:11px;font-weight:800;cursor:pointer}.feature-btn:hover{border-color:rgba(200,154,120,.45);color:var(--accent)}.feature-btn.favorite.active{background:rgba(200,154,120,.12);color:var(--accent)}.life-extra-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1250px;margin:16px auto 0}.life-card{position:relative}.life-card-wide{grid-column:span 2}.info-modal{position:fixed;inset:0;background:rgba(0,0,0,.72);display:none;align-items:center;justify-content:center;padding:20px;z-index:2000}.info-modal.open{display:flex}.info-modal-box{width:min(680px,100%);max-height:85vh;overflow:auto;background:#14110f;border:1px solid var(--line);border-radius:24px;padding:28px;box-shadow:0 30px 90px rgba(0,0,0,.55)}.info-modal-head{display:flex;justify-content:space-between;gap:20px;align-items:flex-start}.info-modal h3{font-family:Georgia,serif;font-size:30px;margin:0 0 8px}.modal-close{border:1px solid var(--line);background:#1d1a17;color:#fff;border-radius:10px;width:38px;height:38px;cursor:pointer}.modal-list{display:grid;gap:10px;margin:20px 0}.modal-list div{padding:13px 15px;border:1px solid rgba(255,255,255,.07);border-radius:12px;color:#aaa}.quick-contact{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:1250px;margin:20px auto 0}.quick-contact a{display:block;text-decoration:none;color:#fff}.quick-contact strong{display:block;color:#cdb09c;margin-bottom:5px}.quick-contact span{color:#8f8b87;font-size:12px}.docs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:1100px;margin:25px auto 0}.doc-card{border:1px solid var(--line);border-radius:16px;padding:18px;background:rgba(255,255,255,.03);display:flex;justify-content:space-between;gap:15px;align-items:center}.doc-card small{color:#777}.doc-card a{color:var(--accent);font-weight:800;font-size:11px;text-decoration:none;white-space:nowrap}.fav-empty{color:#777;font-size:13px}.fav-count{color:var(--accent)}@media(max-width:950px){.life-extra-grid,.docs-grid{grid-template-columns:1fr 1fr}.life-card-wide{grid-column:span 1}}@media(max-width:700px){.life-extra-grid,.quick-contact,.docs-grid{grid-template-columns:1fr}}
+
+/* V3 - nouvelles fonctionnalités */
+.discovery-grid,.agenda-grid{max-width:1100px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.discovery-card,.agenda-card{padding:25px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(145deg,#171717,#101010);transition:.3s}
+.discovery-card:hover,.agenda-card:hover{transform:translateY(-5px);border-color:rgba(200,154,120,.3);box-shadow:0 20px 45px rgba(0,0,0,.28)}
+.discovery-icon{width:52px;height:52px;border-radius:15px;display:grid;place-items:center;background:linear-gradient(145deg,#895a3c,#422719);font-size:23px;margin-bottom:18px}
+.discovery-card h3,.agenda-card h3{font-family:Georgia,serif;font-size:24px;margin-bottom:8px}
+.discovery-card p,.agenda-card p{color:#85807b;font-size:12px;line-height:1.7}
+.discovery-points{display:flex;flex-wrap:wrap;gap:7px;margin-top:15px}
+.discovery-points span{padding:6px 9px;border-radius:999px;background:rgba(255,255,255,.035);border:1px solid var(--line);color:#aaa39d;font-size:10px}
+.agenda-date,.modal-kicker{color:var(--accent);font-size:10px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase}
+.modal-description{color:#aaa39d;line-height:1.8;font-size:13px;margin-top:15px}
+.modal-section-title{font-family:Georgia,serif;font-size:20px;margin:22px 0 9px}
+.modal-tags{display:flex;flex-wrap:wrap;gap:7px;margin:18px 0}
+.modal-tags span{padding:7px 10px;border-radius:999px;background:rgba(200,154,120,.08);border:1px solid rgba(200,154,120,.15);color:#cdb09c;font-size:10px;font-weight:800}
+.modal-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:22px}
+@media(max-width:950px){.discovery-grid,.agenda-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.discovery-grid,.agenda-grid{grid-template-columns:1fr}}
 </style></head><body>
 
 
@@ -194,6 +212,8 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);width:min(calc(1
         <li>
             <a href="#vie">Vie au lycée</a>
         </li>
+        <li><a href="#decouvrir">Découvrir</a></li>
+        <li><a href="#agenda">Agenda</a></li>
 
         <li>
             <a href="#galerie">Photos</a>
@@ -1312,6 +1332,35 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);width:min(calc(1
 
 </section>
 
+
+<section class="section section-brown" id="decouvrir">
+<div class="section-header center reveal">
+<div class="eyebrow">Explorer l'établissement</div>
+<h2 class="section-title">Découvrir le <span>lycée.</span></h2>
+<p class="section-description">Retrouvez les principaux espaces du lycée et leur rôle dans la vie quotidienne des élèves.</p>
+</div>
+<div class="discovery-grid">
+<article class="discovery-card reveal" data-place="cafeteria"><div class="discovery-icon">☕</div><h3>Cafétéria</h3><p>Un espace pour faire une pause et acheter des snacks et des boissons à prix accessibles.</p><div class="discovery-points"><span>🥤 Boissons</span><span>🥪 Snacks</span><span>💶 Prix accessibles</span></div><button class="btn btn-outline place-more" type="button">Voir les détails →</button></article>
+<article class="discovery-card reveal" data-place="foyer"><div class="discovery-icon">🛋️</div><h3>Foyer</h3><p>Un espace convivial pour se détendre, discuter et profiter des temps de pause.</p><div class="discovery-points"><span>🤝 Convivialité</span><span>🛋️ Pause</span></div><button class="btn btn-outline place-more" type="button">Voir les détails →</button></article>
+<article class="discovery-card reveal" data-place="musique"><div class="discovery-icon">🎵</div><h3>Salle de musique</h3><p>Un espace de pratique musicale équipé pour travailler le son.</p><div class="discovery-points"><span>🎹 Piano</span><span>🥁 Batterie</span><span>🎸 Guitare</span><span>🎛️ Mixage</span></div><button class="btn btn-outline place-more" type="button">Voir les détails →</button></article>
+<article class="discovery-card reveal" data-place="infirmerie"><div class="discovery-icon">🩺</div><h3>Infirmerie</h3><p>Un espace d'accueil et d'accompagnement pour les élèves.</p><div class="discovery-points"><span>🩺 Accueil</span><span>🤝 Accompagnement</span></div><button class="btn btn-outline place-more" type="button">Voir les détails →</button></article>
+<article class="discovery-card reveal" data-place="internat"><div class="discovery-icon">🏠</div><h3>Internat</h3><p>Un internat de 3 étages avec des chambres de 2, 3 ou 4 élèves et des sanitaires dans les chambres.</p><div class="discovery-points"><span>🏠 3 étages</span><span>🛏️ 2 à 4 élèves</span><span>🚿 Sanitaires</span></div><button class="btn btn-outline place-more" type="button">Voir les détails →</button></article>
+<article class="discovery-card reveal" data-place="ateliers"><div class="discovery-icon">🔧</div><h3>Ateliers techniques</h3><p>Des espaces dédiés aux enseignements professionnels et à la pratique des métiers techniques.</p><div class="discovery-points"><span>🔧 Maintenance</span><span>⚡ Électrotechnique</span><span>🏗️ BTP</span><span>⚙️ Mécanique</span></div><button class="btn btn-outline place-more" type="button">Voir les détails →</button></article>
+</div>
+</section>
+
+<section class="section section-dark" id="agenda">
+<div class="section-header center reveal">
+<div class="eyebrow">Calendrier</div>
+<h2 class="section-title">Agenda du <span>lycée.</span></h2>
+<p class="section-description">Les événements pourront être ajoutés au fil de l'année : portes ouvertes, réunions, projets et temps forts.</p>
+</div>
+<div class="agenda-grid">
+<article class="agenda-card reveal"><div class="agenda-date">À venir</div><h3>Journées portes ouvertes</h3><p>Ajoutez la date et les horaires dès qu'ils sont confirmés.</p></article>
+<article class="agenda-card reveal"><div class="agenda-date">À venir</div><h3>Réunion parents-professeurs</h3><p>Ajoutez la date et les informations pratiques dès qu'elles sont confirmées.</p></article>
+<article class="agenda-card reveal"><div class="agenda-date">À venir</div><h3>Projets et événements</h3><p>Présentez ici les prochains projets, sorties ou événements du lycée.</p></article>
+</div>
+</section>
 <section class="section section-dark" id="infos-pratiques">
     <div class="section-header center reveal"><div class="eyebrow">Pratique</div><h2 class="section-title">Les informations <span>essentielles.</span></h2><p class="section-description">Retrouvez rapidement les coordonnées et informations utiles du lycée.</p></div>
     <div class="quick-contact">
@@ -1693,6 +1742,51 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);width:min(calc(1
         revealElements.forEach(element => element.classList.add("show"));
     }
 
+
+    const formationModal=document.createElement("div");
+    formationModal.className="info-modal";
+    formationModal.innerHTML='<div class="info-modal-box" role="dialog" aria-modal="true"><div class="info-modal-head"><div><div class="modal-kicker" id="fmKicker"></div><h3 id="fmTitle"></h3></div><button class="modal-close" type="button">✕</button></div><div id="fmBody"></div></div>';
+    document.body.appendChild(formationModal);
+    const closeFM=()=>formationModal.classList.remove("open");
+    formationModal.querySelector(".modal-close").addEventListener("click",closeFM);
+    formationModal.addEventListener("click",e=>{if(e.target===formationModal)closeFM()});
+    const openFormationModal=(card)=>{
+        const title=card.querySelector("h3")?.textContent.trim()||"Formation";
+        const level=card.querySelector(".eyebrow")?.textContent.trim()||"";
+        const desc=card.querySelector(".formation-content p")?.textContent.trim()||"";
+        const duration=card.querySelector(".formation-link")?.textContent.trim()||"";
+        const tags=[...card.querySelectorAll(".formation-tag")].map(x=>x.textContent.trim());
+        document.getElementById("fmKicker").textContent=level;
+        document.getElementById("fmTitle").textContent=title;
+        document.getElementById("fmBody").innerHTML='<p class="modal-description">'+desc+'</p><div class="modal-section-title">À retenir</div><div class="modal-list"><div>🎓 <strong>Niveau :</strong> '+level+'</div><div>⏱️ <strong>Parcours :</strong> '+duration+'</div></div><div class="modal-section-title">Domaines</div><div class="modal-tags">'+tags.map(t=>'<span>'+t+'</span>').join("")+'</div><div class="modal-section-title">Informations complémentaires</div><p class="modal-description">Cette fiche peut être enrichie avec les modalités d’admission, les poursuites d’études et les débouchés officiels de chaque formation.</p><div class="modal-actions"><button class="btn btn-primary fmApply" type="button">📝 Candidater / s\'inscrire</button></div>';
+        formationModal.querySelector(".fmApply").addEventListener("click",()=>{closeFM();document.getElementById("candidater")?.scrollIntoView({behavior:"smooth"})});
+        formationModal.classList.add("open");
+    };
+
+    const placeData={
+        cafeteria:["Restauration","La cafétéria","Un espace pour faire une pause et acheter des snacks et des boissons à prix accessibles.",["🥤 Boissons","🥪 Snacks","💶 Prix accessibles"]],
+        foyer:["Vie sociale","Le foyer","Un lieu convivial pour se détendre, discuter et profiter des temps de pause.",["🤝 Convivialité","🛋️ Pause","🎯 Temps libre"]],
+        musique:["Loisirs","La salle de musique","Un espace de pratique musicale avec piano, batterie, basse, guitare et table de mixage.",["🎹 Piano","🥁 Batterie","🎸 Guitare","🎸 Basse","🎛️ Table de mixage"]],
+        infirmerie:["Accompagnement","L'infirmerie","Un espace d'accueil et d'accompagnement pour les élèves.",["🩺 Accueil","🤝 Accompagnement"]],
+        internat:["Hébergement","L'internat","Un internat de 3 étages. Les chambres peuvent accueillir 2, 3 ou 4 élèves et disposent de sanitaires dans les chambres.",["🏠 3 étages","🛏️ Chambres de 2, 3 ou 4","🚿 Sanitaires"]],
+        ateliers:["Formation professionnelle","Les ateliers techniques","Des espaces dédiés à la pratique professionnelle dans les domaines techniques du lycée.",["🔧 Maintenance","⚡ Électrotechnique","🏗️ BTP","⚙️ Mécanique"]]
+    };
+    const placeModal=document.createElement("div");
+    placeModal.className="info-modal";
+    placeModal.innerHTML='<div class="info-modal-box"><div class="info-modal-head"><div><div class="modal-kicker" id="pmKicker"></div><h3 id="pmTitle"></h3></div><button class="modal-close" type="button">✕</button></div><div id="pmBody"></div></div>';
+    document.body.appendChild(placeModal);
+    const closePM=()=>placeModal.classList.remove("open");
+    placeModal.querySelector(".modal-close").addEventListener("click",closePM);
+    placeModal.addEventListener("click",e=>{if(e.target===placeModal)closePM()});
+    document.querySelectorAll(".place-more").forEach(btn=>btn.addEventListener("click",()=>{
+        const d=placeData[btn.closest("[data-place]")?.dataset.place]; if(!d)return;
+        document.getElementById("pmKicker").textContent=d[0];
+        document.getElementById("pmTitle").textContent=d[1];
+        document.getElementById("pmBody").innerHTML='<p class="modal-description">'+d[2]+'</p><div class="modal-section-title">À retenir</div><div class="modal-tags">'+d[3].map(x=>'<span>'+x+'</span>').join("")+'</div>';
+        placeModal.classList.add("open");
+    }));
+    document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeFM();closePM()}});
+
     // Galerie
     window.openImage = (element) => {
         const image = element?.querySelector("img");
@@ -1719,9 +1813,9 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);width:min(calc(1
         const apply = document.createElement("button");
         apply.className = "feature-btn";
         apply.type = "button";
-        apply.textContent = "📝 Candidater / s'inscrire";
+        apply.textContent = "📝 Candidater / s\'inscrire";
         apply.addEventListener("click", () => document.getElementById("candidater")?.scrollIntoView({behavior:"smooth"}));
-        actions.append(fav, apply);
+        const details = document.createElement("button"); details.className="feature-btn"; details.type="button"; details.textContent="🔎 Voir la fiche"; details.addEventListener("click",()=>openFormationModal(card)); actions.append(fav, details, apply);
         card.querySelector(".formation-content")?.appendChild(actions);
         fav.addEventListener("click", () => {
             const list = getFavorites();
