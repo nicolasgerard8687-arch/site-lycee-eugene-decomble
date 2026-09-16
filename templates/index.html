@@ -156,6 +156,9 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);width:min(calc(1
 .photo-source{max-width:1100px;margin:16px auto 0;text-align:center;color:#55514e;font-size:10px}
 @media(max-width:700px){.featured-intro{display:block}.featured-intro p{margin-top:12px}.life-grid{grid-template-columns:1fr}.life-card-wide{grid-column:auto}.life-card h3{font-size:24px}}
 
+
+/* ===== Fonctionnalités supplémentaires ===== */
+.feature-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.feature-btn{border:1px solid var(--line);background:rgba(255,255,255,.04);color:#eee;border-radius:10px;padding:9px 11px;font-size:11px;font-weight:800;cursor:pointer}.feature-btn:hover{border-color:rgba(200,154,120,.45);color:var(--accent)}.feature-btn.favorite.active{background:rgba(200,154,120,.12);color:var(--accent)}.life-extra-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1250px;margin:16px auto 0}.life-card{position:relative}.life-card-wide{grid-column:span 2}.info-modal{position:fixed;inset:0;background:rgba(0,0,0,.72);display:none;align-items:center;justify-content:center;padding:20px;z-index:2000}.info-modal.open{display:flex}.info-modal-box{width:min(680px,100%);max-height:85vh;overflow:auto;background:#14110f;border:1px solid var(--line);border-radius:24px;padding:28px;box-shadow:0 30px 90px rgba(0,0,0,.55)}.info-modal-head{display:flex;justify-content:space-between;gap:20px;align-items:flex-start}.info-modal h3{font-family:Georgia,serif;font-size:30px;margin:0 0 8px}.modal-close{border:1px solid var(--line);background:#1d1a17;color:#fff;border-radius:10px;width:38px;height:38px;cursor:pointer}.modal-list{display:grid;gap:10px;margin:20px 0}.modal-list div{padding:13px 15px;border:1px solid rgba(255,255,255,.07);border-radius:12px;color:#aaa}.quick-contact{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:1250px;margin:20px auto 0}.quick-contact a{display:block;text-decoration:none;color:#fff}.quick-contact strong{display:block;color:#cdb09c;margin-bottom:5px}.quick-contact span{color:#8f8b87;font-size:12px}.docs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:1100px;margin:25px auto 0}.doc-card{border:1px solid var(--line);border-radius:16px;padding:18px;background:rgba(255,255,255,.03);display:flex;justify-content:space-between;gap:15px;align-items:center}.doc-card small{color:#777}.doc-card a{color:var(--accent);font-weight:800;font-size:11px;text-decoration:none;white-space:nowrap}.fav-empty{color:#777;font-size:13px}.fav-count{color:var(--accent)}@media(max-width:950px){.life-extra-grid,.docs-grid{grid-template-columns:1fr 1fr}.life-card-wide{grid-column:span 1}}@media(max-width:700px){.life-extra-grid,.quick-contact,.docs-grid{grid-template-columns:1fr}}
 </style></head><body>
 
 
@@ -1147,7 +1150,7 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);width:min(calc(1
 
             <p>
 
-                Le Lycée Eugène Decomble dispose d'un internat
+                Le Lycée Eugène Decomble dispose d'un internat de 3 étages
                 permettant aux élèves qui habitent loin de
                 l'établissement d'être hébergés au lycée.
 
@@ -1302,8 +1305,41 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);width:min(calc(1
         </article>
     </div>
 
+    <div class="life-extra-grid">
+        <article class="life-card reveal"><div class="life-card-top"><span class="life-icon">🎵</span><span class="life-label">Loisirs</span></div><h3>La salle de musique</h3><p>Un espace dédié à la pratique musicale, avec plusieurs instruments et une table de mixage.</p><div class="life-points"><span>🎹 Piano</span><span>🥁 Batterie</span><span>🎸 Guitare</span><span>🎸 Basse</span><span>🎛️ Table de mixage</span></div></article>
+        <article class="life-card reveal"><div class="life-card-top"><span class="life-icon">🩺</span><span class="life-label">Accompagnement</span></div><h3>L'infirmerie</h3><p>Un espace d'accueil et d'accompagnement pour les élèves au sein du lycée.</p><div class="life-points"><span>🩺 Infirmerie</span><span>🤝 Accompagnement</span></div></article>
+    </div>
+
 </section>
 
+<section class="section section-dark" id="infos-pratiques">
+    <div class="section-header center reveal"><div class="eyebrow">Pratique</div><h2 class="section-title">Les informations <span>essentielles.</span></h2><p class="section-description">Retrouvez rapidement les coordonnées et informations utiles du lycée.</p></div>
+    <div class="quick-contact">
+        <a class="contact-card" href="tel:0325030605"><strong>📞 Téléphone</strong><span>03 25 03 06 05</span></a>
+        <a class="contact-card" href="mailto:ce.0520008B@ac-reims.fr"><strong>✉️ E-mail</strong><span>ce.0520008B@ac-reims.fr</span></a>
+        <div class="contact-card"><strong>🕐 Horaires</strong><span>8h – 17h</span></div>
+        <a class="contact-card" href="https://www.google.com/maps/search/?api=1&query=47%20avenue%20d'Ashton%20Under%20Lyne%2052000%20Chaumont" target="_blank" rel="noopener"><strong>📍 Adresse / itinéraire</strong><span>47 avenue d'Ashton Under Lyne, 52000 Chaumont</span></a>
+    </div>
+</section>
+
+<section class="section section-dark" id="documents">
+    <div class="section-header center reveal"><div class="eyebrow">Ressources</div><h2 class="section-title">Documents <span>à télécharger.</span></h2><p class="section-description">Les fichiers PDF pourront être déposés dans le dossier documents du site.</p></div>
+    <div class="docs-grid">
+        <div class="doc-card"><div>📄 Plaquette du lycée<br><small>PDF</small></div><a href="static/documents/plaquette-lycee.pdf" download>Télécharger</a></div>
+        <div class="doc-card"><div>📄 Présentation des formations<br><small>PDF</small></div><a href="static/documents/formations.pdf" download>Télécharger</a></div>
+        <div class="doc-card"><div>📄 Informations internat<br><small>PDF</small></div><a href="static/documents/internat.pdf" download>Télécharger</a></div>
+    </div>
+</section>
+
+<section class="section section-dark" id="favoris">
+    <div class="section-header center reveal"><div class="eyebrow">Votre sélection</div><h2 class="section-title">Mes <span>favoris.</span></h2><p class="section-description">Les formations que vous avez enregistrées sont conservées dans votre navigateur.</p></div>
+    <div id="favoritesList" class="formations"><p class="fav-empty">Aucune formation favorite pour le moment.</p></div>
+</section>
+
+<section class="section section-dark" id="candidater">
+    <div class="section-header center reveal"><div class="eyebrow">Orientation</div><h2 class="section-title">Candidater / <span>s'inscrire.</span></h2><p class="section-description">Retrouvez les informations nécessaires pour préparer votre démarche d'inscription.</p></div>
+    <div class="quick-contact"><div class="contact-card"><strong>📝 Démarche</strong><span>Les modalités et liens officiels pourront être ajoutés ici.</span></div><div class="contact-card"><strong>📞 Besoin d'aide ?</strong><span>Contactez directement le lycée pour obtenir les informations adaptées à votre situation.</span></div></div>
+</section>
 
 <!-- =========================================================
      GALERIE
@@ -1665,6 +1701,44 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);width:min(calc(1
 
     // Filtres des formations + affichage progressif
     const cards = [...document.querySelectorAll(".formation-card")];
+
+    // Favoris + candidature sur chaque formation
+    const favoriteKey = "decomble_favorites";
+    const getFavorites = () => JSON.parse(localStorage.getItem(favoriteKey) || "[]");
+    const setFavorites = (items) => localStorage.setItem(favoriteKey, JSON.stringify(items));
+    const slug = (text) => normalize(text).replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
+    cards.forEach((card) => {
+        const title = card.querySelector("h3")?.textContent.trim() || "Formation";
+        const actions = document.createElement("div");
+        actions.className = "feature-actions";
+        const fav = document.createElement("button");
+        fav.className = "feature-btn favorite";
+        fav.type = "button";
+        fav.dataset.id = slug(title);
+        fav.innerHTML = "♡ Ajouter aux favoris";
+        const apply = document.createElement("button");
+        apply.className = "feature-btn";
+        apply.type = "button";
+        apply.textContent = "📝 Candidater / s'inscrire";
+        apply.addEventListener("click", () => document.getElementById("candidater")?.scrollIntoView({behavior:"smooth"}));
+        actions.append(fav, apply);
+        card.querySelector(".formation-content")?.appendChild(actions);
+        fav.addEventListener("click", () => {
+            const list = getFavorites();
+            const id = fav.dataset.id;
+            const next = list.includes(id) ? list.filter(x=>x!==id) : [...list,id];
+            setFavorites(next); updateFavoritesUI();
+        });
+    });
+    const updateFavoritesUI = () => {
+        const ids = getFavorites();
+        cards.forEach(card => { const id=slug(card.querySelector("h3")?.textContent||""); const b=card.querySelector(".favorite"); if(!b)return; const active=ids.includes(id); b.classList.toggle("active",active); b.innerHTML=active?"♥ Retirer des favoris":"♡ Ajouter aux favoris"; });
+        const box=document.getElementById("favoritesList"); if(!box)return;
+        const selected=cards.filter(card=>ids.includes(slug(card.querySelector("h3")?.textContent||"")));
+        box.innerHTML=selected.length ? selected.map(card=>card.outerHTML).join("") : '<p class="fav-empty">Aucune formation favorite pour le moment.</p>';
+    };
+    updateFavoritesUI();
+
     const formationsGrid = document.querySelector(".formations");
     const levelFilter = document.getElementById("levelFilter");
     const domainFilter = document.getElementById("domainFilter");
