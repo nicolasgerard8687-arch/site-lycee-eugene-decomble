@@ -1,0 +1,2197 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="color-scheme" content="dark"><title>Lycée Eugène Decomble | Chaumont — Version 3 — Campus éditorial</title><meta name="description" content="Découvrez le Lycée Eugène Decomble à Chaumont : formations, internat, vie scolaire et établissement."><style>
+:root{--bg:#090909;--panel:#121212;--panel2:#181818;--brown:#8f5d3e;--accent:#c89a78;--cream:#f5eee8;--muted:#a7a19c;--line:rgba(255,255,255,.09);--radius:24px;--max:1240px}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:#fff;line-height:1.6;overflow-x:hidden}a{text-decoration:none;color:inherit}button,input,select{font:inherit}.container,.section>div{width:min(calc(100% - 40px),var(--max));margin-inline:auto}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at 80% 10%,rgba(143,93,62,.12),transparent 30%),radial-gradient(circle at 10% 70%,rgba(200,154,120,.05),transparent 28%);z-index:-1}
+::-webkit-scrollbar{width:9px}::-webkit-scrollbar-track{background:#090909}::-webkit-scrollbar-thumb{background:#70442d;border-radius:99px}
+nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);width:min(calc(100% - 32px),1180px);height:68px;z-index:1000;padding:0 18px 0 14px;display:flex;align-items:center;justify-content:space-between;background:rgba(12,12,12,.78);backdrop-filter:blur(20px);border:1px solid var(--line);border-radius:20px;transition:.3s}nav.scrolled{background:rgba(10,10,10,.94);box-shadow:0 18px 55px rgba(0,0,0,.35)}.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:15px}.logo-icon{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;background:linear-gradient(145deg,#a66e4b,#57321f);box-shadow:0 8px 25px rgba(112,68,45,.28)}.logo span{color:var(--accent)}.nav-links{display:flex;gap:8px;align-items:center;list-style:none}.nav-links a{display:block;padding:10px 13px;color:#cfcac5;font-size:13px;font-weight:700;border-radius:12px;transition:.2s}.nav-links a:hover{color:#fff;background:rgba(255,255,255,.06)}.nav-button{background:var(--brown)!important;color:#fff!important;padding-inline:17px!important}.menu-button{display:none;background:transparent;border:0;color:#fff;font-size:25px;cursor:pointer}
+.hero{min-height:760px;display:flex;align-items:center;padding:150px 20px 100px;position:relative;overflow:hidden}.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:70px 70px;mask-image:linear-gradient(to bottom,#000,transparent 85%)}.hero:after{content:"";position:absolute;width:560px;height:560px;border-radius:50%;right:-180px;top:90px;background:radial-gradient(circle,rgba(143,93,62,.22),transparent 65%);filter:blur(5px)}.hero-content{position:relative;width:min(calc(100% - 40px),var(--max));margin:auto;z-index:1}.hero-badge,.eyebrow{color:var(--accent);font-size:11px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase}.hero-badge{display:inline-flex;padding:9px 13px;border:1px solid rgba(200,154,120,.22);background:rgba(200,154,120,.06);border-radius:999px}.hero h1{font-family:Georgia,serif;font-size:clamp(58px,9vw,110px);line-height:.94;letter-spacing:-5px;margin:25px 0}.hero h1 span,.section-title span{color:var(--accent)}.hero-description{max-width:680px;color:#aaa39d;font-size:17px;line-height:1.85}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 18px;border-radius:13px;font-weight:800;font-size:13px;border:1px solid var(--line);transition:.25s}.btn-primary{background:linear-gradient(135deg,#9d6847,#71442e);box-shadow:0 12px 30px rgba(112,68,45,.25)}.btn-outline{background:rgba(255,255,255,.03)}.btn:hover{transform:translateY(-2px);border-color:rgba(200,154,120,.4)}.hero-stats{display:flex;gap:35px;margin-top:58px;flex-wrap:wrap}.hero-stat{display:flex;flex-direction:column}.hero-stat strong{font-size:27px}.hero-stat span{font-size:12px;color:#777;max-width:150px}
+.section{padding:110px 20px}.section-dark{background:#0d0d0d}.section-brown{background:linear-gradient(180deg,#17110e,#0e0d0c)}.section-header{margin-bottom:38px}.center{text-align:center}.section-title{font-family:Georgia,serif;font-size:clamp(40px,5vw,65px);line-height:1.02;margin-top:10px;letter-spacing:-2px}.section-description{color:#8f8984;max-width:720px;margin:18px auto 0;font-size:15px;line-height:1.8}
+.formation-tools{display:grid;grid-template-columns:minmax(260px,1.5fr) 1fr 1fr;gap:12px;margin:34px auto 14px;max-width:1100px}.search-box,.select-box{height:58px;border:1px solid var(--line);background:rgba(255,255,255,.035);border-radius:16px;display:flex;align-items:center}.search-box{padding:0 16px;gap:10px}.search-box span{font-size:24px;color:var(--accent)}.search-box input{width:100%;background:transparent;border:0;outline:0;color:#fff}.search-box input::placeholder{color:#6f6b67}.select-box{position:relative;padding:7px 13px 6px;display:flex;flex-direction:column;align-items:stretch;justify-content:center}.select-box span{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:#777;font-weight:800}.select-box select{background:transparent;color:#eee;border:0;outline:0;width:100%;font-weight:700;font-size:13px;cursor:pointer}.select-box option{background:#151515;color:#fff}.formation-summary{max-width:1100px;margin:0 auto 25px;display:flex;justify-content:space-between;align-items:center;color:#777;font-size:12px}.formation-summary strong{color:#fff;font-size:14px}.reset-filter{background:transparent;border:0;color:var(--accent);cursor:pointer;font-size:12px;font-weight:800}.formations{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1250px;margin:auto}.formation-card{min-height:400px;position:relative;overflow:hidden;display:flex;flex-direction:column;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(145deg,#191919,#101010);padding:27px;transition:.35s}.formation-card:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 100% 0,rgba(200,154,120,.10),transparent 35%);pointer-events:none}.formation-card:hover{transform:translateY(-7px);border-color:rgba(200,154,120,.4);box-shadow:0 25px 60px rgba(0,0,0,.35)}.formation-number{position:absolute;top:18px;right:21px;color:rgba(255,255,255,.10);font-family:Georgia,serif;font-size:42px;font-weight:800}.formation-icon{width:58px;height:58px;display:grid;place-items:center;border-radius:16px;background:linear-gradient(145deg,#895a3c,#422719);font-size:26px;margin-bottom:25px;box-shadow:0 10px 25px rgba(0,0,0,.2)}.formation-content{display:flex;flex-direction:column;flex:1;position:relative}.formation-content .eyebrow{font-size:9px}.formation-content h3{font-family:Georgia,serif;font-size:22px;line-height:1.2;margin:8px 0 12px}.formation-content p{color:#8f8b87;font-size:13px;line-height:1.7}.formation-meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:17px}.formation-tag{padding:5px 8px;border-radius:999px;background:rgba(200,154,120,.08);border:1px solid rgba(200,154,120,.15);color:#cdb09c;font-size:9px;font-weight:800}.formation-link{margin-top:auto;padding-top:20px;color:var(--accent);font-size:11px;font-weight:800}.formation-card.hidden{display:none}
+.why,.internat,.contact{max-width:1250px;margin:auto}.why{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px;align-items:center}.why h2,.internat h2,.contact h2{font-family:Georgia,serif;font-size:clamp(42px,5vw,65px);line-height:1.02;margin:12px 0 20px}.why h2 span,.internat h2 span{color:var(--accent)}.why-left p,.internat-content p,.contact-intro p{color:#9a938d;line-height:1.85;font-size:15px}.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.why-card,.contact-card{padding:25px;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.035)}.why-icon,.contact-card-icon{font-size:25px;margin-bottom:20px}.why-card h3,.contact-card h3{font-family:Georgia,serif;margin-bottom:7px}.why-card p{color:#817b76;font-size:12px;line-height:1.65}.internat{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}.internat-visual{min-height:430px;border-radius:28px;border:1px solid var(--line);background:radial-gradient(circle at 50% 35%,rgba(200,154,120,.25),transparent 35%),linear-gradient(145deg,#3e281b,#17110d);display:flex;align-items:flex-end;padding:25px;overflow:hidden}.internat-glass{padding:18px 20px;border:1px solid rgba(255,255,255,.12);background:rgba(0,0,0,.25);backdrop-filter:blur(15px);border-radius:18px;width:100%;display:flex;flex-direction:column}.internat-glass span{font-size:12px;color:#aaa;margin-top:3px}.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.gallery-item{min-height:260px;border-radius:20px;overflow:hidden;position:relative;border:1px solid var(--line);background:#17110d}.gallery-item>div:first-child{height:100%!important}.gallery-overlay{position:absolute;inset:auto 0 0;padding:30px 18px 18px;background:linear-gradient(transparent,rgba(0,0,0,.8))}.gallery-overlay h3{font-family:Georgia,serif}.contact{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:start}.contact-info{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.contact-card p{color:#89837e;font-size:12px;line-height:1.7}footer{padding:45px 20px 25px;border-top:1px solid var(--line);background:#080808}.footer-top,.footer-bottom{width:min(calc(100% - 40px),var(--max));margin:auto;display:flex;justify-content:space-between;gap:20px;align-items:center}.footer-logo{font-weight:800}.footer-logo span{color:var(--accent)}.footer-text{color:#666;font-size:12px;margin-top:5px}.footer-bottom{margin-top:35px;padding-top:18px;border-top:1px solid rgba(255,255,255,.06);color:#555;font-size:11px}#top{position:fixed;right:20px;bottom:20px;width:45px;height:45px;border-radius:14px;border:1px solid var(--line);background:#171717;color:#fff;cursor:pointer;opacity:0;transform:translateY(10px);transition:.25s;z-index:900}#top.visible{opacity:1;transform:none}.reveal{opacity:1;transform:none;transition:opacity .7s ease,transform .7s ease}.reveal.animate{opacity:0;transform:translateY(18px)}.reveal.show{opacity:1;transform:none}
+@media(max-width:950px){.formations{grid-template-columns:repeat(2,1fr)}.formation-tools{grid-template-columns:1fr 1fr}.search-box{grid-column:1/-1}.why,.internat,.contact{grid-template-columns:1fr;gap:35px}.gallery{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:700px){nav{top:8px;width:calc(100% - 16px)}.nav-links{position:absolute;top:76px;left:0;right:0;display:none;flex-direction:column;align-items:stretch;padding:10px;background:rgba(10,10,10,.96);border:1px solid var(--line);border-radius:16px}.nav-links.active{display:flex}.nav-links a{padding:13px}.menu-button{display:block}.hero{min-height:680px;padding-top:135px}.hero h1{letter-spacing:-3px}.hero-stats{gap:20px}.section{padding:80px 20px}.formation-tools,.formations,.contact-info{grid-template-columns:1fr}.search-box{grid-column:auto}.formation-summary{align-items:flex-start}.gallery{grid-template-columns:1fr 1fr}.gallery-item{min-height:200px}.footer-top,.footer-bottom{flex-direction:column;align-items:flex-start}.footer-top .btn{display:none}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}.reveal{opacity:1;transform:none}}
+
+/* ===== Compléments visuels de la refonte ===== */
+.numbers{
+    padding:32px 20px;
+    background:linear-gradient(180deg,#100c0a,#0b0b0b);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+}
+.numbers-grid{
+    width:min(calc(100% - 40px),var(--max));
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+}
+.number{
+    padding:24px;
+    min-height:125px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    border:1px solid var(--line);
+    border-radius:20px;
+    background:rgba(255,255,255,.025);
+}
+.number strong{
+    font-size:30px;
+    line-height:1;
+    color:var(--cream);
+}
+.number span{
+    margin-top:8px;
+    color:#77716c;
+    font-size:11px;
+    font-weight:700;
+}
+.internat-features{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+    margin-top:28px;
+}
+.internat-feature{
+    padding:17px;
+    border:1px solid var(--line);
+    border-radius:17px;
+    background:rgba(255,255,255,.035);
+}
+.internat-feature-icon{
+    font-size:20px;
+    margin-bottom:9px;
+}
+.internat-feature h3{
+    font-family:Georgia,serif;
+    font-size:16px;
+    margin-bottom:4px;
+}
+.internat-feature p{
+    color:#817a74;
+    font-size:11px;
+    line-height:1.6;
+}
+.gallery-item img{
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:transform .55s ease,filter .55s ease;
+}
+.gallery-item:hover img{
+    transform:scale(1.05);
+    filter:saturate(.9);
+}
+.gallery-item{
+    cursor:pointer;
+}
+.gallery-item:has(> img){
+    min-height:300px;
+}
+.formation-source{
+    max-width:1100px;
+    margin:20px auto 0;
+    color:#5f5a56;
+    font-size:10px;
+    line-height:1.6;
+}
+.empty-state{
+    display:none;
+    max-width:1100px;
+    margin:12px auto 0;
+    padding:28px;
+    border:1px dashed rgba(200,154,120,.22);
+    border-radius:18px;
+    color:#77716c;
+    text-align:center;
+}
+@media(max-width:950px){
+    .numbers-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:700px){
+    .internat-features{grid-template-columns:1fr 1fr}
+    .numbers-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:460px){
+    .internat-features,.numbers-grid{grid-template-columns:1fr}
+}
+
+
+/* ===== Refonte 2 : accueil plus humain + formations mises en avant + vie lycéenne ===== */
+.featured-intro{
+    max-width:1100px;
+    margin:0 auto 18px;
+    padding:22px 24px;
+    border:1px solid rgba(200,154,120,.16);
+    border-radius:20px;
+    background:linear-gradient(135deg,rgba(200,154,120,.08),rgba(255,255,255,.025));
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:28px;
+}
+.featured-intro h3{font-family:Georgia,serif;font-size:25px;margin-top:5px}
+.featured-intro p{max-width:500px;color:#85807b;font-size:12px;line-height:1.7}
+.formation-card.featured{border-color:rgba(200,154,120,.24)}
+.formation-card.featured:after{content:"À découvrir";position:absolute;right:18px;bottom:18px;padding:5px 8px;border-radius:999px;background:rgba(200,154,120,.08);border:1px solid rgba(200,154,120,.15);color:#cdb09c;font-size:9px;font-weight:800}
+.more-formations-actions{max-width:1100px;margin:24px auto 0;text-align:center}
+.more-formations-actions .btn span{transition:.25s}
+.more-formations-actions.expanded .btn span{transform:rotate(180deg)}
+.more-formations-actions p{margin-top:9px;color:#68635f;font-size:10px}
+.formations:not(.expanded) .formation-card:not(.featured){display:none}
+.life-grid{max-width:1100px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.life-card{padding:28px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(145deg,#171717,#101010);min-height:230px;transition:.3s}
+.life-card:hover{transform:translateY(-5px);border-color:rgba(200,154,120,.3);box-shadow:0 20px 45px rgba(0,0,0,.28)}
+.life-card-wide{grid-column:1/-1;min-height:190px}
+.life-card-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:22px}
+.life-icon{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(145deg,#895a3c,#422719);font-size:22px}
+.life-label{font-size:9px;letter-spacing:1.8px;text-transform:uppercase;color:var(--accent);font-weight:800}
+.life-card h3{font-family:Georgia,serif;font-size:28px;margin-bottom:9px}
+.life-card p{color:#85807b;font-size:13px;line-height:1.75;max-width:720px}
+.life-points{display:flex;flex-wrap:wrap;gap:7px;margin-top:20px}
+.life-points span{padding:6px 9px;border-radius:999px;background:rgba(255,255,255,.035);border:1px solid var(--line);color:#aaa39d;font-size:10px}
+.life-link{display:inline-flex;margin-top:20px;color:var(--accent);font-size:11px;font-weight:800}
+.photo-source{max-width:1100px;margin:16px auto 0;text-align:center;color:#55514e;font-size:10px}
+@media(max-width:700px){.featured-intro{display:block}.featured-intro p{margin-top:12px}.life-grid{grid-template-columns:1fr}.life-card-wide{grid-column:auto}.life-card h3{font-size:24px}}
+
+
+/* ===== Fonctionnalités supplémentaires ===== */
+.feature-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.feature-btn{border:1px solid var(--line);background:rgba(255,255,255,.04);color:#eee;border-radius:10px;padding:9px 11px;font-size:11px;font-weight:800;cursor:pointer}.feature-btn:hover{border-color:rgba(200,154,120,.45);color:var(--accent)}.feature-btn.favorite.active{background:rgba(200,154,120,.12);color:var(--accent)}.life-extra-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1250px;margin:16px auto 0}.life-card{position:relative}.life-card-wide{grid-column:span 2}.info-modal{position:fixed;inset:0;background:rgba(0,0,0,.72);display:none;align-items:center;justify-content:center;padding:20px;z-index:2000}.info-modal.open{display:flex}.info-modal-box{width:min(680px,100%);max-height:85vh;overflow:auto;background:#14110f;border:1px solid var(--line);border-radius:24px;padding:28px;box-shadow:0 30px 90px rgba(0,0,0,.55)}.info-modal-head{display:flex;justify-content:space-between;gap:20px;align-items:flex-start}.info-modal h3{font-family:Georgia,serif;font-size:30px;margin:0 0 8px}.modal-close{border:1px solid var(--line);background:#1d1a17;color:#fff;border-radius:10px;width:38px;height:38px;cursor:pointer}.modal-list{display:grid;gap:10px;margin:20px 0}.modal-list div{padding:13px 15px;border:1px solid rgba(255,255,255,.07);border-radius:12px;color:#aaa}.quick-contact{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:1250px;margin:20px auto 0}.quick-contact a{display:block;text-decoration:none;color:#fff}.quick-contact strong{display:block;color:#cdb09c;margin-bottom:5px}.quick-contact span{color:#8f8b87;font-size:12px}.docs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:1100px;margin:25px auto 0}.doc-card{border:1px solid var(--line);border-radius:16px;padding:18px;background:rgba(255,255,255,.03);display:flex;justify-content:space-between;gap:15px;align-items:center}.doc-card small{color:#777}.doc-card a{color:var(--accent);font-weight:800;font-size:11px;text-decoration:none;white-space:nowrap}.fav-empty{color:#777;font-size:13px}.fav-count{color:var(--accent)}@media(max-width:950px){.life-extra-grid,.docs-grid{grid-template-columns:1fr 1fr}.life-card-wide{grid-column:span 1}}@media(max-width:700px){.life-extra-grid,.quick-contact,.docs-grid{grid-template-columns:1fr}}
+
+/* V3 - nouvelles fonctionnalités */
+.discovery-grid,.agenda-grid{max-width:1100px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.discovery-card,.agenda-card{padding:25px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(145deg,#171717,#101010);transition:.3s}
+.discovery-card:hover,.agenda-card:hover{transform:translateY(-5px);border-color:rgba(200,154,120,.3);box-shadow:0 20px 45px rgba(0,0,0,.28)}
+.discovery-icon{width:52px;height:52px;border-radius:15px;display:grid;place-items:center;background:linear-gradient(145deg,#895a3c,#422719);font-size:23px;margin-bottom:18px}
+.discovery-card h3,.agenda-card h3{font-family:Georgia,serif;font-size:24px;margin-bottom:8px}
+.discovery-card p,.agenda-card p{color:#85807b;font-size:12px;line-height:1.7}
+.discovery-points{display:flex;flex-wrap:wrap;gap:7px;margin-top:15px}
+.discovery-points span{padding:6px 9px;border-radius:999px;background:rgba(255,255,255,.035);border:1px solid var(--line);color:#aaa39d;font-size:10px}
+.agenda-date,.modal-kicker{color:var(--accent);font-size:10px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase}
+.modal-description{color:#aaa39d;line-height:1.8;font-size:13px;margin-top:15px}
+.modal-section-title{font-family:Georgia,serif;font-size:20px;margin:22px 0 9px}
+.modal-tags{display:flex;flex-wrap:wrap;gap:7px;margin:18px 0}
+.modal-tags span{padding:7px 10px;border-radius:999px;background:rgba(200,154,120,.08);border:1px solid rgba(200,154,120,.15);color:#cdb09c;font-size:10px;font-weight:800}
+.modal-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:22px}
+@media(max-width:950px){.discovery-grid,.agenda-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.discovery-grid,.agenda-grid{grid-template-columns:1fr}}
+
+
+/* ===== Correction finale — thème sombre cohérent ===== */
+:root{
+  --bg:#090909;
+  --panel:#121212;
+  --panel2:#181818;
+  --brown:#8f5d3e;
+  --accent:#c89a78;
+  --cream:#f5eee8;
+  --muted:#a7a19c;
+  --line:rgba(255,255,255,.09);
+  --radius:24px;
+  --max:1240px;
+}
+body{background:var(--bg);color:#fff}
+body:before{
+  background:
+    radial-gradient(circle at 80% 10%,rgba(143,93,62,.12),transparent 30%),
+    radial-gradient(circle at 10% 70%,rgba(200,154,120,.05),transparent 28%);
+}
+nav{
+  top:14px;
+  background:rgba(12,12,12,.78);
+  border-color:var(--line);
+  box-shadow:none;
+}
+nav.scrolled{background:rgba(10,10,10,.94);box-shadow:0 18px 55px rgba(0,0,0,.35)}
+.logo{color:#fff}.logo span{color:var(--accent)}
+.logo-icon{
+  background:linear-gradient(145deg,#a66e4b,#57321f);
+  box-shadow:0 8px 25px rgba(112,68,45,.28);
+}
+.nav-links a{color:#cfcac5}
+.nav-links a:hover{color:#fff;background:rgba(255,255,255,.06)}
+.nav-button{background:var(--brown)!important;color:#fff!important}
+
+.hero{background:transparent}
+.hero-grid{
+  background-image:
+    linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+}
+.hero h1,.section-title,.why h2,.internat h2,.contact h2,
+.life-card h3,.discovery-card h3,.agenda-card h3,
+.formation-content h3,.why-card h3,.contact-card h3,
+.internat-feature h3{color:#fff}
+.hero h1 span,.section-title span,.why h2 span,.internat h2 span{color:var(--accent)}
+.hero-description{color:#aaa39d}
+.hero-stat strong{color:#fff}.hero-stat span{color:#777}
+
+.btn{border-color:var(--line)}
+.btn-primary{background:linear-gradient(135deg,#9d6847,#71442e);color:#fff}
+.btn-outline{background:rgba(255,255,255,.03);color:#fff}
+
+.section-dark{background:#0d0d0d}
+.section-brown{background:linear-gradient(180deg,#17110e,#0e0d0c)}
+.section-description,.why-left p,.internat-content p,.contact-intro p{color:#8f8984}
+
+.formation-tools .search-box,
+.formation-tools .select-box{background:rgba(255,255,255,.035);border-color:var(--line)}
+.search-box input,.select-box select{color:#fff}
+.select-box option{background:#151515;color:#fff}
+
+.formation-card,.why-card,.contact-card,.life-card,
+.discovery-card,.agenda-card{
+  background:linear-gradient(145deg,#191919,#101010);
+  border-color:var(--line);
+  box-shadow:none;
+}
+.formation-card:hover,.life-card:hover,.discovery-card:hover,.agenda-card:hover{
+  border-color:rgba(200,154,120,.4);
+  box-shadow:0 25px 60px rgba(0,0,0,.35);
+}
+.formation-number{color:rgba(255,255,255,.10)}
+.formation-icon,.life-icon,.discovery-icon{
+  background:linear-gradient(145deg,#895a3c,#422719);
+}
+.formation-content h3{color:#fff}
+.formation-content p,.life-card p,.discovery-card p,.agenda-card p,
+.why-card p,.contact-card p,.internat-feature p{color:#817b76}
+.formation-tag,.modal-tags span{
+  background:rgba(200,154,120,.08);
+  border-color:rgba(200,154,120,.15);
+  color:#cdb09c;
+}
+.formation-link,.life-link,.reset-filter{color:var(--accent)}
+
+.featured-intro{
+  background:linear-gradient(135deg,rgba(200,154,120,.08),rgba(255,255,255,.025));
+  border-color:rgba(200,154,120,.16);
+}
+.featured-intro h3{color:#fff}.featured-intro p{color:#85807b}
+
+.numbers{background:linear-gradient(180deg,#100c0a,#0b0b0b)}
+.number{background:rgba(255,255,255,.025);border-color:var(--line)}
+.number strong{color:var(--cream)}.number span{color:#77716c}
+
+.internat-visual{
+  background:radial-gradient(circle at 50% 35%,rgba(200,154,120,.25),transparent 35%),linear-gradient(145deg,#3e281b,#17110d);
+  border-color:var(--line);
+}
+.internat-glass{background:rgba(0,0,0,.25);border-color:rgba(255,255,255,.12)}
+.internat-feature{background:rgba(255,255,255,.035);border-color:var(--line)}
+.gallery-item{background:#17110d;border-color:var(--line)}
+.gallery-overlay{background:linear-gradient(transparent,rgba(0,0,0,.8))}
+.contact-card-icon,.why-icon,.internat-feature-icon{color:var(--accent)}
+
+footer{background:#080808;border-color:var(--line)}
+.footer-logo{color:#fff}.footer-logo span{color:var(--accent)}
+.footer-text,.footer-bottom{color:#666}
+
+#top{background:#171717;border-color:var(--line)}
+.info-modal{background:rgba(0,0,0,.72)}
+.info-modal-box{background:#14110f;border-color:var(--line)}
+.info-modal h3{color:#fff}
+.modal-close{background:#1d1a17;color:#fff}
+
+@media(max-width:700px){
+  .nav-links{background:rgba(10,10,10,.96);border-color:var(--line)}
+}
+
+/* Le filtrage JS contrôle l'affichage des formations. */
+.formation-card.filter-match{display:flex!important}
+
+/* ===== Favoris + Mon Bureau Numérique + Easter egg morpion ===== */
+.nav-favorite{position:relative}
+.nav-favorite::after{content:"♥";margin-left:5px;color:var(--accent)}
+.favorites-toolbar{max-width:1100px;margin:0 auto 18px;display:flex;justify-content:flex-end}
+.fav-empty{max-width:1100px;margin:auto;padding:28px;border:1px dashed rgba(200,154,120,.22);border-radius:18px;color:#77716c;text-align:center}
+.favorite-result-card{min-height:260px}
+.favorite-remove{margin-top:14px;padding:9px 12px;border:1px solid rgba(200,154,120,.18);border-radius:10px;background:rgba(200,154,120,.07);color:var(--accent);cursor:pointer;font-weight:800;font-size:11px}
+.favorite-remove:hover{background:rgba(200,154,120,.14)}
+.logo{cursor:pointer;user-select:none}
+#ticTacToeModal{position:fixed;inset:0;z-index:20000;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(0,0,0,.82);backdrop-filter:blur(12px)}
+#ticTacToeModal.open{display:flex}
+.ttt-box{width:min(94vw,430px);padding:26px;border:1px solid rgba(200,154,120,.25);border-radius:24px;background:linear-gradient(145deg,#1b1714,#0e0e0e);box-shadow:0 30px 100px rgba(0,0,0,.6);text-align:center}
+.ttt-box h2{font-family:Georgia,serif;font-size:32px;margin-bottom:5px}
+.ttt-sub{color:#8f8984;font-size:12px;margin-bottom:18px}
+.ttt-status{min-height:24px;color:var(--accent);font-weight:800;font-size:13px;margin-bottom:12px}
+.ttt-board{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:0 auto 18px;max-width:330px}
+.ttt-cell{aspect-ratio:1;border:1px solid rgba(255,255,255,.1);border-radius:14px;background:#151515;color:#fff;font-size:42px;font-weight:900;cursor:pointer;transition:.18s}
+.ttt-cell:hover:not(:disabled){transform:scale(1.03);border-color:rgba(200,154,120,.45);background:#1d1917}
+.ttt-cell:disabled{cursor:default}
+.ttt-actions{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
+.ttt-actions button{padding:10px 14px;border:1px solid var(--line);border-radius:11px;background:#191919;color:#eee;cursor:pointer;font-weight:800;font-size:12px}
+.ttt-actions .ttt-close{background:#71442e}
+@media(max-width:500px){.ttt-box{padding:20px}.ttt-cell{font-size:34px}}
+
+
+/* Corrections favoris */
+.favorites-toolbar{max-width:1250px;margin:0 auto 16px;text-align:right}.favorite-result-card{min-height:300px}.favorite-remove{margin-top:auto;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:rgba(200,154,120,.08);color:var(--accent);font-weight:800;cursor:pointer}.favorite-remove:hover{background:rgba(200,154,120,.16)}
+
+/* ===== Correctifs communs : thème, accessibilité et lisibilité ===== */
+html{scroll-padding-top:100px}
+button,a,input,select{ -webkit-tap-highlight-color:transparent }
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.theme-toggle{flex-shrink:0;border:1px solid var(--line);border-radius:12px;padding:9px 12px;background:rgba(255,255,255,.06);color:inherit;font-size:12px;font-weight:800;cursor:pointer;white-space:nowrap;margin-left:10px}
+.theme-toggle:hover{border-color:var(--accent)}
+body{transition:background-color .25s ease,color .25s ease}
+body.light-mode{--bg:#f7f4f0;--panel:#fff;--panel2:#f0e9e2;--cream:#30251f;--muted:#675b53;--line:rgba(60,40,25,.14);background:#f7f4f0;color:#29221e;color-scheme:light}
+body.light-mode:before{background:radial-gradient(circle at 80% 10%,rgba(143,93,62,.10),transparent 30%),radial-gradient(circle at 10% 70%,rgba(200,154,120,.08),transparent 28%)}
+body.light-mode nav,body.light-mode nav.scrolled{background:rgba(255,252,248,.94);border-color:rgba(60,40,25,.14);box-shadow:0 12px 35px rgba(60,40,25,.08)}
+body.light-mode .nav-links a{color:#594b42}body.light-mode .nav-links a:hover{color:#211a16;background:rgba(80,50,30,.07)}
+body.light-mode .menu-button{color:#30251f}body.light-mode .theme-toggle{background:#fff;color:#39291f;border-color:rgba(60,40,25,.18)}
+body.light-mode .hero-grid{background-image:linear-gradient(rgba(80,55,35,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(80,55,35,.055) 1px,transparent 1px)}
+body.light-mode .hero h1,body.light-mode .section-title,body.light-mode .why h2,body.light-mode .internat h2,body.light-mode .contact h2,body.light-mode .life-card h3,body.light-mode .discovery-card h3,body.light-mode .agenda-card h3,body.light-mode .formation-content h3,body.light-mode .why-card h3,body.light-mode .contact-card h3,body.light-mode .internat-feature h3{color:#30251f}
+body.light-mode .hero-description,body.light-mode .section-description,body.light-mode .why-left p,body.light-mode .internat-content p,body.light-mode .contact-intro p{color:#6c625b}
+body.light-mode .hero-stat strong{color:#30251f}body.light-mode .hero-stat span{color:#746b64}
+body.light-mode .section-dark{background:#f0ebe5}body.light-mode .section-brown{background:linear-gradient(180deg,#f0e7de,#faf7f3)}
+body.light-mode .formation-card,body.light-mode .why-card,body.light-mode .contact-card,body.light-mode .life-card,body.light-mode .discovery-card,body.light-mode .agenda-card{background:linear-gradient(145deg,#fff,#f8f3ed);border-color:rgba(60,40,25,.13);box-shadow:0 8px 24px rgba(60,40,25,.035)}
+body.light-mode .formation-card:hover,body.light-mode .life-card:hover,body.light-mode .discovery-card:hover,body.light-mode .agenda-card:hover{box-shadow:0 20px 45px rgba(60,40,25,.10)}
+body.light-mode .formation-content p,body.light-mode .life-card p,body.light-mode .discovery-card p,body.light-mode .agenda-card p,body.light-mode .why-card p,body.light-mode .contact-card p,body.light-mode .internat-feature p{color:#6e655e}
+body.light-mode .formation-tag,body.light-mode .modal-tags span{background:rgba(143,93,62,.08);border-color:rgba(143,93,62,.18);color:#764a31}
+body.light-mode .search-box,body.light-mode .select-box{background:#fff;border-color:rgba(60,40,25,.16)}body.light-mode .search-box input,body.light-mode .select-box select{color:#30251f}body.light-mode .search-box input::placeholder{color:#81766d}body.light-mode .select-box span{color:#756960}body.light-mode .select-box option{background:#fff;color:#30251f}
+body.light-mode .featured-intro{background:linear-gradient(135deg,rgba(200,154,120,.14),rgba(255,255,255,.8));border-color:rgba(143,93,62,.18)}body.light-mode .featured-intro h3{color:#30251f}body.light-mode .featured-intro p{color:#6c625b}
+body.light-mode .number{background:rgba(255,255,255,.75);border-color:rgba(60,40,25,.13)}body.light-mode .number strong{color:#30251f}body.light-mode .number span{color:#756960}
+body.light-mode .numbers{background:linear-gradient(180deg,#f3ece5,#f7f4f0)}body.light-mode .internat-visual{background:radial-gradient(circle at 50% 35%,rgba(200,154,120,.35),transparent 35%),linear-gradient(145deg,#d9b99e,#f0e4d8)}body.light-mode .internat-glass{background:rgba(255,255,255,.72);border-color:rgba(60,40,25,.12)}body.light-mode .internat-glass span{color:#6c625b}body.light-mode .internat-feature{background:#fff;border-color:rgba(60,40,25,.13)}
+body.light-mode .gallery-item{background:#eee3d8;border-color:rgba(60,40,25,.13)}body.light-mode .gallery-overlay{background:linear-gradient(transparent,rgba(20,14,10,.78))}
+body.light-mode footer{background:#eee8e1;border-color:rgba(60,40,25,.13)}body.light-mode .footer-logo{color:#30251f}body.light-mode .footer-text,body.light-mode .footer-bottom{color:#756960}
+body.light-mode #top{background:#fff;color:#30251f;border-color:rgba(60,40,25,.16)}body.light-mode .info-modal{background:rgba(35,25,18,.48)}body.light-mode .info-modal-box{background:#fffaf5;border-color:rgba(60,40,25,.16);color:#30251f}body.light-mode .info-modal h3{color:#30251f}body.light-mode .modal-description{color:#6c625b}body.light-mode .modal-list div{color:#6c625b;border-color:rgba(60,40,25,.12)}body.light-mode .modal-close{background:#f4ece4;color:#30251f;border-color:rgba(60,40,25,.13)}
+body.light-mode #ticTacToeModal{background:rgba(35,25,18,.55)}body.light-mode .ttt-box{background:#fffaf5;color:#30251f;border-color:rgba(143,93,62,.25)}body.light-mode .ttt-sub{color:#6c625b}body.light-mode .ttt-cell{background:#f6eee6;color:#30251f;border-color:rgba(60,40,25,.15)}body.light-mode .ttt-actions button{background:#f4ece4;color:#30251f}
+body.light-mode .life-points span,body.light-mode .discovery-points span{background:rgba(80,50,30,.045);border-color:rgba(60,40,25,.12);color:#62564d}
+body.light-mode .btn-outline{background:rgba(255,255,255,.65);color:#30251f;border-color:rgba(60,40,25,.16)}body.light-mode .feature-btn{background:#fff;color:#49382d;border-color:rgba(60,40,25,.15)}body.light-mode .feature-btn.favorite.active{background:#f0e1d4;color:#75482e}
+@media(max-width:950px){.theme-toggle{margin-left:auto;margin-right:8px}}
+@media(max-width:700px){.theme-toggle{padding:8px 9px;font-size:11px}.nav-links{background:rgba(255,252,248,.97)}body:not(.light-mode) .nav-links{background:rgba(10,10,10,.97)}.nav-links.active{z-index:2}}
+@media(prefers-reduced-motion:reduce){body{transition:none!important}}
+
+
+/* VERSION 3 — lumineuse, éditoriale, avec terracotta et grands espaces */
+:root{--brown:#a54f36;--accent:#df8c68;--radius:20px}
+.hero{min-height:700px}
+.hero h1,.section-title,.why h2,.internat h2,.contact h2{font-family:ui-serif,Georgia,serif;letter-spacing:-2px}
+.section{padding-top:96px;padding-bottom:96px}
+.formation-card,.life-card,.discovery-card,.agenda-card{background:linear-gradient(145deg,#1c1715,#100f0e);border-radius:20px}
+.logo-icon,.formation-icon,.life-icon,.discovery-icon{background:linear-gradient(145deg,#bd6c4c,#743723)}
+.btn-primary{background:linear-gradient(135deg,#b96545,#8f422c)}
+body.light-mode{--brown:#a54f36;--accent:#a64e35}
+body.light-mode .section-dark{background:#fbf5f0}
+body.light-mode .section-brown{background:linear-gradient(180deg,#f3e5da,#fbf7f3)}
+body.light-mode .formation-card,body.light-mode .why-card,body.light-mode .contact-card,body.light-mode .life-card,body.light-mode .discovery-card,body.light-mode .agenda-card{background:linear-gradient(145deg,#fff,#fff8f3)}
+body.light-mode .logo-icon,body.light-mode .formation-icon,body.light-mode .life-icon,body.light-mode .discovery-icon{background:linear-gradient(145deg,#bd6c4c,#743723)}
+body.light-mode .btn-primary{background:linear-gradient(135deg,#b96545,#8f422c)}
+
+
+
+/* Réglage de difficulté du morpion */
+.ttt-difficulty-label{display:block;margin:0 0 6px;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted,#aaa)}
+.ttt-difficulty{display:block;width:100%;margin:0 auto 14px;padding:10px 12px;border:1px solid var(--line,rgba(255,255,255,.16));border-radius:8px;background:var(--panel,#18201e);color:inherit;font:inherit;font-size:13px;outline-offset:3px}
+body.light-mode .ttt-difficulty{background:#e8e3da;color:#292b28;border-color:#d0c8bc}
+</style>
+<style id="comfort-and-school-photo-refinement">
+
+/* ===== Color and comfort refinement: version 3 ===== */
+:root{--bg:#20272c;--panel:#293137;--panel2:#333c41;--brown:#9b7860;--accent:#c3a087;--cream:#e9e0d5;--muted:#b9b2a9;--line:rgba(233,224,213,.14);--radius:10px;--max:1320px;--coral:#c58c70}
+body{background:var(--bg);color:var(--cream)}
+body:before{opacity:.12;background-image:radial-gradient(rgba(195,160,135,.12) .7px,transparent .7px);background-size:7px 7px}
+nav,nav.scrolled{background:rgba(32,39,44,.94);border-color:var(--line)}
+.logo-icon{background:#c3a087;color:#20272c;box-shadow:none}
+.logo span,.nav-links a:hover,.eyebrow,.hero h1 span,.section-title span{color:var(--accent)}
+.nav-links a:hover{background:rgba(195,160,135,.10)}
+.nav-button,.btn-primary{background:#c3a087!important;color:#20272c!important;box-shadow:none}
+.btn-primary:hover,.nav-button:hover{background:#d3b49b!important}
+.hero{background:var(--bg)}
+.hero-photo img{object-position:center 42%;filter:saturate(.68) brightness(.65) contrast(1.04)}
+.hero-shade{background:linear-gradient(90deg,rgba(24,31,35,.92) 0%,rgba(24,31,35,.69) 42%,rgba(24,31,35,.19) 100%),linear-gradient(0deg,rgba(24,31,35,.80),transparent 48%,rgba(24,31,35,.17))}
+.hero-premium:after{border-color:rgba(233,224,213,.24)}
+.hero-badge{color:#d2b29a}.status-dot{background:#c3a087;box-shadow:0 0 0 5px rgba(195,160,135,.14)}
+.btn-outline,.hero-text-link{background:rgba(32,39,44,.32);border-color:rgba(233,224,213,.25);color:var(--cream)}
+.hero-text-link span,.caption-number,.premium-stats strong{color:#d0ae92}
+.premium-stats{border-color:rgba(233,224,213,.25)}.premium-stats .hero-stat{border-color:rgba(233,224,213,.15)}
+.section-dark{background:#252d32}.section-brown{background:#20272c}
+.section-description,.formation-content p,.why-card p,.contact-card p,.internat-feature p,.life-card p,.discovery-card p,.agenda-card p{color:#bcb8b1}
+.search-box,.select-box{background:#293137;border-color:#475157}
+.search-box input,.select-box select{color:var(--cream)}.select-box option{background:#293137;color:var(--cream)}
+.formation-card,.why-card,.internat-feature,.contact-card,.life-card,.discovery-card,.agenda-card,.doc-card{background:#293137;border-color:#424d52;box-shadow:0 10px 26px rgba(0,0,0,.09)}
+.formation-card:hover{border-color:#c3a087;box-shadow:0 14px 34px rgba(0,0,0,.17)}
+.formation-number{color:rgba(195,160,135,.5)}.formation-icon{background:#343e42;border-color:#505b5f}
+.formation-tag{background:#3a4143;color:#e0c0a5}
+.numbers{background:#b99478;color:#20272c}.number{border-color:rgba(32,39,44,.18)}
+.gallery-item img{filter:saturate(.72) brightness(.83) contrast(1.04)}
+footer{background:#191f23;border-color:#3b454a}
+/* Warm grey light mode: no dazzling white panels. */
+body.light-mode{background:#d8d1c7;color:#302f2b;color-scheme:light}
+body.light-mode:before{opacity:.08}
+body.light-mode nav,body.light-mode nav.scrolled{background:rgba(216,209,199,.96)}
+body.light-mode .section-dark{background:#cec7bd}body.light-mode .section-brown{background:#d8d1c7}
+body.light-mode .hero{background:#555f62}body.light-mode .hero-photo img{filter:saturate(.62) brightness(.52)}
+body.light-mode .formation-card,body.light-mode .why-card,body.light-mode .internat-feature,body.light-mode .contact-card,body.light-mode .life-card,body.light-mode .discovery-card,body.light-mode .agenda-card,body.light-mode .doc-card{background:#e0d9cf;border-color:#c0b6aa}
+body.light-mode .formation-content h3,body.light-mode .section-title,body.light-mode .hero-stat strong,body.light-mode .why-card h3,body.light-mode .contact-card h3{color:#302f2b}
+body.light-mode .formation-content p,body.light-mode .section-description,body.light-mode .why-left p,body.light-mode .internat-content p,body.light-mode .contact-intro p{color:#625d55}
+body.light-mode .search-box,body.light-mode .select-box{background:#e0d9cf;border-color:#c0b6aa}
+body.light-mode .search-box input,body.light-mode .select-box select{color:#302f2b}
+body.light-mode footer{background:#c6beb3;color:#302f2b}
+
+</style>
+</head><body>
+
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+<nav id="navbar">
+
+    <a href="#accueil" class="logo">
+
+        <div class="logo-icon">
+            
+        </div>
+
+        <div>
+            Lycée <span>Eugène Decomble</span>
+        </div>
+
+    </a>
+
+
+    <ul class="nav-links" id="navLinks">
+
+        <li>
+            <a href="#accueil">Accueil</a>
+        </li>
+
+        <li>
+            <a href="#formations">Formations</a>
+        </li>
+
+        <li>
+            <a href="#vie">Vie au lycée</a>
+        </li>
+        <li><a href="#decouvrir">Découvrir</a></li>
+        <li><a href="#agenda">Agenda</a></li>
+
+        <li><a href="#favoris" class="nav-favorite">Favoris</a></li>
+
+        <li>
+            <a href="https://monbureaunumerique.fr/" target="_blank" rel="noopener noreferrer">
+                Mon Bureau Numérique ↗
+            </a>
+        </li>
+
+        <li>
+            <a href="#galerie">Photos</a>
+        </li>
+
+        <li>
+            <a href="#contact" class="nav-button">
+                Contact
+            </a>
+        </li>
+
+    </ul>
+
+
+    <button id="themeToggle" class="theme-toggle" type="button" aria-label="Activer le mode clair">☀ Mode clair</button>
+
+    <button
+        class="menu-button"
+        onclick="toggleMenu()"
+        aria-label="Menu"
+    >
+        
+    </button>
+
+</nav>
+<div class="reading-progress" aria-hidden="true"><span id="readingProgressBar"></span></div>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero hero-premium v3-hero" id="accueil">
+    <div class="hero-photo" aria-hidden="true"><img src="https://3.bp.blogspot.com/-JaMNypNi3vo/V580AZS8_3I/AAAAAAAAu3g/aXdcCH89w1wT1Hj5_bcxVcWjWX6ENHf5ACLcB/s1600/DSC05825.JPG" alt="" fetchpriority="high"></div>
+    <div class="hero-shade" aria-hidden="true"></div>
+    <div class="hero-index"><span>LYCÉE PROFESSIONNEL</span><span>CHAUMONT · HAUTE-MARNE</span></div>
+    <div class="hero-content">
+        <div class="hero-badge"><span class="status-dot"></span> APPRENDRE · PRATIQUER · CONSTRUIRE</div>
+        <h1>Le savoir-faire<br><em>prend forme.</em></h1>
+        <p class="hero-description">Au lycée Eugène Decomble, les idées deviennent des compétences. Découvre des formations concrètes, des métiers d’avenir et un établissement où l’on apprend en faisant.</p>
+        <div class="hero-actions">
+            <a href="#formations" class="btn btn-primary">Explorer les formations <span aria-hidden="true">↗</span></a>
+            <a href="#decouvrir" class="hero-text-link">Découvrir le lycée <span aria-hidden="true">↓</span></a>
+        </div>
+    </div>
+    <div class="hero-caption"><span class="caption-line"></span><span>Un lieu pour apprendre autrement.</span><span class="caption-number">52°N / CHAUMONT</span></div>
+    <div class="hero-side-note">TON PROCHAIN CHAPITRE COMMENCE ICI</div>
+    <div class="hero-stats premium-stats">
+        <div class="hero-stat"><strong>20</strong><span>formations<br>et dispositifs</span></div>
+        <div class="hero-stat"><strong>01</strong><span>objectif : trouver<br>ta voie</span></div>
+        <div class="hero-stat"><strong>100%</strong><span>place à la pratique<br>et aux projets</span></div>
+    </div>
+</section>
+
+
+<!-- =========================================================
+     FORMATIONS
+========================================================= -->
+
+<section
+    class="section section-dark"
+    id="formations"
+>
+
+    <div class="section-header center reveal">
+
+        <div class="eyebrow">
+            Notre enseignement
+        </div>
+
+        <h2 class="section-title">
+            Toutes les formations
+            <span>du lycée.</span>
+        </h2>
+
+        <p class="section-description">
+            Pas besoin de tout parcourir d'un coup : commencez par les trois filières mises en avant,
+            puis ouvrez <strong>« Découvrir plus de formations »</strong> pour explorer l'ensemble de l'offre.
+        </p>
+
+    </div>
+
+    <div class="featured-intro reveal">
+        <div>
+            <div class="eyebrow">Trois filières à découvrir</div>
+            <h3>Des parcours concrets, tournés vers les métiers.</h3>
+        </div>
+        <p>Travaux publics, numérique et maintenance industrielle : trois univers représentatifs de l'identité professionnelle du lycée.</p>
+    </div>
+
+    <div class="formation-tools reveal" aria-label="Recherche et filtres des formations">
+        <div class="search-box">
+            <span>⌕</span>
+            <input id="formationSearch" type="search" placeholder="Rechercher une formation…" aria-label="Rechercher une formation">
+        </div>
+        <label class="select-box">
+            <span>Niveau</span>
+            <select id="levelFilter" aria-label="Choisir un niveau">
+                <option value="all">Tous les niveaux</option>
+                <option value="cap">CAP</option>
+                <option value="seconde">2de pro</option>
+                <option value="bac">Bac pro</option>
+                <option value="bts">BTS</option>
+                <option value="dispositif">Dispositifs</option>
+            </select>
+        </label>
+        <label class="select-box">
+            <span>Domaine</span>
+            <select id="domainFilter" aria-label="Choisir un domaine">
+                <option value="all">Tous les domaines</option>
+                <option value="tp">Travaux publics</option>
+                <option value="auto">Automobile & véhicules</option>
+                <option value="electricite">Électricité</option>
+                <option value="industrie">Industrie & mécanique</option>
+                <option value="numerique">Numérique</option>
+            </select>
+        </label>
+    </div>
+
+    <div class="formation-summary">
+        <div><strong id="formationCountNumber">20</strong> <span id="formationCountLabel">formations affichées</span></div>
+        <button id="resetFilters" class="reset-filter" type="button">Réinitialiser ↺</button>
+    </div>
+
+    <div class="formations">
+{% for f in formations %}
+<article class="formation-card reveal {{ 'featured' if loop.index in [10, 12, 16] else '' }}" data-category="{{ f.category }}">
+  <div class="formation-number">{{ '%02d'|format(loop.index) }}</div>
+  <div class="formation-icon"></div>
+  <div class="formation-content">
+    <div class="eyebrow">{{ f.level }}</div>
+    <h3>{{ f.title }}</h3>
+    <p>{{ f.description }}</p>
+    <div class="formation-meta"><span class="formation-tag">{{ f.domain }}</span></div>
+    <div class="formation-link">Informations à confirmer auprès de l’établissement</div>
+  </div>
+</article>
+{% endfor %}
+</div>
+
+    <div class="more-formations-actions reveal">
+        <button id="moreFormationsButton" class="btn btn-primary" type="button" aria-expanded="false">
+            Découvrir plus de formations <span>↓</span>
+        </button>
+        <p>Les autres CAP, 2de pro, Bac pro, BTS et dispositifs sont disponibles juste ici.</p>
+    </div>
+
+    <div class="formation-source">
+        Liste vérifiée à partir des formations actuellement référencées par l'Onisep
+        pour le Lycée professionnel Eugène Decomble à Chaumont.
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CHIFFRES
+========================================================= -->
+
+<section class="numbers">
+
+    <div class="numbers-grid">
+
+        <div class="number reveal">
+
+            <strong>20</strong>
+
+            <span>
+                formations et dispositifs
+            </span>
+
+        </div>
+
+
+        <div class="number reveal">
+
+            <strong>Tech</strong>
+
+            <span>
+                technologies
+            </span>
+
+        </div>
+
+
+        <div class="number reveal">
+
+            <strong>✓</strong>
+
+            <span>
+                internat
+            </span>
+
+        </div>
+
+
+        <div class="number reveal">
+
+            <strong>52</strong>
+
+            <span>
+                Chaumont
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     POURQUOI
+========================================================= -->
+
+<section class="section section-dark">
+
+    <div class="why">
+
+
+        <div class="why-left reveal">
+
+            <div class="eyebrow">
+                Nos atouts
+            </div>
+
+            <h2>
+
+                Plus qu'un lycée,
+                <span>un tremplin.</span>
+
+            </h2>
+
+            <p>
+
+                L'objectif est de permettre aux élèves
+                de développer leurs connaissances,
+                leurs compétences pratiques et leur
+                projet professionnel.
+
+            </p>
+
+            <br>
+
+            <a
+                href="#contact"
+                class="btn btn-primary"
+            >
+                En savoir plus →
+            </a>
+
+        </div>
+
+
+        <div class="why-grid">
+
+
+            <div class="why-card reveal">
+
+                <div class="why-icon">
+                    ‍
+                </div>
+
+                <h3>
+                    Accompagnement
+                </h3>
+
+                <p>
+                    Un suivi pédagogique pour progresser
+                    et construire son projet.
+                </p>
+
+            </div>
+
+
+            <div class="why-card reveal">
+
+                <div class="why-icon">
+                    
+                </div>
+
+                <h3>
+                    Pratique
+                </h3>
+
+                <p>
+                    Des apprentissages orientés vers
+                    les situations professionnelles.
+                </p>
+
+            </div>
+
+
+            <div class="why-card reveal">
+
+                <div class="why-icon">
+                    
+                </div>
+
+                <h3>
+                    Technologie
+                </h3>
+
+                <p>
+                    Des domaines liés aux technologies
+                    et aux métiers techniques.
+                </p>
+
+            </div>
+
+
+            <div class="why-card reveal">
+
+                <div class="why-icon">
+                    
+                </div>
+
+                <h3>
+                    Professionnel
+                </h3>
+
+                <p>
+                    Une préparation au monde professionnel
+                    et à la poursuite d'études.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     INTERNAT
+========================================================= -->
+
+<section
+    class="section section-brown"
+    id="internat"
+>
+
+    <div class="internat">
+
+
+        <div class="internat-visual reveal">
+
+            <div class="internat-glass">
+
+                <strong>
+                    Vie au lycée
+                </strong>
+
+                <span>
+                    Un environnement adapté aux élèves internes.
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="internat-content reveal">
+
+            <div class="eyebrow">
+                Vie scolaire
+            </div>
+
+            <h2>
+
+                Un internat
+                <span>moderne.</span>
+
+            </h2>
+
+            <p>
+
+                Le Lycée Eugène Decomble dispose d'un internat de 3 étages
+                permettant aux élèves qui habitent loin de
+                l'établissement d'être hébergés au lycée.
+
+                <br><br>
+
+                Il permet également de profiter d'un cadre
+                adapté à la vie scolaire et à la vie collective.
+
+            </p>
+
+
+            <div class="internat-features">
+
+
+                <div class="internat-feature">
+
+                    <div class="internat-feature-icon">
+                        
+                    </div>
+
+                    <h3>
+                        Hébergement
+                    </h3>
+
+                    <p>
+                        Un espace dédié aux élèves internes.
+                    </p>
+
+                </div>
+
+
+                <div class="internat-feature">
+
+                    <div class="internat-feature-icon">
+                        
+                    </div>
+
+                    <h3>
+                        Travail
+                    </h3>
+
+                    <p>
+                        Un cadre adapté au travail scolaire.
+                    </p>
+
+                </div>
+
+
+                <div class="internat-feature">
+
+                    <div class="internat-feature-icon">
+                        
+                    </div>
+
+                    <h3>
+                        Vie collective
+                    </h3>
+
+                    <p>
+                        Partager le quotidien avec d'autres élèves.
+                    </p>
+
+                </div>
+
+
+                <div class="internat-feature">
+
+                    <div class="internat-feature-icon">
+                        
+                    </div>
+
+                    <h3>
+                        Vie scolaire
+                    </h3>
+
+                    <p>
+                        Un environnement pensé pour les internes.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     VIE AU LYCEE
+========================================================= -->
+
+<section class="section section-dark" id="vie">
+
+    <div class="section-header center reveal">
+        <div class="eyebrow">Au quotidien</div>
+        <h2 class="section-title">Une vie de lycée <span>qui compte.</span></h2>
+        <p class="section-description">
+            Au-delà des cours et des ateliers, le lycée propose aussi des espaces pour se retrouver,
+            souffler et partager les temps de la journée.
+        </p>
+    </div>
+
+    <div class="life-grid">
+        <article class="life-card reveal">
+            <div class="life-card-top">
+                <span class="life-icon"></span>
+                <span class="life-label">Restauration</span>
+            </div>
+            <h3>La cafétéria</h3>
+            <p>
+                Un espace pratique pour faire une pause entre deux cours et acheter des snacks et des boissons
+                à petits prix.
+            </p>
+            <div class="life-points">
+                <span> Boissons</span>
+                <span> Snacks</span>
+                <span> Prix accessibles</span>
+            </div>
+        </article>
+
+        <article class="life-card reveal">
+            <div class="life-card-top">
+                <span class="life-icon"></span>
+                <span class="life-label">Vie sociale</span>
+            </div>
+            <h3>Le foyer</h3>
+            <p>
+                Un lieu pour se détendre, discuter avec les autres élèves et profiter d'un moment plus convivial
+                pendant la vie scolaire.
+            </p>
+            <div class="life-points">
+                <span> Convivialité</span>
+                <span> Pause</span>
+                <span> Temps libre</span>
+            </div>
+        </article>
+
+        <article class="life-card reveal life-card-wide">
+            <div class="life-card-top">
+                <span class="life-icon"></span>
+                <span class="life-label">Hébergement</span>
+            </div>
+            <h3>Internat & accompagnement</h3>
+            <p>
+                Pour les élèves qui habitent loin de Chaumont, l'internat permet de vivre au plus près du lycée
+                et de garder un rythme adapté aux études et à la vie collective.
+            </p>
+            <a class="life-link" href="#internat">En savoir plus sur l'internat →</a>
+        </article>
+    </div>
+
+    <div class="life-extra-grid">
+        <article class="life-card reveal"><div class="life-card-top"><span class="life-icon"></span><span class="life-label">Loisirs</span></div><h3>La salle de musique</h3><p>Un espace dédié à la pratique musicale, avec plusieurs instruments et une table de mixage.</p><div class="life-points"><span> Piano</span><span> Batterie</span><span> Guitare</span><span> Basse</span><span> Table de mixage</span></div></article>
+        <article class="life-card reveal"><div class="life-card-top"><span class="life-icon"></span><span class="life-label">Accompagnement</span></div><h3>L'infirmerie</h3><p>Un espace d'accueil et d'accompagnement pour les élèves au sein du lycée.</p><div class="life-points"><span> Infirmerie</span><span> Accompagnement</span></div></article>
+    </div>
+
+</section>
+
+
+<section class="section section-brown" id="decouvrir">
+<div class="section-header center reveal">
+<div class="eyebrow">Explorer l'établissement</div>
+<h2 class="section-title">Découvrir le <span>lycée.</span></h2>
+<p class="section-description">Retrouvez les principaux espaces du lycée et leur rôle dans la vie quotidienne des élèves.</p>
+</div>
+<div class="discovery-grid">
+<article class="discovery-card reveal" data-place="cafeteria"><div class="discovery-icon"></div><h3>Cafétéria</h3><p>Un espace pour faire une pause et acheter des snacks et des boissons à prix accessibles.</p><div class="discovery-points"><span> Boissons</span><span> Snacks</span><span> Prix accessibles</span></div><button class="btn btn-outline place-more" type="button">Voir les détails →</button></article>
+<article class="discovery-card reveal" data-place="foyer"><div class="discovery-icon"></div><h3>Foyer</h3><p>Un espace convivial pour se détendre, discuter et profiter des temps de pause.</p><div class="discovery-points"><span> Convivialité</span><span> Pause</span></div><button class="btn btn-outline place-more" type="button">Voir les détails →</button></article>
+<article class="discovery-card reveal" data-place="musique"><div class="discovery-icon"></div><h3>Salle de musique</h3><p>Un espace de pratique musicale équipé pour travailler le son.</p><div class="discovery-points"><span> Piano</span><span> Batterie</span><span> Guitare</span><span> Mixage</span></div><button class="btn btn-outline place-more" type="button">Voir les détails →</button></article>
+<article class="discovery-card reveal" data-place="infirmerie"><div class="discovery-icon"></div><h3>Infirmerie</h3><p>Un espace d'accueil et d'accompagnement pour les élèves.</p><div class="discovery-points"><span> Accueil</span><span> Accompagnement</span></div><button class="btn btn-outline place-more" type="button">Voir les détails →</button></article>
+<article class="discovery-card reveal" data-place="internat"><div class="discovery-icon"></div><h3>Internat</h3><p>Un internat de 3 étages avec des chambres de 2, 3 ou 4 élèves et des sanitaires dans les chambres.</p><div class="discovery-points"><span> 3 étages</span><span> 2 à 4 élèves</span><span> Sanitaires</span></div><button class="btn btn-outline place-more" type="button">Voir les détails →</button></article>
+<article class="discovery-card reveal" data-place="ateliers"><div class="discovery-icon"></div><h3>Ateliers techniques</h3><p>Des espaces dédiés aux enseignements professionnels et à la pratique des métiers techniques.</p><div class="discovery-points"><span> Maintenance</span><span> Électrotechnique</span><span> BTP</span><span> Mécanique</span></div><button class="btn btn-outline place-more" type="button">Voir les détails →</button></article>
+</div>
+</section>
+
+<section class="section section-dark" id="agenda">
+<div class="section-header center reveal">
+<div class="eyebrow">Calendrier</div>
+<h2 class="section-title">Agenda du <span>lycée.</span></h2>
+<p class="section-description">Les événements pourront être ajoutés au fil de l'année : portes ouvertes, réunions, projets et temps forts.</p>
+</div>
+<div class="agenda-grid">
+<article class="agenda-card reveal"><div class="agenda-date">À venir</div><h3>Journées portes ouvertes</h3><p>Ajoutez la date et les horaires dès qu'ils sont confirmés.</p></article>
+<article class="agenda-card reveal"><div class="agenda-date">À venir</div><h3>Réunion parents-professeurs</h3><p>Ajoutez la date et les informations pratiques dès qu'elles sont confirmées.</p></article>
+<article class="agenda-card reveal"><div class="agenda-date">À venir</div><h3>Projets et événements</h3><p>Présentez ici les prochains projets, sorties ou événements du lycée.</p></article>
+</div>
+</section>
+<section class="section section-dark" id="infos-pratiques">
+    <div class="section-header center reveal"><div class="eyebrow">Pratique</div><h2 class="section-title">Les informations <span>essentielles.</span></h2><p class="section-description">Retrouvez rapidement les coordonnées et informations utiles du lycée.</p></div>
+    <div class="quick-contact">
+        <a class="contact-card" href="tel:0325030605"><strong> Téléphone</strong><span>03 25 03 06 05</span></a>
+        <a class="contact-card" href="mailto:ce.0520008B@ac-reims.fr"><strong> E-mail</strong><span>ce.0520008B@ac-reims.fr</span></a>
+        <div class="contact-card"><strong> Horaires</strong><span>8h – 17h</span></div>
+        <a class="contact-card" href="https://www.google.com/maps/search/?api=1&query=47%20avenue%20d'Ashton%20Under%20Lyne%2052000%20Chaumont" target="_blank" rel="noopener"><strong> Adresse / itinéraire</strong><span>47 avenue d'Ashton Under Lyne, 52000 Chaumont</span></a>
+    </div>
+</section>
+
+<section class="section section-dark" id="documents">
+    <div class="section-header center reveal"><div class="eyebrow">Ressources</div><h2 class="section-title">Documents <span>à télécharger.</span></h2><p class="section-description">Les fichiers PDF pourront être déposés dans le dossier documents du site.</p></div>
+    <div class="docs-grid">
+        <div class="doc-card"><div> Plaquette du lycée<br><small>PDF</small></div><a href="static/documents/plaquette-lycee.pdf" download>Télécharger</a></div>
+        <div class="doc-card"><div> Présentation des formations<br><small>PDF</small></div><a href="static/documents/formations.pdf" download>Télécharger</a></div>
+        <div class="doc-card"><div> Informations internat<br><small>PDF</small></div><a href="static/documents/internat.pdf" download>Télécharger</a></div>
+    </div>
+</section>
+
+<section class="section section-dark" id="favoris">
+    <div class="section-header center reveal">
+        <div class="eyebrow">Votre sélection</div>
+        <h2 class="section-title">Mes <span>favoris.</span></h2>
+        <p class="section-description">Ajoutez une formation avec « Ajouter aux favoris ». Votre sélection est conservée dans ce navigateur.</p>
+    </div>
+    <div class="favorites-toolbar">
+        <button id="clearFavorites" class="reset-filter" type="button">Tout supprimer ×</button>
+    </div>
+    <div id="favoritesList" class="formations">
+        <p class="fav-empty">Aucune formation favorite pour le moment.</p>
+    </div>
+</section>
+
+<section class="section section-dark" id="candidater">
+    <div class="section-header center reveal"><div class="eyebrow">Orientation</div><h2 class="section-title">Candidater / <span>s'inscrire.</span></h2><p class="section-description">Retrouvez les informations nécessaires pour préparer votre démarche d'inscription.</p></div>
+    <div class="quick-contact"><div class="contact-card"><strong> Démarche</strong><span>Les modalités et liens officiels pourront être ajoutés ici.</span></div><div class="contact-card"><strong> Besoin d'aide ?</strong><span>Contactez directement le lycée pour obtenir les informations adaptées à votre situation.</span></div></div>
+</section>
+
+<div class="database-message-panel" style="max-width:760px;margin:36px auto 0;padding:26px;border:1px solid var(--line);border-radius:22px;background:var(--panel)">
+<h3 style="margin-bottom:8px">Envoyer un message</h3><p style="color:var(--muted);margin-bottom:18px">Ce formulaire enregistre votre message dans la base de données du site. N’envoyez pas d’informations confidentielles.</p>
+<form id="databaseMessageForm" style="display:grid;gap:12px">
+<label>Votre nom<input name="name" required maxlength="100" autocomplete="name" style="width:100%;padding:12px;border-radius:10px;border:1px solid var(--line);background:var(--panel2);color:inherit"></label>
+<label>Votre adresse e-mail<input name="email" type="email" required maxlength="254" autocomplete="email" style="width:100%;padding:12px;border-radius:10px;border:1px solid var(--line);background:var(--panel2);color:inherit"></label>
+<label>Objet<input name="subject" required maxlength="180" style="width:100%;padding:12px;border-radius:10px;border:1px solid var(--line);background:var(--panel2);color:inherit"></label>
+<label>Message<textarea name="body" required maxlength="5000" rows="5" style="width:100%;padding:12px;border-radius:10px;border:1px solid var(--line);background:var(--panel2);color:inherit"></textarea></label>
+<button class="btn btn-primary" type="submit">Envoyer le message →</button><p id="databaseMessageStatus" role="status" aria-live="polite"></p>
+</form></div>
+
+<section class="section section-dark" id="espace-compte"><div class="section-header center"><div class="eyebrow">Espace personnel</div><h2 class="section-title">Mon <span>compte.</span></h2><p class="section-description">Créez un compte pour enregistrer vos favoris sur plusieurs appareils. Utilisez un mot de passe unique.</p></div><div style="max-width:760px;margin:auto;padding:26px;border:1px solid var(--line);border-radius:22px;background:var(--panel);display:grid;gap:18px"><form id="databaseAccountForm" style="display:grid;gap:12px"><label>Adresse e-mail<input name="email" type="email" required maxlength="254" autocomplete="email" style="width:100%;padding:12px;border-radius:10px;border:1px solid var(--line);background:var(--panel2);color:inherit"></label><label>Mot de passe<input name="password" type="password" required minlength="10" autocomplete="current-password" style="width:100%;padding:12px;border-radius:10px;border:1px solid var(--line);background:var(--panel2);color:inherit"></label><div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn btn-primary" type="submit" data-action="login">Se connecter</button><button class="btn btn-outline" type="button" id="databaseRegister">Créer un compte</button><button class="btn btn-outline" type="button" id="databaseLogout" hidden>Se déconnecter</button></div><p id="databaseAccountStatus" role="status" aria-live="polite"></p></form><p style="color:var(--muted);font-size:.9rem">Les administrateurs peuvent gérer les formations, les événements et les messages depuis <code>/admin</code> après connexion avec un compte administrateur configuré sur Render.</p></div></section>
+
+<!-- =========================================================
+     GALERIE
+========================================================= -->
+
+<section
+    class="section section-dark"
+    id="galerie"
+>
+
+    <div class="section-header reveal">
+
+        <div class="eyebrow">
+            L'établissement
+        </div>
+
+        <h2 class="section-title">
+            Le lycée en
+            <span>images.</span>
+        </h2>
+
+        <p class="section-description">
+            Découvrez quelques vues du Lycée Eugène Decomble.
+        </p>
+
+    </div>
+
+
+    <div class="gallery">
+
+
+        <div
+            class="gallery-item reveal"
+            onclick="openImage(this)"
+        >
+
+            <img
+                src="https://3.bp.blogspot.com/-JaMNypNi3vo/V580AZS8_3I/AAAAAAAAu3g/aXdcCH89w1wT1Hj5_bcxVcWjWX6ENHf5ACLcB/s1600/DSC05825.JPG"
+                alt="Lycée Eugène Decomble"
+            >
+
+            <div class="gallery-overlay">
+                <h3>
+                     L'établissement
+                </h3>
+            </div>
+
+        </div>
+
+
+        <div
+            class="gallery-item reveal"
+            onclick="openImage(this)"
+        >
+
+            <img
+                src="https://cortex.persona.co/w/1000/q/67/i/ad1334a602c11139dccaa4c3b0ab4d9e48f3f25eece175da4b5d8a66f36e2d15/Decomble_Home_Tegami.jpg"
+                alt="Lycée Eugène Decomble"
+            >
+
+            <div class="gallery-overlay">
+                <h3>
+                     Architecture
+                </h3>
+            </div>
+
+        </div>
+
+
+        <div
+            class="gallery-item reveal"
+            onclick="openImage(this)"
+        >
+
+            <img
+                src="https://static.wixstatic.com/media/788563_79bb7afece7d4aeabe1691344cb5c546~mv2.jpg"
+                alt="Lycée Eugène Decomble"
+            >
+
+            <div class="gallery-overlay">
+                <h3>
+                     Extérieur
+                </h3>
+            </div>
+
+        </div>
+
+
+        <div class="gallery-item reveal" onclick="openImage(this)">
+            <img src="https://www.ac-reims.fr/sites/ac_reims/files/styles/personality_content_16x9/public/2022-12/221208-visite-recteur-lyc-decomble-cht-02-jpg-29119.jpg?itok=I1Ik2ZFq" alt="Vie scolaire au Lycée Eugène Decomble">
+            <div class="gallery-overlay"><h3> Vie scolaire</h3></div>
+        </div>
+
+        <div class="gallery-item reveal" onclick="openImage(this)">
+            <img src="https://www.ac-reims.fr/sites/ac_reims/files/2022-12/221208-visite-recteur-lyc-decomble-cht-07-jpg-29134.jpg" alt="Atelier technique du Lycée Eugène Decomble">
+            <div class="gallery-overlay"><h3> Ateliers techniques</h3></div>
+        </div>
+
+        <div class="gallery-item reveal" onclick="openImage(this)">
+            <img src="https://www.ac-reims.fr/sites/ac_reims/files/styles/personality_content_16x9/public/2023-07/220427-lp-decomble-cht-fresque-01-jpg-33488.jpg?itok=NUKFfX4G" alt="Élèves du Lycée Eugène Decomble en projet">
+            <div class="gallery-overlay"><h3> Projets des élèves</h3></div>
+        </div>
+
+    </div>
+
+    <p class="photo-source">
+        Photos issues de publications de l'Académie de Reims consacrées au Lycée Eugène Decomble.
+    </p>
+
+</section>
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section
+    class="section section-brown"
+    id="contact"
+>
+
+    <div class="contact">
+
+
+        <div class="contact-intro reveal">
+
+            <div class="eyebrow">
+                Informations
+            </div>
+
+            <h2>
+                Une question ?
+            </h2>
+
+            <p>
+
+                Besoin d'informations sur l'établissement,
+                les formations ou l'internat ?
+
+                <br><br>
+
+                Retrouvez ici les principales informations
+                pour nous trouver.
+
+            </p>
+
+            <br>
+
+            <a
+                href="https://www.google.com/maps/search/?api=1&query=Lycée+Eugène+Decomble+Chaumont"
+                target="_blank"
+                class="btn btn-primary"
+            >
+                 Ouvrir dans Google Maps →
+            </a>
+
+        </div>
+
+
+        <div class="contact-info">
+
+
+            <div class="contact-card reveal">
+
+                <div class="contact-card-icon">
+                    
+                </div>
+
+                <h3>
+                    Adresse
+                </h3>
+
+                <p>
+                    47 avenue d'Ashton Under Lyne<br>
+                    52000 Chaumont
+                </p>
+
+            </div>
+
+
+            <div class="contact-card reveal">
+
+                <div class="contact-card-icon">
+                    
+                </div>
+
+                <h3>
+                    Établissement
+                </h3>
+
+                <p>
+                    Lycée Eugène Decomble
+                </p>
+
+            </div>
+
+
+            <div class="contact-card reveal">
+
+                <div class="contact-card-icon">
+                    
+                </div>
+
+                <h3>
+                    Formations
+                </h3>
+
+                <p>
+                    20 formations et dispositifs dans les domaines
+                    du numérique, de l'industrie, de l'automobile,
+                    de l'électricité et des travaux publics.
+                </p>
+
+            </div>
+
+
+            <div class="contact-card reveal">
+
+                <div class="contact-card-icon">
+                    
+                </div>
+
+                <h3>
+                    Internat
+                </h3>
+
+                <p>
+                    Hébergement disponible pour les élèves
+                    concernés.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <div class="footer-top">
+
+        <div>
+
+            <div class="footer-logo" id="footerBrand" title="Psst… il y a peut-être un secret ici">
+
+                 Lycée
+                <span>Eugène Decomble</span>
+
+            </div>
+
+            <div class="footer-text">
+
+                Construisons ensemble ton avenir professionnel.
+
+            </div>
+
+        </div>
+
+
+        <a
+            href="#accueil"
+            class="btn btn-outline"
+        >
+            Retour à l'accueil ↑
+        </a>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 Lycée Eugène Decomble
+        </span>
+
+        <span>
+            Chaumont • Haute-Marne
+        </span>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================================================
+     BOUTON TOP
+========================================================= -->
+
+<button
+    id="top"
+    onclick="window.scrollTo({top:0, behavior:'smooth'})"
+>
+    ↑
+</button>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+(() => {
+    "use strict";
+    // Progression discrète en haut de page
+    const progressBar = document.getElementById("readingProgressBar");
+    const updateReadingProgress = () => {
+        if (!progressBar) return;
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        progressBar.style.width = (maxScroll > 0 ? (window.scrollY / maxScroll) * 100 : 0) + "%";
+    };
+    window.addEventListener("scroll", updateReadingProgress, { passive: true });
+    updateReadingProgress();
+
+
+    const navbar = document.getElementById("navbar");
+    const navLinks = document.getElementById("navLinks");
+    const topButton = document.getElementById("top");
+
+    // Menu mobile
+    window.toggleMenu = () => {
+        navLinks?.classList.toggle("active");
+    };
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+        link.addEventListener("click", () => navLinks?.classList.remove("active"));
+    });
+
+    // Navigation + bouton retour en haut
+    const updateScrollUI = () => {
+        const scrolled = window.scrollY > 40;
+        navbar?.classList.toggle("scrolled", scrolled);
+        topButton?.classList.toggle("visible", window.scrollY > 500);
+    };
+
+    window.addEventListener("scroll", updateScrollUI, { passive: true });
+    updateScrollUI();
+
+    // Animations d'apparition
+    const revealElements = document.querySelectorAll(".reveal");
+
+    revealElements.forEach(element => element.classList.add("animate"));
+
+    if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add("show");
+                obs.unobserve(entry.target);
+            });
+        }, { threshold: 0.10 });
+
+        revealElements.forEach(element => observer.observe(element));
+    } else {
+        revealElements.forEach(element => element.classList.add("show"));
+    }
+
+
+    const formationModal=document.createElement("div");
+    formationModal.className="info-modal";
+    formationModal.innerHTML='<div class="info-modal-box" role="dialog" aria-modal="true"><div class="info-modal-head"><div><div class="modal-kicker" id="fmKicker"></div><h3 id="fmTitle"></h3></div><button class="modal-close" type="button"></button></div><div id="fmBody"></div></div>';
+    document.body.appendChild(formationModal);
+    const closeFM=()=>formationModal.classList.remove("open");
+    formationModal.querySelector(".modal-close").addEventListener("click",closeFM);
+    formationModal.addEventListener("click",e=>{if(e.target===formationModal)closeFM()});
+    const openFormationModal=(card)=>{
+        const title=card.querySelector("h3")?.textContent.trim()||"Formation";
+        const level=card.querySelector(".eyebrow")?.textContent.trim()||"";
+        const desc=card.querySelector(".formation-content p")?.textContent.trim()||"";
+        const duration=card.querySelector(".formation-link")?.textContent.trim()||"";
+        const tags=[...card.querySelectorAll(".formation-tag")].map(x=>x.textContent.trim());
+        document.getElementById("fmKicker").textContent=level;
+        document.getElementById("fmTitle").textContent=title;
+        document.getElementById("fmBody").innerHTML='<p class="modal-description">'+desc+'</p><div class="modal-section-title">À retenir</div><div class="modal-list"><div> <strong>Niveau :</strong> '+level+'</div><div>⏱ <strong>Parcours :</strong> '+duration+'</div></div><div class="modal-section-title">Domaines</div><div class="modal-tags">'+tags.map(t=>'<span>'+t+'</span>').join("")+'</div><div class="modal-section-title">Informations complémentaires</div><p class="modal-description">Cette fiche peut être enrichie avec les modalités d’admission, les poursuites d’études et les débouchés officiels de chaque formation.</p><div class="modal-actions"><button class="btn btn-primary fmApply" type="button"> Candidater / s\'inscrire</button></div>';
+        formationModal.querySelector(".fmApply").addEventListener("click",()=>{closeFM();document.getElementById("candidater")?.scrollIntoView({behavior:"smooth"})});
+        formationModal.classList.add("open");
+    };
+
+    const placeData={
+        cafeteria:["Restauration","La cafétéria","Un espace pour faire une pause et acheter des snacks et des boissons à prix accessibles.",[" Boissons"," Snacks"," Prix accessibles"]],
+        foyer:["Vie sociale","Le foyer","Un lieu convivial pour se détendre, discuter et profiter des temps de pause.",[" Convivialité"," Pause"," Temps libre"]],
+        musique:["Loisirs","La salle de musique","Un espace de pratique musicale avec piano, batterie, basse, guitare et table de mixage.",[" Piano"," Batterie"," Guitare"," Basse"," Table de mixage"]],
+        infirmerie:["Accompagnement","L'infirmerie","Un espace d'accueil et d'accompagnement pour les élèves.",[" Accueil"," Accompagnement"]],
+        internat:["Hébergement","L'internat","Un internat de 3 étages. Les chambres peuvent accueillir 2, 3 ou 4 élèves et disposent de sanitaires dans les chambres.",[" 3 étages"," Chambres de 2, 3 ou 4"," Sanitaires"]],
+        ateliers:["Formation professionnelle","Les ateliers techniques","Des espaces dédiés à la pratique professionnelle dans les domaines techniques du lycée.",[" Maintenance"," Électrotechnique"," BTP"," Mécanique"]]
+    };
+    const placeModal=document.createElement("div");
+    placeModal.className="info-modal";
+    placeModal.innerHTML='<div class="info-modal-box"><div class="info-modal-head"><div><div class="modal-kicker" id="pmKicker"></div><h3 id="pmTitle"></h3></div><button class="modal-close" type="button"></button></div><div id="pmBody"></div></div>';
+    document.body.appendChild(placeModal);
+    const closePM=()=>placeModal.classList.remove("open");
+    placeModal.querySelector(".modal-close").addEventListener("click",closePM);
+    placeModal.addEventListener("click",e=>{if(e.target===placeModal)closePM()});
+    document.querySelectorAll(".place-more").forEach(btn=>btn.addEventListener("click",()=>{
+        const d=placeData[btn.closest("[data-place]")?.dataset.place]; if(!d)return;
+        document.getElementById("pmKicker").textContent=d[0];
+        document.getElementById("pmTitle").textContent=d[1];
+        document.getElementById("pmBody").innerHTML='<p class="modal-description">'+d[2]+'</p><div class="modal-section-title">À retenir</div><div class="modal-tags">'+d[3].map(x=>'<span>'+x+'</span>').join("")+'</div>';
+        placeModal.classList.add("open");
+    }));
+    document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeFM();closePM()}});
+
+    // Galerie
+    window.openImage = (element) => {
+        const image = element?.querySelector("img");
+        if (image?.src) window.open(image.src, "_blank", "noopener,noreferrer");
+    };
+
+    // ===== FORMATIONS : recherche, filtres, reset et bouton "voir plus" =====
+    const normalize = (value = "") => String(value)
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/[’'`]/g, "")
+        .replace(/[-_/]/g, " ")
+        .replace(/[^\p{L}\p{N}\s]/gu, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+
+    const cards = [...document.querySelectorAll(".formation-card")];
+    const formationsGrid = document.querySelector(".formations");
+    const levelFilter = document.getElementById("levelFilter");
+    const domainFilter = document.getElementById("domainFilter");
+    const searchInput = document.getElementById("formationSearch");
+    const countNumber = document.getElementById("formationCountNumber");
+    const countLabel = document.getElementById("formationCountLabel");
+    const resetButton = document.getElementById("resetFilters");
+    const moreButton = document.getElementById("moreFormationsButton");
+    const moreActions = moreButton?.closest(".more-formations-actions");
+
+    let expanded = false;
+
+    // Alias permettant de rechercher aussi les sigles.
+    const aliases = {
+        ciel: ["ciel", "cyber", "cybersecurite", "informatique", "reseaux", "electronique"],
+        melec: ["melec", "electricite", "metiers de lelectricite", "environnements connectes"],
+        ms: ["ms", "maintenance des systemes", "systemes de production"],
+        mspc: ["mspc", "maintenance des systemes de production connectes"],
+        trpm: ["trpm", "technicien en realisation de produits mecaniques", "produits mecaniques"],
+        cp: ["cp", "carrossier peintre", "carrossier peintre automobile"],
+        tp: ["tp", "travaux publics"],
+        btp: ["btp", "batiment", "construction", "travaux publics"],
+        mv: ["mv", "maintenance des vehicules", "vehicules"],
+        auto: ["auto", "automobile", "vehicules"],
+        bts: ["bts"],
+        cap: ["cap"],
+        ulis: ["ulis"],
+        "3e": ["3e", "troisieme", "prepa metiers"],
+        "3eme": ["3e", "troisieme", "prepa metiers"],
+        "2de": ["2de", "seconde"],
+        "2nde": ["2de", "seconde"]
+    };
+
+    const domains = {
+        tp: ["travaux publics", "chantier", "engins", "construction", "infrastructures", "batiment", "btp", "tp"],
+        auto: ["automobile", "vehicules", "vehicules legers", "materiels", "mecanique", "maintenance", "carrosserie", "mv", "auto"],
+        electricite: ["electricite", "electrique", "electriques", "energie", "domotique", "melec"],
+        industrie: ["industrie", "mecanique", "usinage", "productique", "production", "fabrication", "maintenance", "automatisme", "ms", "mspc", "trpm"],
+        numerique: ["numerique", "informatique", "digital", "cyber", "cybersecurite", "reseau", "reseaux", "electronique", "ciel"]
+    };
+
+    const getSearchText = (card) => normalize([
+        card.querySelector("h3")?.textContent || "",
+        card.querySelector("p")?.textContent || "",
+        card.querySelector(".eyebrow")?.textContent || "",
+        card.querySelector(".formation-meta")?.textContent || "",
+        card.querySelector(".formation-link")?.textContent || "",
+        card.dataset.category || ""
+    ].join(" "));
+
+    const queryMatches = (card, rawQuery) => {
+        const query = normalize(rawQuery);
+        if (!query) return true;
+
+        const text = getSearchText(card);
+
+        // Recherche exacte.
+        if (text.includes(query)) return true;
+
+        // Recherche par mots + alias.
+        const words = query.split(" ").filter(Boolean);
+        return words.every(word => {
+            if (text.includes(word)) return true;
+            const aliasWords = aliases[word] || [word];
+            return aliasWords.some(alias => text.includes(normalize(alias)));
+        });
+    };
+
+    const matchesDomain = (card, domain) => {
+        if (!domain || domain === "all") return true;
+        const text = getSearchText(card);
+        return (domains[domain] || []).some(keyword => text.includes(normalize(keyword)));
+    };
+
+    const matchesLevel = (card, selectedLevel) => {
+        if (!selectedLevel || selectedLevel === "all") return true;
+
+        const category = normalize(card.dataset.category || "");
+        const text = getSearchText(card);
+
+        // Les valeurs du menu correspondent normalement directement aux data-category.
+        if (category === normalize(selectedLevel)) return true;
+
+        // Sécurité pour les niveaux écrits différemment dans une fiche.
+        const levelAliases = {
+            seconde: ["seconde", "2de", "2nde"],
+            bac: ["bac", "bac pro", "baccalaureat"],
+            cap: ["cap"],
+            bts: ["bts"],
+            dispositif: ["dispositif", "ulis"]
+        };
+
+        return (levelAliases[selectedLevel] || [selectedLevel])
+            .some(value => text.includes(normalize(value)));
+    };
+
+    const updateMoreButton = () => {
+        if (!moreButton) return;
+
+        moreButton.setAttribute("aria-expanded", String(expanded));
+        moreButton.innerHTML = expanded
+            ? 'Réduire les formations <span>↑</span>'
+            : 'Découvrir plus de formations <span>↓</span>';
+
+        moreActions?.classList.toggle("expanded", expanded);
+    };
+
+    const filterFormations = () => {
+        const selectedLevel = levelFilter?.value || "all";
+        const selectedDomain = domainFilter?.value || "all";
+        const query = searchInput?.value || "";
+
+        const hasFilter =
+            selectedLevel !== "all" ||
+            selectedDomain !== "all" ||
+            Boolean(normalize(query));
+
+        // Dès qu'un filtre est utilisé, on ouvre automatiquement toutes les formations
+        // pour que les résultats puissent réellement être affichés.
+        const showAll = expanded || hasFilter;
+
+        if (formationsGrid) {
+            formationsGrid.classList.toggle("expanded", showAll);
+        }
+
+        let visible = 0;
+
+        cards.forEach(card => {
+            const levelOK = matchesLevel(card, selectedLevel);
+            const domainOK = matchesDomain(card, selectedDomain);
+            const searchOK = queryMatches(card, query);
+            const matches = levelOK && domainOK && searchOK;
+            const featured = card.classList.contains("featured");
+            const shouldShow = matches && (showAll || featured);
+
+            // Inline style = priorité sur les anciennes règles CSS.
+            card.style.display = shouldShow ? "" : "none";
+            card.classList.toggle("hidden", !shouldShow);
+            card.classList.toggle("filter-match", shouldShow);
+
+            if (shouldShow) visible++;
+        });
+
+        if (countNumber) countNumber.textContent = String(visible);
+        if (countLabel) {
+            countLabel.textContent = visible === 1
+                ? "formation affichée"
+                : "formations affichées";
+        }
+    };
+
+    // Favoris + candidature sur chaque formation
+    const favoriteKey = "decomble_favorites";
+    const getFavorites = () => JSON.parse(localStorage.getItem(favoriteKey) || "[]");
+    const setFavorites = (items) => localStorage.setItem(favoriteKey, JSON.stringify(items));
+    const slug = (text) => normalize(text).replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+
+    cards.forEach((card) => {
+        const title = card.querySelector("h3")?.textContent.trim() || "Formation";
+        const actions = document.createElement("div");
+        actions.className = "feature-actions";
+
+        const fav = document.createElement("button");
+        fav.className = "feature-btn favorite";
+        fav.type = "button";
+        fav.dataset.id = slug(title);
+        fav.innerHTML = " Ajouter aux favoris";
+
+        const apply = document.createElement("button");
+        apply.className = "feature-btn";
+        apply.type = "button";
+        apply.textContent = " Candidater / s'inscrire";
+        apply.addEventListener("click", () =>
+            document.getElementById("candidater")?.scrollIntoView({behavior:"smooth"})
+        );
+
+        const details = document.createElement("button");
+        details.className = "feature-btn";
+        details.type = "button";
+        details.textContent = " Voir la fiche";
+        details.addEventListener("click", () => openFormationModal(card));
+
+        actions.append(fav, details, apply);
+        card.querySelector(".formation-content")?.appendChild(actions);
+
+        fav.addEventListener("click", () => {
+            const list = getFavorites();
+            const id = fav.dataset.id;
+            const next = list.includes(id)
+                ? list.filter(x => x !== id)
+                : [...list, id];
+
+            setFavorites(next);
+            updateFavoritesUI();
+            const token = sessionStorage.getItem("lyceeToken");
+            if (token) fetch("/api/favorites/by-title", {method: next.includes(id) ? "POST" : "DELETE", headers: {"Content-Type":"application/json", "Authorization":"Bearer " + token}, body: JSON.stringify({title})}).catch(() => {});
+        });
+    });
+
+    const updateFavoritesUI = () => {
+        const ids = getFavorites();
+
+        cards.forEach(card => {
+            const id = slug(card.querySelector("h3")?.textContent || "");
+            const b = card.querySelector(".favorite");
+            if (!b) return;
+
+            const active = ids.includes(id);
+            b.classList.toggle("active", active);
+            b.innerHTML = active
+                ? " Retirer des favoris"
+                : " Ajouter aux favoris";
+        });
+
+        const box = document.getElementById("favoritesList");
+        if (!box) return;
+
+        const selected = cards.filter(card =>
+            ids.includes(slug(card.querySelector("h3")?.textContent || ""))
+        );
+
+        if (!selected.length) {
+            box.innerHTML = '<p class="fav-empty">Aucune formation favorite pour le moment.</p>';
+            return;
+        }
+
+        // On reconstruit la liste avec de vrais boutons reliés aux favoris.
+        box.innerHTML = selected.map(card => {
+            const title = card.querySelector("h3")?.textContent.trim() || "Formation";
+            const desc = card.querySelector("p")?.textContent.trim() || "";
+            const category = card.querySelector(".eyebrow")?.textContent.trim() || "";
+            const id = slug(title);
+
+            return `
+                <article class="formation-card favorite-result-card">
+                    <div class="formation-number">♥</div>
+                    <div class="formation-icon">★</div>
+                    <div class="formation-content">
+                        <div class="eyebrow">${category}</div>
+                        <h3>${title}</h3>
+                        <p>${desc}</p>
+                        <button class="favorite-remove" type="button" data-remove-favorite="${id}">
+                            Retirer des favoris ×
+                        </button>
+                    </div>
+                </article>`;
+        }).join("");
+
+        box.querySelectorAll("[data-remove-favorite]").forEach(button => {
+            button.addEventListener("click", () => {
+                const id = button.dataset.removeFavorite;
+                setFavorites(getFavorites().filter(x => x !== id));
+                updateFavoritesUI();
+            });
+        });
+    };
+
+    window.addEventListener("lycee-account-login", async () => {
+        const token = sessionStorage.getItem("lyceeToken");
+        if (!token) return;
+        try {
+            // Merge browser favorites into the account, then load the account's saved favorites.
+            const localIds = getFavorites();
+            for (const card of cards) {
+                const title = card.querySelector("h3")?.textContent.trim() || "";
+                if (localIds.includes(slug(title))) {
+                    await fetch("/api/favorites/by-title", {method:"POST", headers:{"Content-Type":"application/json","Authorization":"Bearer "+token}, body:JSON.stringify({title})});
+                }
+            }
+            const response = await fetch("/api/favorites", {headers:{"Authorization":"Bearer "+token}});
+            if (response.ok) {
+                const saved = await response.json();
+                setFavorites(saved.map(item => slug(item.title)));
+                updateFavoritesUI();
+            }
+        } catch (_) { /* Les favoris locaux restent disponibles si le réseau est indisponible. */ }
+    });
+
+    // Événements
+    moreButton?.addEventListener("click", () => {
+        expanded = !expanded;
+        filterFormations();
+        updateMoreButton();
+
+        if (expanded) {
+            formationsGrid?.scrollIntoView({behavior:"smooth", block:"start"});
+        }
+    });
+
+    levelFilter?.addEventListener("change", () => {
+        filterFormations();
+    });
+
+    domainFilter?.addEventListener("change", () => {
+        filterFormations();
+    });
+
+    searchInput?.addEventListener("input", () => {
+        filterFormations();
+    });
+
+    resetButton?.addEventListener("click", () => {
+        if (levelFilter) levelFilter.value = "all";
+        if (domainFilter) domainFilter.value = "all";
+        if (searchInput) searchInput.value = "";
+
+        expanded = false;
+        updateMoreButton();
+        filterFormations();
+    });
+
+    updateFavoritesUI();
+
+    document.getElementById("clearFavorites")?.addEventListener("click", () => {
+        setFavorites([]);
+        updateFavoritesUI();
+    });
+
+    updateMoreButton();
+    filterFormations();
+    
+})();
+</script>
+
+<div id="site-toast" class="site-toast" role="status" aria-live="polite"></div>
+<div class="modal" id="lightbox" aria-hidden="true"><button class="modal-close" type="button" aria-label="Fermer">×</button><div class="lightbox-inner"><img id="lightbox-image" alt=""><p id="lightbox-caption"></p></div></div>
+<style>
+.site-toast{position:fixed;right:22px;bottom:22px;z-index:9999;max-width:calc(100vw - 44px);padding:14px 18px;border-radius:12px;background:#173f3a;color:#fffdf9;box-shadow:0 14px 40px #173f3a38;transform:translateY(24px);opacity:0;pointer-events:none;transition:.25s}.site-toast.show{transform:none;opacity:1}
+.modal{position:fixed;inset:0;z-index:10000;display:none;align-items:center;justify-content:center;padding:30px;background:#111e1cdc;backdrop-filter:blur(5px)}.modal.open{display:flex}.lightbox-inner{max-width:1100px;max-height:90vh;text-align:center}.lightbox-inner img{max-width:100%;max-height:78vh;object-fit:contain;border-radius:12px}.modal-close{position:absolute;top:18px;right:22px;border:0;background:transparent;color:#fff;font-size:38px;cursor:pointer}
+.favorite-btn{position:absolute!important;top:12px;right:12px;width:38px;height:38px;border:1px solid #173f3a25;border-radius:50%;background:#fffdf9;color:#173f3a;cursor:pointer;z-index:3;font-size:20px}.favorite-btn.active{background:#c56b3d;color:#fff;border-color:#c56b3d}
+.back-top{position:fixed;right:22px;bottom:22px;width:44px;height:44px;border:0;border-radius:50%;background:#c56b3d;color:#fff;cursor:pointer;z-index:100;opacity:0;pointer-events:none;transition:.2s}.back-top.visible{opacity:1;pointer-events:auto}.site-control{position:fixed;left:18px;bottom:18px;z-index:101;border:1px solid #173f3a2e;background:#fffdf9;color:#173f3a;border-radius:999px;padding:9px 13px;cursor:pointer;box-shadow:0 6px 22px #173f3a1f}.dark-mode{background:#111b1a!important;color:#e9e5de!important}.light-mode{background:#f4f1ec!important;color:#1c2523!important}
+.light-mode header,.light-mode footer,.light-mode .card,.light-mode section,.light-mode article,.light-mode input,.light-mode textarea,.light-mode select{background-color:#fffdf9!important;color:#1c2523!important;border-color:rgba(28,37,35,.13)!important}
+.light-mode a{color:#173f3a}
+.light-mode .favorite-btn,.light-mode .site-control{background:#fffdf9;color:#173f3a}
+.light-mode .section-dark{background:#ebe5dc!important}
+.dark-mode header,.dark-mode footer,.dark-mode .card,.dark-mode section,.dark-mode article,.dark-mode input,.dark-mode textarea,.dark-mode select{background-color:#172321!important;color:#e9e5de!important;border-color:#e9e5de24!important}.dark-mode a{color:#e9e5de}.dark-mode .favorite-btn,.dark-mode .site-control{background:#172321;color:#e9e5de}
+.reveal-on-scroll{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease}.reveal-on-scroll.is-visible{opacity:1;transform:none}@media(max-width:700px){.site-toast{right:14px;bottom:14px}.modal{padding:16px}}
+/* DA 3 — CAMPUS CONTEMPORAIN : grand visuel, blocs doux, typographie sans-serif */
+:root{--bg:#f6f7fb;--panel:#fff;--panel2:#edf0f8;--brown:#3549a8;--accent:#ef7857;--cream:#202747;--muted:#707792;--line:rgba(38,53,110,.13);--radius:22px;--max:1280px}
+body{background:#f6f7fb;color:#202747;font-family:Inter,ui-sans-serif,system-ui,sans-serif;line-height:1.65}body:before{display:none}nav,nav.scrolled{top:16px;left:50%;transform:translateX(-50%);width:min(calc(100% - 40px),1280px);height:72px;padding:0 20px;border:1px solid rgba(38,53,110,.1);border-radius:20px;background:rgba(255,255,255,.94);box-shadow:0 12px 40px rgba(42,51,98,.09);backdrop-filter:blur(18px)}.logo{font-size:15px;color:#202747}.logo-icon{background:#3549a8;border-radius:14px;box-shadow:0 8px 18px rgba(53,73,168,.22)}.logo span{color:#ef7857}.nav-links{gap:3px}.nav-links a{color:#525d82;border-radius:12px;font-size:12px;padding:10px 11px}.nav-links a:hover{background:#edf0f8;color:#3549a8}.nav-button{background:#3549a8!important;color:#fff!important}.hero{min-height:800px;padding:160px 20px 85px;display:block;background:radial-gradient(ellipse at 90% 20%,#e5e9ff 0,transparent 35%),#f6f7fb}.hero-grid{display:none}.hero:after{content:"";position:absolute;right:max(5vw,30px);top:175px;width:43vw;height:470px;border-radius:34px;filter:none;background:linear-gradient(180deg,transparent 35%,rgba(28,42,98,.24)),url('https://www.ac-reims.fr/sites/ac_reims/files/styles/personality_content_16x9/public/2022-12/221208-visite-recteur-lyc-decomble-cht-02-jpg-29119.jpg?itok=I1Ik2ZFq') center/cover no-repeat;box-shadow:0 30px 70px rgba(43,55,113,.18)}.hero-content{width:min(1280px,100%);margin:auto;min-height:550px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;position:relative;z-index:2}.hero-badge{background:#fff;border:1px solid #e1e5f5;border-radius:999px;color:#3549a8;padding:10px 15px;box-shadow:0 5px 15px rgba(43,55,113,.05)}.hero h1{font-family:Inter,ui-sans-serif,sans-serif;font-size:clamp(58px,7.5vw,104px);font-weight:850;letter-spacing:-6px;line-height:.95;color:#202747;max-width:750px;margin:27px 0}.hero h1 span{color:#3549a8}.hero-description{max-width:510px;color:#68718d;font-size:17px}.hero-actions{margin-top:28px}.btn{border-radius:14px;padding:15px 21px;font-size:13px}.btn-primary{background:#3549a8;box-shadow:0 10px 25px rgba(53,73,168,.22)}.btn-outline{background:#fff;border-color:#dfe4f4;color:#3549a8}.hero-stats{gap:12px;margin-top:42px}.hero-stat{background:#fff;border:1px solid #e6e9f5;border-radius:16px;padding:12px 17px;min-width:115px;box-shadow:0 8px 25px rgba(43,55,113,.04)}.hero-stat strong{font-size:26px;color:#3549a8}.hero-stat span{color:#707792}.section{padding:100px 20px}.section-dark{background:#fff}.section-brown{background:#edf0f8}.section-header{max-width:900px}.section-title{font-family:Inter,ui-sans-serif,sans-serif;font-size:clamp(40px,5vw,68px);font-weight:800;letter-spacing:-3px;color:#202747}.section-title span{color:#3549a8}.section-description{color:#707792}.formation-tools{grid-template-columns:1.5fr 1fr 1fr}.search-box,.select-box{border-radius:16px;border-color:#e0e5f2;background:#fff;box-shadow:0 5px 18px rgba(43,55,113,.035)}.search-box input,.select-box select{color:#202747}.select-box option{background:#fff;color:#202747}.formations{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.formation-card{min-height:390px;border:1px solid #e3e7f4;border-radius:22px;background:#fff;padding:26px;box-shadow:0 12px 35px rgba(43,55,113,.05)}.formation-card:before{background:radial-gradient(circle at 100% 0,rgba(53,73,168,.08),transparent 40%)}.formation-card:hover{transform:translateY(-6px);border-color:#c4ccef;box-shadow:0 22px 50px rgba(43,55,113,.12)}.formation-number{color:rgba(53,73,168,.12);font-size:50px}.formation-icon{background:#edf0ff;color:#3549a8;border-radius:18px;box-shadow:none}.formation-content h3{font-size:23px;line-height:1.2;color:#202747}.formation-content p{color:#707792}.formation-tag{border-radius:999px;background:#edf0ff;color:#3549a8}.numbers{background:#3549a8;border-radius:30px;margin:0 20px}.number strong{font-weight:850}.why-card,.internat-feature,.contact-card,.life-card,.discovery-card,.agenda-card,.doc-card{border-radius:20px;background:#fff;border:1px solid #e3e7f4;box-shadow:0 10px 30px rgba(43,55,113,.045)}.gallery{gap:14px}.gallery-item{border-radius:20px;overflow:hidden}.gallery-item img{transition:transform .5s}.gallery-item:hover img{transform:scale(1.04)}footer{background:#202747;border-radius:28px 28px 0 0;margin-top:50px}body.light-mode{color-scheme:light}
+@media(max-width:1000px){.hero:after{width:37vw;height:340px;opacity:.6}.formations{grid-template-columns:repeat(2,minmax(0,1fr))}.formation-tools{grid-template-columns:1fr}.nav-links{background:#fff}}
+@media(max-width:680px){nav,nav.scrolled{top:8px;width:calc(100% - 16px);height:64px}.hero{padding-top:130px}.hero:after{inset:auto 6vw 30px auto;width:65vw;height:210px;opacity:.38}.hero-content{padding-bottom:180px}.hero h1{font-size:clamp(52px,13vw,78px);letter-spacing:-3px}.hero-stats{gap:7px}.hero-stat{min-width:0;padding:9px}.formations{grid-template-columns:1fr}.numbers{margin:0 10px;border-radius:20px}}
+
+</style>
+<button class="back-top" id="back-top" type="button" aria-label="Retour en haut">↑</button>
+<script>
+(() => {
+  const key = 'decomble-theme';
+  const button = document.getElementById('themeToggle');
+  const meta = document.querySelector('meta[name="color-scheme"]');
+  let saved = null;
+  try { saved = localStorage.getItem(key); } catch (_) {}
+  const apply = mode => {
+    document.body.classList.toggle('light-mode', mode === 'light');
+    document.body.classList.toggle('dark-mode', mode !== 'light');
+    if (meta) meta.content = mode === 'light' ? 'light' : 'dark';
+    if (button) {
+      button.textContent = mode === 'light' ? '☾ Mode sombre' : '☀ Mode clair';
+      button.setAttribute('aria-label', mode === 'light' ? 'Activer le mode sombre' : 'Activer le mode clair');
+      button.setAttribute('aria-pressed', String(mode === 'light'));
+    }
+  };
+  apply(saved === 'light' ? 'light' : 'dark');
+  button?.addEventListener('click', () => {
+    const next = document.body.classList.contains('light-mode') ? 'dark' : 'light';
+    apply(next);
+    try { localStorage.setItem(key, next); } catch (_) {}
+  });
+  document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => document.getElementById('navLinks')?.classList.remove('active')));
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.info-modal.open').forEach(m => m.classList.remove('open'));
+      document.getElementById('ticTacToeModal')?.classList.remove('open');
+    }
+  });
+})();
+</script>
+
+<!-- ===== EASTER EGG : MORPION ===== -->
+<div id="ticTacToeModal" aria-hidden="true">
+    <div class="ttt-box" role="dialog" aria-modal="true" aria-labelledby="tttTitle">
+        <h2 id="tttTitle">Morpion</h2>
+        <p class="ttt-sub">Tu joues avec <strong>✕</strong> contre le robot <strong>○</strong>.</p>
+        <label class="ttt-difficulty-label" for="tttDifficulty">Difficulté</label>
+        <select id="tttDifficulty" class="ttt-difficulty">
+            <option value="easy">Facile — détente</option>
+            <option value="medium" selected>Moyen — malin</option>
+            <option value="hard">Difficile — imbattable</option>
+        </select>
+        <div id="tttStatus" class="ttt-status">À toi de jouer !</div>
+        <div id="tttBoard" class="ttt-board"></div>
+        <div class="ttt-actions">
+            <button id="tttRestart" type="button">Nouvelle partie</button>
+            <button id="tttClose" class="ttt-close" type="button">Fermer</button>
+        </div>
+    </div>
+</div>
+
+<script>
+(() => {
+    const logo = document.querySelector('.logo');
+    const modal = document.getElementById('ticTacToeModal');
+    const board = document.getElementById('tttBoard');
+    const status = document.getElementById('tttStatus');
+    const restart = document.getElementById('tttRestart');
+    const close = document.getElementById('tttClose');
+    const difficulty = document.getElementById('tttDifficulty');
+    if (!logo || !modal || !board) return;
+
+    let clickCount = 0, clickTimer = null, robotTimer = null;
+    let cells = Array(9).fill('');
+    let gameOver = false;
+    let robotThinking = false;
+    const human = 'X', robot = 'O';
+    const wins = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+
+    const winner = b => {
+        for (const [a,c,d] of wins) if (b[a] && b[a] === b[c] && b[a] === b[d]) return b[a];
+        return b.every(Boolean) ? 'draw' : null;
+    };
+    const setStatus = t => { if (status) status.textContent = t; };
+
+    const render = () => {
+        board.innerHTML = '';
+        cells.forEach((value, i) => {
+            const button = document.createElement('button');
+            button.className = 'ttt-cell';
+            button.type = 'button';
+            button.textContent = value;
+            // IMPORTANT : aucune case n'est cliquable pendant le tour du robot.
+            button.disabled = Boolean(value) || gameOver || robotThinking;
+            button.setAttribute('aria-disabled', String(button.disabled));
+            button.addEventListener('click', () => humanMove(i));
+            board.appendChild(button);
+        });
+    };
+
+    const endGame = result => {
+        robotThinking = false;
+        gameOver = true;
+        clearTimeout(robotTimer);
+        if (result === human) setStatus('🎉 Tu as gagné !');
+        else if (result === robot) setStatus('🤖 Le robot a gagné !');
+        else setStatus('Égalité !');
+        render();
+    };
+
+    const minimax = (b, maximizing) => {
+        const result = winner(b);
+        if (result === robot) return 10;
+        if (result === human) return -10;
+        if (result === 'draw') return 0;
+        const empty = b.map((v,i) => v ? null : i).filter(i => i !== null);
+        if (maximizing) {
+            let best = -Infinity;
+            for (const i of empty) { b[i] = robot; best = Math.max(best, minimax(b, false)); b[i] = ''; }
+            return best;
+        }
+        let best = Infinity;
+        for (const i of empty) { b[i] = human; best = Math.min(best, minimax(b, true)); b[i] = ''; }
+        return best;
+    };
+
+    const robotMove = () => {
+        if (gameOver || !robotThinking) return;
+        const empty = cells.map((v,i) => v ? null : i).filter(i => i !== null);
+        if (!empty.length) { endGame('draw'); return; }
+        const mode = difficulty?.value || 'medium';
+        let bestMove;
+
+        if (mode === 'easy') {
+            // Mode facile : le robot choisit au hasard, sans stratégie.
+            bestMove = empty[Math.floor(Math.random() * empty.length)];
+        } else if (mode === 'medium') {
+            // Mode moyen : gagne s'il peut, bloque le joueur, sinon joue au hasard.
+            const findImmediateMove = mark => {
+                for (const i of empty) {
+                    cells[i] = mark;
+                    const result = winner(cells);
+                    cells[i] = '';
+                    if (result === mark) return i;
+                }
+                return null;
+            };
+            bestMove = findImmediateMove(robot);
+            if (bestMove === null) bestMove = findImmediateMove(human);
+            if (bestMove === null) {
+                const preferred = empty.filter(i => [4,0,2,6,8].includes(i));
+                const pool = preferred.length ? preferred : empty;
+                bestMove = pool[Math.floor(Math.random() * pool.length)];
+            }
+        } else {
+            // Mode difficile : minimax, le robot joue de façon optimale.
+            let bestScore = -Infinity;
+            bestMove = empty[0];
+            for (const i of empty) {
+                cells[i] = robot;
+                const score = minimax(cells, false);
+                cells[i] = '';
+                if (score > bestScore) { bestScore = score; bestMove = i; }
+            }
+        }
+
+        cells[bestMove] = robot;
+        const result = winner(cells);
+        if (result) { endGame(result); return; }
+        robotThinking = false;
+        setStatus('À toi !');
+        render();
+    };
+
+    const humanMove = i => {
+        // Double sécurité : même un clic déjà en file d'attente ne peut jouer.
+        if (gameOver || robotThinking || cells[i]) return;
+        cells[i] = human;
+        const result = winner(cells);
+        if (result) { endGame(result); return; }
+        robotThinking = true;
+        setStatus('🤖 Le robot réfléchit…');
+        render();
+        clearTimeout(robotTimer);
+        robotTimer = setTimeout(robotMove, 450);
+    };
+
+    const newGame = () => {
+        clearTimeout(robotTimer);
+        robotTimer = null;
+        cells = Array(9).fill('');
+        gameOver = false;
+        robotThinking = false;
+        setStatus('À toi de jouer !');
+        render();
+    };
+    const openGame = () => { modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); newGame(); };
+    const closeGame = () => { clearTimeout(robotTimer); robotThinking = false; modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); };
+
+    // ===== MODE EASTER EGG =====
+    // Variable principale : un double-clic désactive les animations du site.
+    const DISABLE_ANIMATIONS_ON_DOUBLE_CLICK = true;
+    let easterEggAnimationsDisabled = false;
+
+    const disableAnimationsForEasterEggs = () => {
+        if (!DISABLE_ANIMATIONS_ON_DOUBLE_CLICK || easterEggAnimationsDisabled) return;
+        easterEggAnimationsDisabled = true;
+        document.querySelectorAll('.reveal, .reveal-on-scroll').forEach(el => {
+            el.classList.remove('animate', 'reveal-on-scroll');
+            el.classList.add('show', 'is-visible');
+            el.style.setProperty('opacity', '1', 'important');
+            el.style.setProperty('transform', 'none', 'important');
+            el.style.setProperty('transition', 'none', 'important');
+            el.style.setProperty('animation', 'none', 'important');
+        });
+        document.documentElement.classList.add('easter-egg-no-animations');
+    };
+
+    // 2 clics rapprochés : on coupe les animations pour faciliter les easter eggs.
+    document.addEventListener('dblclick', () => {
+        disableAnimationsForEasterEggs();
+    }, { passive: true });
+
+    // ===== EASTER EGGS =====
+    // Les clics doivent être rapides, mais on laisse 3 secondes entre deux clics.
+    const setupEasterEgg = (element, required, action) => {
+        if (!element) return;
+        let clicks = 0;
+        let timer = null;
+        element.addEventListener('click', e => {
+            clicks++;
+            clearTimeout(timer);
+            if (clicks >= required) {
+                e.preventDefault();
+                clicks = 0;
+                action(e);
+                return;
+            }
+            timer = setTimeout(() => { clicks = 0; }, 3000);
+        });
+    };
+
+    // ===== EASTER EGGS =====
+    const makeEgg = (selector, count, action) => {
+        const el = document.querySelector(selector);
+        if (!el) return;
+        let clicks = 0, timer = null;
+        el.style.cursor = 'pointer';
+        el.addEventListener('click', e => {
+            e.stopPropagation();
+            clicks++;
+            clearTimeout(timer);
+            if (clicks >= count) { clicks = 0; action(); return; }
+            timer = setTimeout(() => clicks = 0, 3000);
+        });
+    };
+
+    // 3 clics sur le titre de l'agenda -> morpion
+    makeEgg('#agenda .section-title', 3, openGame);
+
+    // 4 clics sur la première carte de l'agenda -> message secret
+    makeEgg('#agenda .agenda-card:first-of-type', 4, () => alert('evann le zgueg'));
+
+    // 5 clics sur la carte Projet -> blague qui vide la page (actualise pour revenir)
+    makeEgg('#agenda .agenda-grid .agenda-card:nth-child(2)', 5, () => {
+        document.documentElement.innerHTML = '';
+        document.title = 'Fermé 😈';
+        try { window.close(); } catch (err) {}
+    });
+
+    // Nouvel easter egg : 7 clics sur le petit nom en bas de page -> Rickroll
+    makeEgg('#footerBrand', 7, () => {
+        window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank', 'noopener,noreferrer');
+    });
+
+    // 6 clics sur la carte Événement -> rappel
+    makeEgg('#agenda .agenda-grid .agenda-card:nth-child(3)', 6, () => {
+        alert("Tape 3 fois sur le titre de l'agenda pour lancer le morpion !");
+    });
+
+    restart?.addEventListener('click', newGame);
+    close?.addEventListener('click', closeGame);
+    modal.addEventListener('click', e => { if (e.target === modal) closeGame(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('open')) closeGame(); });
+})();
+</script>
+
+<style>
+/* ===== PREMIUM REDESIGN / VERSION 3 : CAMPUS ÉDITORIAL ===== */
+:root{--bg:#f4f0e8;--panel:#fffdf8;--panel2:#e9e1d4;--brown:#9f4937;--accent:#c36b52;--cream:#24231f;--muted:#77736b;--line:rgba(36,35,31,.15);--radius:4px;--max:1320px;--coral:#d98a6c}
+body{background:#f4f0e8;color:#24231f;font-family:Inter,Arial,sans-serif;letter-spacing:-.015em}body:before{background:radial-gradient(ellipse at 90% 4%,rgba(217,138,108,.16),transparent 34%),linear-gradient(90deg,transparent 49.95%,rgba(36,35,31,.025) 50%,transparent 50.05%)}
+nav{top:18px;height:66px;border-radius:4px;background:rgba(250,247,240,.84);border-color:rgba(36,35,31,.14);backdrop-filter:blur(22px);box-shadow:0 12px 40px rgba(45,35,25,.06)}nav.scrolled{background:rgba(250,247,240,.97);box-shadow:0 12px 35px rgba(45,35,25,.1)}.logo-icon{border-radius:3px;background:#24231f;color:#fff;box-shadow:none}.logo-icon:after{content:'ED';font-family:Georgia,serif;font-size:12px}.logo span{color:var(--brown)}.nav-links a{border-radius:3px;text-transform:uppercase;letter-spacing:.065em;font-size:10px;color:#555149}.nav-links a:hover{background:rgba(159,73,55,.09);color:var(--brown)}.nav-button{background:#24231f!important;color:#fff!important}.theme-toggle{border-radius:3px;color:#24231f;border-color:rgba(36,35,31,.22)}
+.hero-premium{position:relative;isolation:isolate;min-height:850px;height:min(100svh,1000px);max-height:1040px;padding:160px max(6vw,32px) 150px;display:flex;align-items:center;overflow:hidden;background:#24231f;border-radius:0 0 4px 4px;color:#fffdf8}.hero-photo{position:absolute;inset:0;z-index:-3;overflow:hidden}.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 46%;filter:saturate(.8) contrast(1.02);transform:scale(1.02);animation:heroDrift 22s ease-in-out infinite alternate}.hero-shade{position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(24,23,20,.91) 0%,rgba(24,23,20,.72) 32%,rgba(24,23,20,.18) 72%,rgba(24,23,20,.05) 100%),linear-gradient(0deg,rgba(24,23,20,.82),transparent 34%,rgba(24,23,20,.05))}.hero-premium:after{content:'';position:absolute;inset:108px 28px 28px;border:1px solid rgba(255,253,248,.42);pointer-events:none;z-index:-1}.hero-grid{display:none}.hero-content{position:relative;z-index:2;width:min(760px,76%);margin:0;animation:heroEnter .9s cubic-bezier(.2,.8,.2,1) both}.hero-badge{display:inline-flex;align-items:center;gap:10px;padding:9px 0;margin-bottom:32px;background:none;border:0;border-radius:0;color:#f0b29a;font-size:10px;font-weight:800;letter-spacing:.19em}.status-dot{width:7px;height:7px;border-radius:50%;background:#f0b29a;box-shadow:0 0 0 5px rgba(240,178,154,.16)}.hero h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(58px,8.6vw,132px);line-height:.91;letter-spacing:-.075em;font-weight:500;max-width:900px;text-wrap:balance}.hero h1 em{font-style:italic;font-weight:400;color:#f0b29a;letter-spacing:-.075em}.hero-description{max-width:510px;color:rgba(255,253,248,.84);font-size:clamp(15px,1.35vw,19px);line-height:1.75;margin:30px 0 32px}.hero-actions{display:flex;align-items:center;gap:28px;flex-wrap:wrap}.btn{border-radius:3px;font-size:11px;letter-spacing:.07em;text-transform:uppercase;padding:16px 21px;transition:transform .25s,background .25s,border-color .25s}.btn-primary{background:#f0b29a;color:#24231f;box-shadow:none}.btn-primary:hover{background:#ffd0bd;transform:translateY(-3px)}.hero-text-link{font-size:11px;text-transform:uppercase;letter-spacing:.12em;border-bottom:1px solid rgba(255,253,248,.48);padding:12px 0;color:#fffdf8}.hero-text-link span{color:#f0b29a;margin-left:8px}.hero-index{position:absolute;top:126px;left:6vw;right:6vw;display:flex;justify-content:space-between;color:rgba(255,253,248,.76);font-size:9px;letter-spacing:.18em;font-weight:800}.hero-caption{position:absolute;bottom:140px;left:6vw;display:flex;align-items:center;gap:12px;color:rgba(255,253,248,.74);font-size:10px;letter-spacing:.1em;text-transform:uppercase}.caption-line{display:inline-block;width:42px;height:1px;background:#f0b29a}.caption-number{margin-left:24px;color:#f0b29a}.hero-side-note{position:absolute;right:4.5vw;top:43%;writing-mode:vertical-rl;transform:rotate(180deg);font-size:9px;letter-spacing:.22em;color:rgba(255,253,248,.76)}.premium-stats{position:absolute;right:6vw;bottom:0;width:min(610px,50%);display:grid;grid-template-columns:repeat(3,1fr);padding:22px 0 24px;border-top:1px solid rgba(255,253,248,.42);background:transparent;gap:0}.premium-stats .hero-stat{display:flex;align-items:center;gap:13px;padding:0 16px;border:0;border-right:1px solid rgba(255,253,248,.22);text-align:left}.premium-stats .hero-stat:first-child{padding-left:0}.premium-stats .hero-stat:last-child{border-right:0}.premium-stats strong{font-family:Georgia,serif;font-size:27px;color:#f0b29a;font-weight:500}.premium-stats span{font-size:9px;line-height:1.5;color:rgba(255,253,248,.75)}
+.section{padding:124px 0}.section-header{max-width:760px;margin-bottom:58px}.section-header.center{text-align:left;margin-left:max(5vw,20px);margin-right:auto}.eyebrow{font-size:10px;letter-spacing:.19em;text-transform:uppercase;color:var(--brown);font-weight:850}.section-title{font-family:Georgia,'Times New Roman',serif;font-size:clamp(40px,5.5vw,76px);line-height:.98;letter-spacing:-.065em;font-weight:500}.section-title span{color:var(--brown);font-style:italic;font-weight:400}.section-description{max-width:630px;color:#77736b;font-size:16px;line-height:1.8}.featured-intro{display:grid;grid-template-columns:1.15fr .85fr;align-items:end;gap:50px;padding:28px 0 42px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.featured-intro h3{font-family:Georgia,serif;font-size:clamp(24px,3vw,40px);line-height:1.12;letter-spacing:-.04em;font-weight:500}.featured-intro p{color:#77736b;max-width:400px}.formation-tools{background:#e9e1d4;border:1px solid rgba(36,35,31,.12);border-radius:4px;padding:14px;margin:26px 0 34px;gap:12px}.search-box,.select-box{border-radius:3px;background:#fffdf8;border:1px solid rgba(36,35,31,.15);color:#24231f}.formation-card{position:relative;border-radius:4px;background:#fffdf8;border:1px solid rgba(36,35,31,.12);overflow:hidden;transition:transform .35s,border-color .35s,box-shadow .35s}.formation-card:before{content:'';position:absolute;top:0;left:0;width:3px;height:0;background:var(--brown);transition:height .35s}.formation-card:hover{transform:translateY(-7px);border-color:rgba(159,73,55,.4);box-shadow:0 22px 60px rgba(68,47,35,.1)}.formation-card:hover:before{height:100%}.formation-number{font-family:Georgia,serif;color:rgba(159,73,55,.65)}.formation-icon{background:rgba(159,73,55,.08);color:var(--brown);border-radius:3px}.formation-tag{border-radius:2px;background:rgba(159,73,55,.07);border-color:rgba(159,73,55,.14);color:#8a3e30}.agenda-card,.why-card,.contact-card,.doc-card,.internat-feature{border-radius:4px;transition:transform .3s,border-color .3s,background .3s}.agenda-card:hover,.why-card:hover,.contact-card:hover{transform:translateY(-5px);border-color:rgba(159,73,55,.35)}.numbers{background:#24231f;color:#fffdf8}.numbers .number strong{color:#f0b29a}.reading-progress{position:fixed;top:0;left:0;right:0;height:2px;z-index:1200;background:transparent}.reading-progress span{display:block;width:0;height:100%;background:#d98a6c}
+body.light-mode{--bg:#f4f0e8;--panel:#fffdf8;--panel2:#e9e1d4;--cream:#24231f;--muted:#77736b;--line:rgba(36,35,31,.15);background:#f4f0e8;color:#24231f}body.light-mode:before{background:radial-gradient(ellipse at 90% 4%,rgba(217,138,108,.16),transparent 34%)}body.light-mode nav{background:rgba(250,247,240,.88);border-color:rgba(36,35,31,.14)}body.light-mode nav.scrolled{background:rgba(250,247,240,.97)}body.light-mode .nav-links a{color:#555149}body.light-mode .nav-links a:hover{color:#24231f;background:rgba(159,73,55,.09)}body.light-mode .theme-toggle{color:#24231f}body.light-mode .section-dark,body.light-mode .section-brown{background:#f4f0e8;color:#24231f}body.light-mode .section-description,body.light-mode .featured-intro p{color:#77736b}body.light-mode .formation-card,body.light-mode .agenda-card,body.light-mode .why-card,body.light-mode .contact-card,body.light-mode .doc-card{background:#fffdf8;color:#24231f;border-color:rgba(36,35,31,.12)}body.light-mode .formation-card p,body.light-mode .agenda-card p,body.light-mode .why-card p{color:#77736b}body.light-mode .formation-tag{color:#8a3e30}body.light-mode .formation-tools{background:#e9e1d4}body.light-mode .search-box,body.light-mode .select-box{background:#fffdf8;color:#24231f}body.light-mode .numbers{background:#24231f;color:#fffdf8}body.light-mode footer{background:#e9e1d4;color:#24231f}
+@keyframes heroEnter{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}@keyframes heroDrift{from{transform:scale(1.02) translateX(-.3%)}to{transform:scale(1.075) translateX(.3%)}}
+@media(max-width:1000px){.hero-premium{min-height:820px;padding-inline:5vw}.hero-content{width:min(760px,90%)}.hero-side-note{display:none}.premium-stats{right:5vw;width:65%}.hero-caption{left:5vw}.hero-index{left:5vw;right:5vw}.nav-links{gap:2px}.nav-links a{padding:9px 7px;font-size:9px}}
+@media(max-width:760px){nav{top:8px;width:calc(100% - 16px);height:58px;padding:0 10px}.logo{font-size:12px}.logo-icon{width:34px;height:34px}.theme-toggle{font-size:10px;padding:7px 8px}.menu-button{display:block}.nav-links{top:65px;border-radius:4px}.hero-premium{height:auto;min-height:880px;max-height:none;padding:150px 24px 210px;align-items:flex-start}.hero-premium:after{inset:82px 9px 10px}.hero-index{top:88px;left:24px;right:24px;font-size:8px}.hero-content{width:100%;margin-top:55px}.hero h1{font-size:clamp(54px,14vw,88px)}.hero-description{font-size:15px;max-width:440px}.hero-caption{bottom:168px;left:24px;right:24px;flex-wrap:wrap}.caption-number{margin-left:0}.premium-stats{left:24px;right:24px;width:auto;bottom:0;grid-template-columns:repeat(3,1fr);padding:18px 0}.premium-stats .hero-stat{padding:0 8px;gap:7px;align-items:flex-start;flex-direction:column}.premium-stats strong{font-size:21px}.premium-stats span{font-size:8px}.section{padding:80px 0}.section-header.center{margin-left:20px;margin-right:20px}.featured-intro{grid-template-columns:1fr;gap:15px}.formation-tools{display:grid}.reading-progress{height:3px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+
+
+</style>
+<script>
+(() => {
+  const api = async (url, options={}) => {
+    const headers = {'Content-Type':'application/json', ...(options.headers||{})};
+    const token = sessionStorage.getItem('lyceeToken');
+    if (token) headers.Authorization = 'Bearer ' + token;
+    const response = await fetch(url, {...options, headers});
+    const data = await response.json().catch(()=>({error:'Réponse invalide du serveur'}));
+    if (!response.ok) throw new Error(data.error || 'Une erreur est survenue.');
+    return data;
+  };
+  const escapeHtml = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  async function loadAgenda(){
+    const grid=document.getElementById('databaseAgendaGrid'); if(!grid) return;
+    try { const data=await api('/api/events');
+      if(!data.length){grid.innerHTML='<article class="agenda-card"><div class="agenda-date">Agenda</div><h3>Aucun événement publié</h3><p>Les prochains événements seront ajoutés ici.</p></article>';return;}
+      grid.innerHTML=data.map(e=>{const d=e.starts_at?new Date(e.starts_at).toLocaleString('fr-FR',{dateStyle:'medium',timeStyle:'short'}):'Date à confirmer';return `<article class="agenda-card reveal"><div class="agenda-date">${escapeHtml(d)}</div><h3>${escapeHtml(e.title)}</h3><p>${escapeHtml(e.description||'')}</p></article>`}).join('');
+    } catch(err){grid.innerHTML='<article class="agenda-card"><div class="agenda-date">Agenda</div><h3>Agenda temporairement indisponible</h3><p>Réessayez dans quelques instants.</p></article>';}
+  }
+  const msgForm=document.getElementById('databaseMessageForm');
+  if(msgForm) msgForm.addEventListener('submit',async ev=>{ev.preventDefault();const status=document.getElementById('databaseMessageStatus');status.textContent='Envoi…';const f=new FormData(msgForm);try{await api('/api/messages',{method:'POST',body:JSON.stringify({name:f.get('name'),email:f.get('email'),subject:f.get('subject'),body:f.get('body')})});msgForm.reset();status.textContent='Message enregistré. Merci !';}catch(e){status.textContent=e.message;}});
+  const accountForm=document.getElementById('databaseAccountForm');
+  const accountStatus=document.getElementById('databaseAccountStatus');
+  const logout=document.getElementById('databaseLogout');
+  const register=document.getElementById('databaseRegister');
+  let mode='login';
+  if(register) register.addEventListener('click',async()=>{if(!accountForm.reportValidity())return;const f=new FormData(accountForm);try{const d=await api('/api/auth/register',{method:'POST',body:JSON.stringify({email:f.get('email'),password:f.get('password')})});sessionStorage.setItem('lyceeToken',d.token);accountStatus.textContent='Compte créé et connecté.';logout.hidden=false;window.dispatchEvent(new Event('lycee-account-login'));}catch(e){accountStatus.textContent=e.message;}});
+  if(accountForm) accountForm.addEventListener('submit',async ev=>{ev.preventDefault();const f=new FormData(accountForm);try{const d=await api('/api/auth/login',{method:'POST',body:JSON.stringify({email:f.get('email'),password:f.get('password')})});sessionStorage.setItem('lyceeToken',d.token);accountStatus.textContent='Connecté avec '+d.user.email;logout.hidden=false;window.dispatchEvent(new Event('lycee-account-login'));}catch(e){accountStatus.textContent=e.message;}});
+  if(logout) logout.addEventListener('click',()=>{sessionStorage.removeItem('lyceeToken');logout.hidden=true;accountStatus.textContent='Vous êtes déconnecté.';});
+  loadAgenda();
+})();
+</script>
+</body></html>
