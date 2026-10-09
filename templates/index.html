@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Lycée Eugène Decomble | Chaumont</title><meta name="description" content="Découvrez le Lycée Eugène Decomble à Chaumont : formations, internat, vie scolaire et établissement."><style>
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="color-scheme" content="dark"><title>Lycée Eugène Decomble | Chaumont — Version 2 — Atelier contemporain</title><meta name="description" content="Découvrez le Lycée Eugène Decomble à Chaumont : formations, internat, vie scolaire et établissement."><style>
 :root{--bg:#090909;--panel:#121212;--panel2:#181818;--brown:#8f5d3e;--accent:#c89a78;--cream:#f5eee8;--muted:#a7a19c;--line:rgba(255,255,255,.09);--radius:24px;--max:1240px}
 *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:#fff;line-height:1.6;overflow-x:hidden}a{text-decoration:none;color:inherit}button,input,select{font:inherit}.container,.section>div{width:min(calc(100% - 40px),var(--max));margin-inline:auto}
 body:before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at 80% 10%,rgba(143,93,62,.12),transparent 30%),radial-gradient(circle at 10% 70%,rgba(200,154,120,.05),transparent 28%);z-index:-1}
@@ -298,7 +298,144 @@ footer{background:#080808;border-color:var(--line)}
 @media(max-width:700px){
   .nav-links{background:rgba(10,10,10,.96);border-color:var(--line)}
 }
-</style></head><body>
+
+/* Le filtrage JS contrôle l'affichage des formations. */
+.formation-card.filter-match{display:flex!important}
+
+/* ===== Favoris + Mon Bureau Numérique + Easter egg morpion ===== */
+.nav-favorite{position:relative}
+.nav-favorite::after{content:"♥";margin-left:5px;color:var(--accent)}
+.favorites-toolbar{max-width:1100px;margin:0 auto 18px;display:flex;justify-content:flex-end}
+.fav-empty{max-width:1100px;margin:auto;padding:28px;border:1px dashed rgba(200,154,120,.22);border-radius:18px;color:#77716c;text-align:center}
+.favorite-result-card{min-height:260px}
+.favorite-remove{margin-top:14px;padding:9px 12px;border:1px solid rgba(200,154,120,.18);border-radius:10px;background:rgba(200,154,120,.07);color:var(--accent);cursor:pointer;font-weight:800;font-size:11px}
+.favorite-remove:hover{background:rgba(200,154,120,.14)}
+.logo{cursor:pointer;user-select:none}
+#ticTacToeModal{position:fixed;inset:0;z-index:20000;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(0,0,0,.82);backdrop-filter:blur(12px)}
+#ticTacToeModal.open{display:flex}
+.ttt-box{width:min(94vw,430px);padding:26px;border:1px solid rgba(200,154,120,.25);border-radius:24px;background:linear-gradient(145deg,#1b1714,#0e0e0e);box-shadow:0 30px 100px rgba(0,0,0,.6);text-align:center}
+.ttt-box h2{font-family:Georgia,serif;font-size:32px;margin-bottom:5px}
+.ttt-sub{color:#8f8984;font-size:12px;margin-bottom:18px}
+.ttt-status{min-height:24px;color:var(--accent);font-weight:800;font-size:13px;margin-bottom:12px}
+.ttt-board{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:0 auto 18px;max-width:330px}
+.ttt-cell{aspect-ratio:1;border:1px solid rgba(255,255,255,.1);border-radius:14px;background:#151515;color:#fff;font-size:42px;font-weight:900;cursor:pointer;transition:.18s}
+.ttt-cell:hover:not(:disabled){transform:scale(1.03);border-color:rgba(200,154,120,.45);background:#1d1917}
+.ttt-cell:disabled{cursor:default}
+.ttt-actions{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
+.ttt-actions button{padding:10px 14px;border:1px solid var(--line);border-radius:11px;background:#191919;color:#eee;cursor:pointer;font-weight:800;font-size:12px}
+.ttt-actions .ttt-close{background:#71442e}
+@media(max-width:500px){.ttt-box{padding:20px}.ttt-cell{font-size:34px}}
+
+
+/* Corrections favoris */
+.favorites-toolbar{max-width:1250px;margin:0 auto 16px;text-align:right}.favorite-result-card{min-height:300px}.favorite-remove{margin-top:auto;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:rgba(200,154,120,.08);color:var(--accent);font-weight:800;cursor:pointer}.favorite-remove:hover{background:rgba(200,154,120,.16)}
+
+/* ===== Correctifs communs : thème, accessibilité et lisibilité ===== */
+html{scroll-padding-top:100px}
+button,a,input,select{ -webkit-tap-highlight-color:transparent }
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.theme-toggle{flex-shrink:0;border:1px solid var(--line);border-radius:12px;padding:9px 12px;background:rgba(255,255,255,.06);color:inherit;font-size:12px;font-weight:800;cursor:pointer;white-space:nowrap;margin-left:10px}
+.theme-toggle:hover{border-color:var(--accent)}
+body{transition:background-color .25s ease,color .25s ease}
+body.light-mode{--bg:#f7f4f0;--panel:#fff;--panel2:#f0e9e2;--cream:#30251f;--muted:#675b53;--line:rgba(60,40,25,.14);background:#f7f4f0;color:#29221e;color-scheme:light}
+body.light-mode:before{background:radial-gradient(circle at 80% 10%,rgba(143,93,62,.10),transparent 30%),radial-gradient(circle at 10% 70%,rgba(200,154,120,.08),transparent 28%)}
+body.light-mode nav,body.light-mode nav.scrolled{background:rgba(255,252,248,.94);border-color:rgba(60,40,25,.14);box-shadow:0 12px 35px rgba(60,40,25,.08)}
+body.light-mode .nav-links a{color:#594b42}body.light-mode .nav-links a:hover{color:#211a16;background:rgba(80,50,30,.07)}
+body.light-mode .menu-button{color:#30251f}body.light-mode .theme-toggle{background:#fff;color:#39291f;border-color:rgba(60,40,25,.18)}
+body.light-mode .hero-grid{background-image:linear-gradient(rgba(80,55,35,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(80,55,35,.055) 1px,transparent 1px)}
+body.light-mode .hero h1,body.light-mode .section-title,body.light-mode .why h2,body.light-mode .internat h2,body.light-mode .contact h2,body.light-mode .life-card h3,body.light-mode .discovery-card h3,body.light-mode .agenda-card h3,body.light-mode .formation-content h3,body.light-mode .why-card h3,body.light-mode .contact-card h3,body.light-mode .internat-feature h3{color:#30251f}
+body.light-mode .hero-description,body.light-mode .section-description,body.light-mode .why-left p,body.light-mode .internat-content p,body.light-mode .contact-intro p{color:#6c625b}
+body.light-mode .hero-stat strong{color:#30251f}body.light-mode .hero-stat span{color:#746b64}
+body.light-mode .section-dark{background:#f0ebe5}body.light-mode .section-brown{background:linear-gradient(180deg,#f0e7de,#faf7f3)}
+body.light-mode .formation-card,body.light-mode .why-card,body.light-mode .contact-card,body.light-mode .life-card,body.light-mode .discovery-card,body.light-mode .agenda-card{background:linear-gradient(145deg,#fff,#f8f3ed);border-color:rgba(60,40,25,.13);box-shadow:0 8px 24px rgba(60,40,25,.035)}
+body.light-mode .formation-card:hover,body.light-mode .life-card:hover,body.light-mode .discovery-card:hover,body.light-mode .agenda-card:hover{box-shadow:0 20px 45px rgba(60,40,25,.10)}
+body.light-mode .formation-content p,body.light-mode .life-card p,body.light-mode .discovery-card p,body.light-mode .agenda-card p,body.light-mode .why-card p,body.light-mode .contact-card p,body.light-mode .internat-feature p{color:#6e655e}
+body.light-mode .formation-tag,body.light-mode .modal-tags span{background:rgba(143,93,62,.08);border-color:rgba(143,93,62,.18);color:#764a31}
+body.light-mode .search-box,body.light-mode .select-box{background:#fff;border-color:rgba(60,40,25,.16)}body.light-mode .search-box input,body.light-mode .select-box select{color:#30251f}body.light-mode .search-box input::placeholder{color:#81766d}body.light-mode .select-box span{color:#756960}body.light-mode .select-box option{background:#fff;color:#30251f}
+body.light-mode .featured-intro{background:linear-gradient(135deg,rgba(200,154,120,.14),rgba(255,255,255,.8));border-color:rgba(143,93,62,.18)}body.light-mode .featured-intro h3{color:#30251f}body.light-mode .featured-intro p{color:#6c625b}
+body.light-mode .number{background:rgba(255,255,255,.75);border-color:rgba(60,40,25,.13)}body.light-mode .number strong{color:#30251f}body.light-mode .number span{color:#756960}
+body.light-mode .numbers{background:linear-gradient(180deg,#f3ece5,#f7f4f0)}body.light-mode .internat-visual{background:radial-gradient(circle at 50% 35%,rgba(200,154,120,.35),transparent 35%),linear-gradient(145deg,#d9b99e,#f0e4d8)}body.light-mode .internat-glass{background:rgba(255,255,255,.72);border-color:rgba(60,40,25,.12)}body.light-mode .internat-glass span{color:#6c625b}body.light-mode .internat-feature{background:#fff;border-color:rgba(60,40,25,.13)}
+body.light-mode .gallery-item{background:#eee3d8;border-color:rgba(60,40,25,.13)}body.light-mode .gallery-overlay{background:linear-gradient(transparent,rgba(20,14,10,.78))}
+body.light-mode footer{background:#eee8e1;border-color:rgba(60,40,25,.13)}body.light-mode .footer-logo{color:#30251f}body.light-mode .footer-text,body.light-mode .footer-bottom{color:#756960}
+body.light-mode #top{background:#fff;color:#30251f;border-color:rgba(60,40,25,.16)}body.light-mode .info-modal{background:rgba(35,25,18,.48)}body.light-mode .info-modal-box{background:#fffaf5;border-color:rgba(60,40,25,.16);color:#30251f}body.light-mode .info-modal h3{color:#30251f}body.light-mode .modal-description{color:#6c625b}body.light-mode .modal-list div{color:#6c625b;border-color:rgba(60,40,25,.12)}body.light-mode .modal-close{background:#f4ece4;color:#30251f;border-color:rgba(60,40,25,.13)}
+body.light-mode #ticTacToeModal{background:rgba(35,25,18,.55)}body.light-mode .ttt-box{background:#fffaf5;color:#30251f;border-color:rgba(143,93,62,.25)}body.light-mode .ttt-sub{color:#6c625b}body.light-mode .ttt-cell{background:#f6eee6;color:#30251f;border-color:rgba(60,40,25,.15)}body.light-mode .ttt-actions button{background:#f4ece4;color:#30251f}
+body.light-mode .life-points span,body.light-mode .discovery-points span{background:rgba(80,50,30,.045);border-color:rgba(60,40,25,.12);color:#62564d}
+body.light-mode .btn-outline{background:rgba(255,255,255,.65);color:#30251f;border-color:rgba(60,40,25,.16)}body.light-mode .feature-btn{background:#fff;color:#49382d;border-color:rgba(60,40,25,.15)}body.light-mode .feature-btn.favorite.active{background:#f0e1d4;color:#75482e}
+@media(max-width:950px){.theme-toggle{margin-left:auto;margin-right:8px}}
+@media(max-width:700px){.theme-toggle{padding:8px 9px;font-size:11px}.nav-links{background:rgba(255,252,248,.97)}body:not(.light-mode) .nav-links{background:rgba(10,10,10,.97)}.nav-links.active{z-index:2}}
+@media(prefers-reduced-motion:reduce){body{transition:none!important}}
+
+
+/* VERSION 2 — direction moderne, plus technique et structurée */
+:root{--brown:#246b67;--accent:#70c7b5;--radius:18px}
+body:before{background:radial-gradient(circle at 85% 8%,rgba(55,160,145,.16),transparent 32%),radial-gradient(circle at 5% 75%,rgba(65,115,170,.09),transparent 30%)}
+.logo-icon,.formation-icon,.life-icon,.discovery-icon{background:linear-gradient(145deg,#2b8b80,#174a48);box-shadow:0 8px 25px rgba(30,110,100,.18)}
+.btn-primary{background:linear-gradient(135deg,#25877c,#17665f);box-shadow:0 12px 30px rgba(30,110,100,.20)}
+.hero h1,.section-title,.why h2,.internat h2,.contact h2{font-family:ui-sans-serif,system-ui,sans-serif;letter-spacing:-2.5px}
+.formation-card,.why-card,.contact-card,.life-card,.discovery-card,.agenda-card{border-radius:17px}
+.formation-tag{border-radius:8px}
+body.light-mode{--brown:#17665f;--accent:#197a70}
+body.light-mode .formation-icon,body.light-mode .logo-icon,body.light-mode .life-icon,body.light-mode .discovery-icon{background:linear-gradient(145deg,#4ca99c,#287d75)}
+body.light-mode .btn-primary{background:linear-gradient(135deg,#25877c,#17665f)}
+
+
+
+/* Réglage de difficulté du morpion */
+.ttt-difficulty-label{display:block;margin:0 0 6px;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted,#aaa)}
+.ttt-difficulty{display:block;width:100%;margin:0 auto 14px;padding:10px 12px;border:1px solid var(--line,rgba(255,255,255,.16));border-radius:8px;background:var(--panel,#18201e);color:inherit;font:inherit;font-size:13px;outline-offset:3px}
+body.light-mode .ttt-difficulty{background:#e8e3da;color:#292b28;border-color:#d0c8bc}
+</style>
+<style id="comfort-and-school-photo-refinement">
+
+/* ===== Color and comfort refinement: version 2 ===== */
+:root{--bg:#121b1c;--panel:#1a2829;--panel2:#223334;--brown:#6f8175;--accent:#b8b99a;--cream:#ece8df;--muted:#aeb7b0;--line:rgba(220,224,210,.13);--radius:18px;--max:1280px}
+body{background:var(--bg);color:var(--cream)}
+body:before{opacity:.24;background-image:linear-gradient(rgba(184,185,154,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(184,185,154,.035) 1px,transparent 1px)}
+nav,nav.scrolled{background:rgba(18,27,28,.94);border-color:var(--line)}
+.logo-icon{background:#b8b99a;color:#182222;box-shadow:none}
+.logo span,.nav-links a:hover,.eyebrow,.hero h1 span,.section-title span{color:var(--accent)}
+.nav-links a:hover{background:rgba(184,185,154,.09)}
+.nav-button,.btn-primary{background:#b8b99a!important;color:#182222!important;box-shadow:0 8px 22px rgba(0,0,0,.13)}
+.btn-primary:hover,.nav-button:hover{background:#d0d0b6!important}
+.hero{background:var(--bg)}
+.hero:after{content:none!important;display:none!important}
+.hero-photo img{object-position:center 42%;filter:saturate(.68) brightness(.68) contrast(1.05)}
+.hero-shade{background:linear-gradient(90deg,rgba(12,20,21,.90) 0%,rgba(12,20,21,.67) 42%,rgba(12,20,21,.20) 100%),linear-gradient(0deg,rgba(12,20,21,.78),transparent 48%,rgba(12,20,21,.18))}
+.hero-premium:after{border-color:rgba(236,232,223,.25)}
+.hero-badge,.status-dot,.caption-line{color:#d1c6a5}
+.status-dot{background:#b8b99a;box-shadow:0 0 0 5px rgba(184,185,154,.13)}
+.btn-outline,.hero-text-link{background:rgba(18,27,28,.34);border-color:rgba(236,232,223,.24);color:var(--cream)}
+.hero-text-link span,.caption-number,.premium-stats strong{color:#c8b89a}
+.premium-stats{border-color:rgba(236,232,223,.25)}
+.premium-stats .hero-stat{border-color:rgba(236,232,223,.14)}
+.section-dark{background:#172324}.section-brown{background:#121b1c}
+.section-description,.formation-content p,.why-card p,.contact-card p,.internat-feature p,.life-card p,.discovery-card p,.agenda-card p{color:#b4bcb5}
+.search-box,.select-box{background:#1a2829;border-color:#3a4b48}
+.search-box input,.select-box select{color:var(--cream)}
+.select-box option{background:#1a2829;color:var(--cream)}
+.formation-card,.why-card,.internat-feature,.contact-card,.life-card,.discovery-card,.agenda-card,.doc-card{background:#1a2829;border-color:#354744;box-shadow:0 10px 28px rgba(0,0,0,.08)}
+.formation-card:hover{border-color:#b8b99a;box-shadow:0 14px 35px rgba(0,0,0,.16)}
+.formation-number{color:rgba(184,185,154,.48)}
+.formation-icon{background:#263735;border-color:#40534c}
+.formation-tag{background:#2a3936;color:#d1d2b5}
+.numbers{background:#b8b99a;color:#182222}.number{border-color:rgba(24,34,34,.18)}
+.gallery-item img{filter:saturate(.76) brightness(.86) contrast(1.04)}
+footer{background:#0e1617;border-color:#2a3a39}
+/* Light mode stays soft and warm rather than pure white. */
+body.light-mode{background:#d9ded7;color:#24302d;color-scheme:light}
+body.light-mode:before{opacity:.12}
+body.light-mode nav,body.light-mode nav.scrolled{background:rgba(217,222,215,.96)}
+body.light-mode .section-dark{background:#cfd6cf}body.light-mode .section-brown{background:#d9ded7}
+body.light-mode .hero{background:#6c7770}body.light-mode .hero-photo img{filter:saturate(.65) brightness(.55)}
+body.light-mode .formation-card,body.light-mode .why-card,body.light-mode .internat-feature,body.light-mode .contact-card,body.light-mode .life-card,body.light-mode .discovery-card,body.light-mode .agenda-card,body.light-mode .doc-card{background:#e1e4dc;border-color:#bdc8bd}
+body.light-mode .formation-content h3,body.light-mode .section-title,body.light-mode .hero-stat strong,body.light-mode .why-card h3,body.light-mode .contact-card h3{color:#24302d}
+body.light-mode .formation-content p,body.light-mode .section-description,body.light-mode .why-left p,body.light-mode .internat-content p,body.light-mode .contact-intro p{color:#59655e}
+body.light-mode .search-box,body.light-mode .select-box{background:#e1e4dc;border-color:#bdc8bd}
+body.light-mode .search-box input,body.light-mode .select-box select{color:#24302d}
+body.light-mode footer{background:#c5cdc5;color:#24302d}
+
+</style>
+</head><body>
 
 
 <!-- =========================================================
@@ -336,6 +473,14 @@ footer{background:#080808;border-color:var(--line)}
         <li><a href="#decouvrir">Découvrir</a></li>
         <li><a href="#agenda">Agenda</a></li>
 
+        <li><a href="#favoris" class="nav-favorite">Favoris</a></li>
+
+        <li>
+            <a href="https://monbureaunumerique.fr/" target="_blank" rel="noopener noreferrer">
+                Mon Bureau Numérique ↗
+            </a>
+        </li>
+
         <li>
             <a href="#galerie">Photos</a>
         </li>
@@ -349,6 +494,8 @@ footer{background:#080808;border-color:var(--line)}
     </ul>
 
 
+    <button id="themeToggle" class="theme-toggle" type="button" aria-label="Activer le mode clair">☀ Mode clair</button>
+
     <button
         class="menu-button"
         onclick="toggleMenu()"
@@ -358,104 +505,33 @@ footer{background:#080808;border-color:var(--line)}
     </button>
 
 </nav>
+<div class="reading-progress" aria-hidden="true"><span id="readingProgressBar"></span></div>
 
 
 <!-- =========================================================
      HERO
 ========================================================= -->
 
-<section class="hero" id="accueil">
-
-    <div class="hero-grid"></div>
-
-
+<section class="hero hero-premium v2-hero" id="accueil">
+    <div class="hero-photo" aria-hidden="true"><img src="https://3.bp.blogspot.com/-JaMNypNi3vo/V580AZS8_3I/AAAAAAAAu3g/aXdcCH89w1wT1Hj5_bcxVcWjWX6ENHf5ACLcB/s1600/DSC05825.JPG" alt="" fetchpriority="high"></div>
+    <div class="hero-shade" aria-hidden="true"></div>
+    <div class="hero-index"><span>LYCÉE PROFESSIONNEL</span><span>CHAUMONT · HAUTE-MARNE</span></div>
     <div class="hero-content">
-
-        <div class="hero-badge">
-
-             LYCÉE PROFESSIONNEL • CHAUMONT
-
-        </div>
-
-
-        <h1>
-
-            Construisons<br>
-
-            <span>ton avenir.</span>
-
-        </h1>
-
-
-        <p class="hero-description">
-
-            Bienvenue au Lycée Eugène Decomble.
-            Un établissement tourné vers les métiers
-            techniques, les nouvelles technologies,
-            la pratique professionnelle et la réussite
-            de ses élèves.
-
-        </p>
-
-
+        <div class="hero-badge"><span class="status-dot"></span> APPRENDRE · PRATIQUER · CONSTRUIRE</div>
+        <h1>Le savoir-faire<br><em>prend forme.</em></h1>
+        <p class="hero-description">Au lycée Eugène Decomble, les idées deviennent des compétences. Découvre des formations concrètes, des métiers d’avenir et un établissement où l’on apprend en faisant.</p>
         <div class="hero-actions">
-
-            <a
-                href="#formations"
-                class="btn btn-primary"
-            >
-                 Découvrir les formations →
-            </a>
-
-
-            <a
-                href="#contact"
-                class="btn btn-outline"
-            >
-                 Nous trouver
-            </a>
-
+            <a href="#formations" class="btn btn-primary">Explorer les formations <span aria-hidden="true">↗</span></a>
+            <a href="#decouvrir" class="hero-text-link">Découvrir le lycée <span aria-hidden="true">↓</span></a>
         </div>
-
-
-        <div class="hero-stats">
-
-            <div class="hero-stat">
-
-                <strong>20</strong>
-
-                <span>
-                    formations et dispositifs
-                </span>
-
-            </div>
-
-
-            <div class="hero-stat">
-
-                <strong>Pro</strong>
-
-                <span>
-                    établissement professionnel
-                </span>
-
-            </div>
-
-
-            <div class="hero-stat">
-
-                <strong>52</strong>
-
-                <span>
-                    à Chaumont
-                </span>
-
-            </div>
-
-        </div>
-
     </div>
-
+    <div class="hero-caption"><span class="caption-line"></span><span>Un lieu pour apprendre autrement.</span><span class="caption-number">52°N / CHAUMONT</span></div>
+    <div class="hero-side-note">TON PROCHAIN CHAPITRE COMMENCE ICI</div>
+    <div class="hero-stats premium-stats">
+        <div class="hero-stat"><strong>20</strong><span>formations<br>et dispositifs</span></div>
+        <div class="hero-stat"><strong>01</strong><span>objectif : trouver<br>ta voie</span></div>
+        <div class="hero-stat"><strong>100%</strong><span>place à la pratique<br>et aux projets</span></div>
+    </div>
 </section>
 
 
@@ -1502,8 +1578,17 @@ footer{background:#080808;border-color:var(--line)}
 </section>
 
 <section class="section section-dark" id="favoris">
-    <div class="section-header center reveal"><div class="eyebrow">Votre sélection</div><h2 class="section-title">Mes <span>favoris.</span></h2><p class="section-description">Les formations que vous avez enregistrées sont conservées dans votre navigateur.</p></div>
-    <div id="favoritesList" class="formations"><p class="fav-empty">Aucune formation favorite pour le moment.</p></div>
+    <div class="section-header center reveal">
+        <div class="eyebrow">Votre sélection</div>
+        <h2 class="section-title">Mes <span>favoris.</span></h2>
+        <p class="section-description">Ajoutez une formation avec « Ajouter aux favoris ». Votre sélection est conservée dans ce navigateur.</p>
+    </div>
+    <div class="favorites-toolbar">
+        <button id="clearFavorites" class="reset-filter" type="button">Tout supprimer ×</button>
+    </div>
+    <div id="favoritesList" class="formations">
+        <p class="fav-empty">Aucune formation favorite pour le moment.</p>
+    </div>
 </section>
 
 <section class="section section-dark" id="candidater">
@@ -1760,7 +1845,7 @@ footer{background:#080808;border-color:var(--line)}
 
         <div>
 
-            <div class="footer-logo">
+            <div class="footer-logo" id="footerBrand" title="Psst… il y a peut-être un secret ici">
 
                  Lycée
                 <span>Eugène Decomble</span>
@@ -1820,6 +1905,16 @@ footer{background:#080808;border-color:var(--line)}
 <script>
 (() => {
     "use strict";
+    // Progression discrète en haut de page
+    const progressBar = document.getElementById("readingProgressBar");
+    const updateReadingProgress = () => {
+        if (!progressBar) return;
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        progressBar.style.width = (maxScroll > 0 ? (window.scrollY / maxScroll) * 100 : 0) + "%";
+    };
+    window.addEventListener("scroll", updateReadingProgress, { passive: true });
+    updateReadingProgress();
+
 
     const navbar = document.getElementById("navbar");
     const navLinks = document.getElementById("navLinks");
@@ -1914,46 +2009,18 @@ footer{background:#080808;border-color:var(--line)}
         if (image?.src) window.open(image.src, "_blank", "noopener,noreferrer");
     };
 
-    // Filtres des formations + affichage progressif
+    // ===== FORMATIONS : recherche, filtres, reset et bouton "voir plus" =====
+    const normalize = (value = "") => String(value)
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/[’'`]/g, "")
+        .replace(/[-_/]/g, " ")
+        .replace(/[^\p{L}\p{N}\s]/gu, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+
     const cards = [...document.querySelectorAll(".formation-card")];
-
-    // Favoris + candidature sur chaque formation
-    const favoriteKey = "decomble_favorites";
-    const getFavorites = () => JSON.parse(localStorage.getItem(favoriteKey) || "[]");
-    const setFavorites = (items) => localStorage.setItem(favoriteKey, JSON.stringify(items));
-    const slug = (text) => normalize(text).replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
-    cards.forEach((card) => {
-        const title = card.querySelector("h3")?.textContent.trim() || "Formation";
-        const actions = document.createElement("div");
-        actions.className = "feature-actions";
-        const fav = document.createElement("button");
-        fav.className = "feature-btn favorite";
-        fav.type = "button";
-        fav.dataset.id = slug(title);
-        fav.innerHTML = " Ajouter aux favoris";
-        const apply = document.createElement("button");
-        apply.className = "feature-btn";
-        apply.type = "button";
-        apply.textContent = " Candidater / s\'inscrire";
-        apply.addEventListener("click", () => document.getElementById("candidater")?.scrollIntoView({behavior:"smooth"}));
-        const details = document.createElement("button"); details.className="feature-btn"; details.type="button"; details.textContent=" Voir la fiche"; details.addEventListener("click",()=>openFormationModal(card)); actions.append(fav, details, apply);
-        card.querySelector(".formation-content")?.appendChild(actions);
-        fav.addEventListener("click", () => {
-            const list = getFavorites();
-            const id = fav.dataset.id;
-            const next = list.includes(id) ? list.filter(x=>x!==id) : [...list,id];
-            setFavorites(next); updateFavoritesUI();
-        });
-    });
-    const updateFavoritesUI = () => {
-        const ids = getFavorites();
-        cards.forEach(card => { const id=slug(card.querySelector("h3")?.textContent||""); const b=card.querySelector(".favorite"); if(!b)return; const active=ids.includes(id); b.classList.toggle("active",active); b.innerHTML=active?" Retirer des favoris":" Ajouter aux favoris"; });
-        const box=document.getElementById("favoritesList"); if(!box)return;
-        const selected=cards.filter(card=>ids.includes(slug(card.querySelector("h3")?.textContent||"")));
-        box.innerHTML=selected.length ? selected.map(card=>card.outerHTML).join("") : '<p class="fav-empty">Aucune formation favorite pour le moment.</p>';
-    };
-    updateFavoritesUI();
-
     const formationsGrid = document.querySelector(".formations");
     const levelFilter = document.getElementById("levelFilter");
     const domainFilter = document.getElementById("domainFilter");
@@ -1966,84 +2033,292 @@ footer{background:#080808;border-color:var(--line)}
 
     let expanded = false;
 
-    const normalize = (value = "") =>
-        value.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    // Alias permettant de rechercher aussi les sigles.
+    const aliases = {
+        ciel: ["ciel", "cyber", "cybersecurite", "informatique", "reseaux", "electronique"],
+        melec: ["melec", "electricite", "metiers de lelectricite", "environnements connectes"],
+        ms: ["ms", "maintenance des systemes", "systemes de production"],
+        mspc: ["mspc", "maintenance des systemes de production connectes"],
+        trpm: ["trpm", "technicien en realisation de produits mecaniques", "produits mecaniques"],
+        cp: ["cp", "carrossier peintre", "carrossier peintre automobile"],
+        tp: ["tp", "travaux publics"],
+        btp: ["btp", "batiment", "construction", "travaux publics"],
+        mv: ["mv", "maintenance des vehicules", "vehicules"],
+        auto: ["auto", "automobile", "vehicules"],
+        bts: ["bts"],
+        cap: ["cap"],
+        ulis: ["ulis"],
+        "3e": ["3e", "troisieme", "prepa metiers"],
+        "3eme": ["3e", "troisieme", "prepa metiers"],
+        "2de": ["2de", "seconde"],
+        "2nde": ["2de", "seconde"]
+    };
 
     const domains = {
-        tp: ["travaux publics", "chantier", "engins", "construction", "infrastructures", "batiment"],
-        auto: ["automobile", "vehicules", "materiels", "mecanique", "maintenance", "carrosserie"],
-        electricite: ["electricite", "electrique", "electriques", "energie", "domotique"],
-        industrie: ["industrie", "mecanique", "usinage", "productique", "production", "fabrication", "maintenance", "automatisme"],
-        numerique: ["numerique", "informatique", "digital", "cyber", "reseau", "electronique"]
+        tp: ["travaux publics", "chantier", "engins", "construction", "infrastructures", "batiment", "btp", "tp"],
+        auto: ["automobile", "vehicules", "vehicules legers", "materiels", "mecanique", "maintenance", "carrosserie", "mv", "auto"],
+        electricite: ["electricite", "electrique", "electriques", "energie", "domotique", "melec"],
+        industrie: ["industrie", "mecanique", "usinage", "productique", "production", "fabrication", "maintenance", "automatisme", "ms", "mspc", "trpm"],
+        numerique: ["numerique", "informatique", "digital", "cyber", "cybersecurite", "reseau", "reseaux", "electronique", "ciel"]
+    };
+
+    const getSearchText = (card) => normalize([
+        card.querySelector("h3")?.textContent || "",
+        card.querySelector("p")?.textContent || "",
+        card.querySelector(".eyebrow")?.textContent || "",
+        card.querySelector(".formation-meta")?.textContent || "",
+        card.querySelector(".formation-link")?.textContent || "",
+        card.dataset.category || ""
+    ].join(" "));
+
+    const queryMatches = (card, rawQuery) => {
+        const query = normalize(rawQuery);
+        if (!query) return true;
+
+        const text = getSearchText(card);
+
+        // Recherche exacte.
+        if (text.includes(query)) return true;
+
+        // Recherche par mots + alias.
+        const words = query.split(" ").filter(Boolean);
+        return words.every(word => {
+            if (text.includes(word)) return true;
+            const aliasWords = aliases[word] || [word];
+            return aliasWords.some(alias => text.includes(normalize(alias)));
+        });
     };
 
     const matchesDomain = (card, domain) => {
-        if (domain === "all") return true;
-        const text = normalize(card.innerText);
-        return domains[domain]?.some(keyword => text.includes(normalize(keyword))) ?? false;
+        if (!domain || domain === "all") return true;
+        const text = getSearchText(card);
+        return (domains[domain] || []).some(keyword => text.includes(normalize(keyword)));
     };
 
-    const hasActiveFilter = () =>
-        (levelFilter?.value ?? "all") !== "all" ||
-        (domainFilter?.value ?? "all") !== "all" ||
-        Boolean(searchInput?.value.trim());
+    const matchesLevel = (card, selectedLevel) => {
+        if (!selectedLevel || selectedLevel === "all") return true;
+
+        const category = normalize(card.dataset.category || "");
+        const text = getSearchText(card);
+
+        // Les valeurs du menu correspondent normalement directement aux data-category.
+        if (category === normalize(selectedLevel)) return true;
+
+        // Sécurité pour les niveaux écrits différemment dans une fiche.
+        const levelAliases = {
+            seconde: ["seconde", "2de", "2nde"],
+            bac: ["bac", "bac pro", "baccalaureat"],
+            cap: ["cap"],
+            bts: ["bts"],
+            dispositif: ["dispositif", "ulis"]
+        };
+
+        return (levelAliases[selectedLevel] || [selectedLevel])
+            .some(value => text.includes(normalize(value)));
+    };
 
     const updateMoreButton = () => {
-        if (!moreButton || !moreActions) return;
-        moreActions.classList.toggle("expanded", expanded);
+        if (!moreButton) return;
+
         moreButton.setAttribute("aria-expanded", String(expanded));
         moreButton.innerHTML = expanded
             ? 'Réduire les formations <span>↑</span>'
             : 'Découvrir plus de formations <span>↓</span>';
+
+        moreActions?.classList.toggle("expanded", expanded);
     };
 
     const filterFormations = () => {
-        const selectedLevel = levelFilter?.value ?? "all";
-        const selectedDomain = domainFilter?.value ?? "all";
-        const query = normalize(searchInput?.value.trim() ?? "");
-        const forceAll = hasActiveFilter();
+        const selectedLevel = levelFilter?.value || "all";
+        const selectedDomain = domainFilter?.value || "all";
+        const query = searchInput?.value || "";
+
+        const hasFilter =
+            selectedLevel !== "all" ||
+            selectedDomain !== "all" ||
+            Boolean(normalize(query));
+
+        // Dès qu'un filtre est utilisé, on ouvre automatiquement toutes les formations
+        // pour que les résultats puissent réellement être affichés.
+        const showAll = expanded || hasFilter;
+
+        if (formationsGrid) {
+            formationsGrid.classList.toggle("expanded", showAll);
+        }
+
         let visible = 0;
 
         cards.forEach(card => {
-            const levelOK = selectedLevel === "all" || card.dataset.category === selectedLevel;
+            const levelOK = matchesLevel(card, selectedLevel);
             const domainOK = matchesDomain(card, selectedDomain);
-            const searchOK = !query || normalize(card.innerText).includes(query);
+            const searchOK = queryMatches(card, query);
             const matches = levelOK && domainOK && searchOK;
-            const isFeatured = card.classList.contains("featured");
-            const shouldShow = matches && (expanded || forceAll || isFeatured);
+            const featured = card.classList.contains("featured");
+            const shouldShow = matches && (showAll || featured);
 
+            // Inline style = priorité sur les anciennes règles CSS.
+            card.style.display = shouldShow ? "" : "none";
             card.classList.toggle("hidden", !shouldShow);
+            card.classList.toggle("filter-match", shouldShow);
+
             if (shouldShow) visible++;
         });
 
-        if (formationsGrid) formationsGrid.classList.toggle("expanded", expanded || forceAll);
-        if (countNumber) countNumber.textContent = visible;
-        if (countLabel) countLabel.textContent = visible === 1 ? "formation affichée" : "formations affichées";
+        if (countNumber) countNumber.textContent = String(visible);
+        if (countLabel) {
+            countLabel.textContent = visible === 1
+                ? "formation affichée"
+                : "formations affichées";
+        }
     };
 
+    // Favoris + candidature sur chaque formation
+    const favoriteKey = "decomble_favorites";
+    const getFavorites = () => JSON.parse(localStorage.getItem(favoriteKey) || "[]");
+    const setFavorites = (items) => localStorage.setItem(favoriteKey, JSON.stringify(items));
+    const slug = (text) => normalize(text).replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+
+    cards.forEach((card) => {
+        const title = card.querySelector("h3")?.textContent.trim() || "Formation";
+        const actions = document.createElement("div");
+        actions.className = "feature-actions";
+
+        const fav = document.createElement("button");
+        fav.className = "feature-btn favorite";
+        fav.type = "button";
+        fav.dataset.id = slug(title);
+        fav.innerHTML = " Ajouter aux favoris";
+
+        const apply = document.createElement("button");
+        apply.className = "feature-btn";
+        apply.type = "button";
+        apply.textContent = " Candidater / s'inscrire";
+        apply.addEventListener("click", () =>
+            document.getElementById("candidater")?.scrollIntoView({behavior:"smooth"})
+        );
+
+        const details = document.createElement("button");
+        details.className = "feature-btn";
+        details.type = "button";
+        details.textContent = " Voir la fiche";
+        details.addEventListener("click", () => openFormationModal(card));
+
+        actions.append(fav, details, apply);
+        card.querySelector(".formation-content")?.appendChild(actions);
+
+        fav.addEventListener("click", () => {
+            const list = getFavorites();
+            const id = fav.dataset.id;
+            const next = list.includes(id)
+                ? list.filter(x => x !== id)
+                : [...list, id];
+
+            setFavorites(next);
+            updateFavoritesUI();
+        });
+    });
+
+    const updateFavoritesUI = () => {
+        const ids = getFavorites();
+
+        cards.forEach(card => {
+            const id = slug(card.querySelector("h3")?.textContent || "");
+            const b = card.querySelector(".favorite");
+            if (!b) return;
+
+            const active = ids.includes(id);
+            b.classList.toggle("active", active);
+            b.innerHTML = active
+                ? " Retirer des favoris"
+                : " Ajouter aux favoris";
+        });
+
+        const box = document.getElementById("favoritesList");
+        if (!box) return;
+
+        const selected = cards.filter(card =>
+            ids.includes(slug(card.querySelector("h3")?.textContent || ""))
+        );
+
+        if (!selected.length) {
+            box.innerHTML = '<p class="fav-empty">Aucune formation favorite pour le moment.</p>';
+            return;
+        }
+
+        // On reconstruit la liste avec de vrais boutons reliés aux favoris.
+        box.innerHTML = selected.map(card => {
+            const title = card.querySelector("h3")?.textContent.trim() || "Formation";
+            const desc = card.querySelector("p")?.textContent.trim() || "";
+            const category = card.querySelector(".eyebrow")?.textContent.trim() || "";
+            const id = slug(title);
+
+            return `
+                <article class="formation-card favorite-result-card">
+                    <div class="formation-number">♥</div>
+                    <div class="formation-icon">★</div>
+                    <div class="formation-content">
+                        <div class="eyebrow">${category}</div>
+                        <h3>${title}</h3>
+                        <p>${desc}</p>
+                        <button class="favorite-remove" type="button" data-remove-favorite="${id}">
+                            Retirer des favoris ×
+                        </button>
+                    </div>
+                </article>`;
+        }).join("");
+
+        box.querySelectorAll("[data-remove-favorite]").forEach(button => {
+            button.addEventListener("click", () => {
+                const id = button.dataset.removeFavorite;
+                setFavorites(getFavorites().filter(x => x !== id));
+                updateFavoritesUI();
+            });
+        });
+    };
+
+    // Événements
     moreButton?.addEventListener("click", () => {
         expanded = !expanded;
         filterFormations();
         updateMoreButton();
-        if (expanded) moreButton.scrollIntoView({ behavior: "smooth", block: "center" });
+
+        if (expanded) {
+            formationsGrid?.scrollIntoView({behavior:"smooth", block:"start"});
+        }
     });
 
-    levelFilter?.addEventListener("change", filterFormations);
-    domainFilter?.addEventListener("change", filterFormations);
-    searchInput?.addEventListener("input", filterFormations);
+    levelFilter?.addEventListener("change", () => {
+        filterFormations();
+    });
+
+    domainFilter?.addEventListener("change", () => {
+        filterFormations();
+    });
+
+    searchInput?.addEventListener("input", () => {
+        filterFormations();
+    });
 
     resetButton?.addEventListener("click", () => {
         if (levelFilter) levelFilter.value = "all";
         if (domainFilter) domainFilter.value = "all";
         if (searchInput) searchInput.value = "";
+
         expanded = false;
         updateMoreButton();
         filterFormations();
-        searchInput?.focus();
+    });
+
+    updateFavoritesUI();
+
+    document.getElementById("clearFavorites")?.addEventListener("click", () => {
+        setFavorites([]);
+        updateFavoritesUI();
     });
 
     updateMoreButton();
     filterFormations();
+    
 })();
 </script>
 
@@ -2060,32 +2335,308 @@ footer{background:#080808;border-color:var(--line)}
 .light-mode .section-dark{background:#ebe5dc!important}
 .dark-mode header,.dark-mode footer,.dark-mode .card,.dark-mode section,.dark-mode article,.dark-mode input,.dark-mode textarea,.dark-mode select{background-color:#172321!important;color:#e9e5de!important;border-color:#e9e5de24!important}.dark-mode a{color:#e9e5de}.dark-mode .favorite-btn,.dark-mode .site-control{background:#172321;color:#e9e5de}
 .reveal-on-scroll{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease}.reveal-on-scroll.is-visible{opacity:1;transform:none}@media(max-width:700px){.site-toast{right:14px;bottom:14px}.modal{padding:16px}}
+/* DA 2 — ATELIER TECHNIQUE : grille, signalétique, rythme compact, esthétique industrielle */
+:root{--bg:#101a1d;--panel:#172629;--panel2:#203438;--brown:#13b8a6;--accent:#d5ff54;--cream:#eaf5f2;--muted:#a5b9b7;--line:rgba(213,255,84,.22);--radius:8px;--max:1400px}
+body{background:#101a1d;color:#eaf5f2;font-family:Inter,Arial,sans-serif;line-height:1.55}body:before{background:linear-gradient(rgba(213,255,84,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(213,255,84,.035) 1px,transparent 1px);background-size:32px 32px;opacity:.8}nav,nav.scrolled{top:0;left:0;transform:none;width:100%;max-width:none;height:76px;border-radius:0;border:0;border-bottom:1px solid rgba(213,255,84,.25);background:#101a1d;padding:0 3vw;box-shadow:none;backdrop-filter:none}.logo{font-family:monospace;font-size:14px;letter-spacing:-.5px}.logo-icon{border-radius:6px;background:#d5ff54;color:#101a1d;box-shadow:none}.logo span{color:#d5ff54}.nav-links{gap:3px}.nav-links a{border-radius:5px;color:#bfd0ce;font-family:monospace;font-size:11px;text-transform:uppercase;letter-spacing:.3px;padding:11px 9px}.nav-links a:hover{background:#203438;color:#d5ff54}.nav-button{background:#d5ff54!important;color:#101a1d!important}.hero{min-height:760px;padding:145px 3vw 70px;background:#101a1d;display:block}.hero-grid{background-size:32px 32px;opacity:.6}.hero:after{content:"";position:absolute;right:3vw;top:150px;width:42vw;height:430px;border-radius:8px;filter:none;background:linear-gradient(135deg,rgba(16,26,29,.05),rgba(16,26,29,.3)),url('https://www.ac-reims.fr/sites/ac_reims/files/2022-12/221208-visite-recteur-lyc-decomble-cht-07-jpg-29134.jpg') center/cover no-repeat;border:1px solid rgba(213,255,84,.45);box-shadow:14px 14px 0 #d5ff54}.hero-content{width:min(1400px,100%);margin:auto;min-height:520px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;position:relative;z-index:2}.hero-badge{background:#d5ff54;color:#101a1d;border:0;border-radius:4px;padding:8px 12px;font-family:monospace;letter-spacing:1px}.hero h1{font-family:monospace;font-size:clamp(46px,7vw,94px);line-height:.99;letter-spacing:-6px;text-transform:uppercase;max-width:800px;margin:25px 0}.hero h1 span{color:#d5ff54}.hero-description{max-width:490px;color:#b2c5c2;font-size:16px}.hero-actions{margin-top:25px}.btn{border-radius:5px;font-family:monospace;text-transform:uppercase;font-size:11px;letter-spacing:.5px;padding:15px 18px}.btn-primary{background:#d5ff54;color:#101a1d;box-shadow:none}.btn-outline{border:1px solid #5d7773;background:#172629}.hero-stats{gap:0;margin-top:38px;border:1px solid #2e484a;border-radius:5px;background:#172629;max-width:520px;padding:15px}.hero-stat{padding:0 17px;border-right:1px solid #2e484a}.hero-stat:last-child{border:0}.hero-stat strong{font-family:monospace;color:#d5ff54;font-size:25px}.hero-stat span{color:#9bb2af}.section{padding:85px 3vw}.section-dark{background:#132124}.section-brown{background:#101a1d}.section-header{max-width:1000px}.eyebrow{font-family:monospace;letter-spacing:2px;color:#d5ff54}.section-title{font-family:monospace;text-transform:uppercase;font-size:clamp(36px,5vw,65px);line-height:1.03;letter-spacing:-3px}.section-title span{color:#d5ff54}.section-description{color:#a5b9b7}.formation-tools{max-width:none;grid-template-columns:1.5fr 1fr 1fr}.search-box,.select-box{border-radius:5px;border-color:#3a5556;background:#172629}.search-box input,.select-box select{color:#eaf5f2}.select-box option{background:#172629;color:#eaf5f2}.formation-summary{max-width:none}.formations{max-width:none;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.formation-card{min-height:370px;border:1px solid #365254;border-radius:8px;background:#172629;padding:24px;box-shadow:none}.formation-card:before{background:linear-gradient(135deg,rgba(213,255,84,.08),transparent 45%)}.formation-card:hover{transform:translateY(-4px);border-color:#d5ff54;box-shadow:0 12px 0 rgba(213,255,84,.07)}.formation-number{font-family:monospace;color:rgba(213,255,84,.22)}.formation-icon{border-radius:5px;background:#203438;border:1px solid #466261;box-shadow:none}.formation-content h3{font-family:monospace;font-size:22px;line-height:1.2;text-transform:uppercase}.formation-content p{color:#a5b9b7}.formation-tag{border-radius:3px;background:#203438;color:#d5ff54}.numbers{background:#d5ff54;color:#101a1d}.number{border-right:1px solid rgba(16,26,29,.22)}.number strong{font-family:monospace}.why-card,.internat-feature,.contact-card,.life-card,.discovery-card,.agenda-card,.doc-card{border-radius:6px;background:#172629;border:1px solid #365254;box-shadow:none}.gallery{gap:12px}.gallery-item{border-radius:6px;border:1px solid #365254}.gallery-item img{filter:saturate(.72) contrast(1.1)}footer{background:#0b1315;border-top:1px solid #365254;border-radius:0}body.light-mode{background:#edf4f1;color:#172629;color-scheme:light}body.light-mode:before{opacity:.2}body.light-mode nav,body.light-mode nav.scrolled{background:#edf4f1}body.light-mode .section-dark{background:#e4eeea}body.light-mode .section-brown{background:#edf4f1}body.light-mode .formation-card,body.light-mode .why-card,body.light-mode .internat-feature,body.light-mode .contact-card,body.light-mode .life-card,body.light-mode .discovery-card,body.light-mode .agenda-card,body.light-mode .doc-card{background:#fff;border-color:#c7d8d3}body.light-mode .formation-content h3,body.light-mode .section-title,body.light-mode .hero-stat strong{color:#172629}body.light-mode .formation-content p,body.light-mode .section-description{color:#526966}body.light-mode .search-box,body.light-mode .select-box{background:#fff;border-color:#c7d8d3}body.light-mode .search-box input,body.light-mode .select-box select{color:#172629}
+@media(max-width:1000px){.hero:after{right:4vw;top:160px;width:38vw;height:300px;opacity:.42}.formations{grid-template-columns:repeat(2,minmax(0,1fr))}.formation-tools{grid-template-columns:1fr}.nav-links{background:#101a1d}}
+@media(max-width:680px){.hero:after{inset:auto 5vw 25px auto;width:65vw;height:200px;opacity:.25}.hero-content{padding-bottom:180px}.formations{grid-template-columns:1fr}.hero h1{letter-spacing:-3px}.nav-links{background:#101a1d}}
+
 </style>
-<button class="site-control" id="theme-toggle" type="button">Thème</button><button class="back-top" id="back-top" type="button" aria-label="Retour en haut">↑</button>
-<script>(()=>{const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];let timer;function toast(m){const e=$('#site-toast');if(!e)return;e.textContent=m;e.classList.add('show');clearTimeout(timer);timer=setTimeout(()=>e.classList.remove('show'),2600)}
-const tk='decomble-theme';
-const savedTheme=localStorage.getItem(tk);
-if(savedTheme==='light')document.body.classList.add('light-mode');
-else document.body.classList.add('dark-mode');
-const themeBtn=$('#theme-toggle');
-const updateThemeButton=()=>{
-  if(!themeBtn)return;
-  themeBtn.textContent=document.body.classList.contains('dark-mode')?'☀️ Thème clair':'🌙 Thème sombre';
-  themeBtn.setAttribute('aria-label',document.body.classList.contains('dark-mode')?'Activer le thème clair':'Activer le thème sombre');
-};
-updateThemeButton();
-themeBtn?.addEventListener('click',()=>{
-  const dark=document.body.classList.contains('dark-mode');
-  document.body.classList.toggle('dark-mode',!dark);
-  document.body.classList.toggle('light-mode',dark);
-  localStorage.setItem(tk,dark?'light':'dark');
-  updateThemeButton();
-  toast(dark?'Mode clair activé.':'Mode sombre activé.');
-});
-const bt=$('#back-top');addEventListener('scroll',()=>bt?.classList.toggle('visible',scrollY>500),{passive:true});bt?.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
-const search=$('input[type=search],input[placeholder*="Recherch" i]');const cards=$$('.card,.formation,.formation-card,article,.gallery-item');if(search&&cards.length)search.addEventListener('input',()=>{const q=search.value.trim().toLowerCase();let n=0;cards.forEach(c=>{const ok=!q||c.textContent.toLowerCase().includes(q);c.style.display=ok?'':'none';if(ok)n++});if(q)toast(n+' résultat'+(n>1?'s':'')+' trouvé'+(n>1?'s':''))});
-let fav=JSON.parse(localStorage.getItem('decomble-favorites')||'[]');$$('.formation-card,.formation,.card').forEach((c,i)=>{if(c.dataset.fav)return;c.dataset.fav=1;const t=($('h2,h3,h4,.card-title,.formation-title',c)?.textContent||'').replace(/\s+/g,' ').trim();if(!t)return;if(getComputedStyle(c).position==='static')c.style.position='relative';const id='f'+i+'-'+t.toLowerCase().replace(/[^a-z0-9]+/g,'-').slice(0,40),b=document.createElement('button');b.className='favorite-btn';b.type='button';b.textContent=fav.includes(id)?'♥':'♡';if(fav.includes(id))b.classList.add('active');b.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();if(fav.includes(id)){fav=fav.filter(x=>x!==id);b.textContent='♡';b.classList.remove('active');toast('Retirée des favoris.')}else{fav.push(id);b.textContent='♥';b.classList.add('active');toast('Ajoutée aux favoris.')}localStorage.setItem('decomble-favorites',JSON.stringify(fav))});c.appendChild(b)});
-$$('img').forEach(img=>{if(img.closest('#lightbox')||img.dataset.lb)return;const p=img.closest('.gallery-item,.gallery-card,figure,.image-card');if(!p)return;img.dataset.lb=1;img.style.cursor='zoom-in';img.addEventListener('click',()=>{const box=$('#lightbox'),big=$('#lightbox-image'),cap=$('#lightbox-caption');big.src=img.currentSrc||img.src;big.alt=img.alt||'';cap.textContent=img.alt||'';box.classList.add('open');box.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'})});function close(){const b=$('#lightbox');b?.classList.remove('open');b?.setAttribute('aria-hidden','true');document.body.style.overflow=''}$('.modal-close')?.addEventListener('click',close);$('#lightbox')?.addEventListener('click',e=>{if(e.target.id==='lightbox')close()});addEventListener('keydown',e=>{if(e.key==='Escape')close()});
-$$('form').forEach(f=>f.addEventListener('submit',e=>{const bad=$$('[required]',f).find(x=>!x.value.trim()||!x.checkValidity());if(bad){e.preventDefault();bad.focus();toast('Vérifie les champs obligatoires.');return}if(!f.getAttribute('action')||f.getAttribute('action')==='#'){e.preventDefault();f.reset();toast('Merci, ta demande a bien été prise en compte.')}}));
-if('IntersectionObserver'in window){const o=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-visible');o.unobserve(e.target)}}),{threshold:.08});$$('.card,.formation-card,section,article,.gallery-item').forEach(e=>{e.classList.add('reveal-on-scroll');o.observe(e)})}})();</script>
+<button class="back-top" id="back-top" type="button" aria-label="Retour en haut">↑</button>
+<script>
+(() => {
+  const key = 'decomble-theme';
+  const button = document.getElementById('themeToggle');
+  const meta = document.querySelector('meta[name="color-scheme"]');
+  let saved = null;
+  try { saved = localStorage.getItem(key); } catch (_) {}
+  const apply = mode => {
+    document.body.classList.toggle('light-mode', mode === 'light');
+    document.body.classList.toggle('dark-mode', mode !== 'light');
+    if (meta) meta.content = mode === 'light' ? 'light' : 'dark';
+    if (button) {
+      button.textContent = mode === 'light' ? '☾ Mode sombre' : '☀ Mode clair';
+      button.setAttribute('aria-label', mode === 'light' ? 'Activer le mode sombre' : 'Activer le mode clair');
+      button.setAttribute('aria-pressed', String(mode === 'light'));
+    }
+  };
+  apply(saved === 'light' ? 'light' : 'dark');
+  button?.addEventListener('click', () => {
+    const next = document.body.classList.contains('light-mode') ? 'dark' : 'light';
+    apply(next);
+    try { localStorage.setItem(key, next); } catch (_) {}
+  });
+  document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => document.getElementById('navLinks')?.classList.remove('active')));
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.info-modal.open').forEach(m => m.classList.remove('open'));
+      document.getElementById('ticTacToeModal')?.classList.remove('open');
+    }
+  });
+})();
+</script>
+
+<!-- ===== EASTER EGG : MORPION ===== -->
+<div id="ticTacToeModal" aria-hidden="true">
+    <div class="ttt-box" role="dialog" aria-modal="true" aria-labelledby="tttTitle">
+        <h2 id="tttTitle">Morpion</h2>
+        <p class="ttt-sub">Tu joues avec <strong>✕</strong> contre le robot <strong>○</strong>.</p>
+        <label class="ttt-difficulty-label" for="tttDifficulty">Difficulté</label>
+        <select id="tttDifficulty" class="ttt-difficulty">
+            <option value="easy">Facile — détente</option>
+            <option value="medium" selected>Moyen — malin</option>
+            <option value="hard">Difficile — imbattable</option>
+        </select>
+        <div id="tttStatus" class="ttt-status">À toi de jouer !</div>
+        <div id="tttBoard" class="ttt-board"></div>
+        <div class="ttt-actions">
+            <button id="tttRestart" type="button">Nouvelle partie</button>
+            <button id="tttClose" class="ttt-close" type="button">Fermer</button>
+        </div>
+    </div>
+</div>
+
+<script>
+(() => {
+    const logo = document.querySelector('.logo');
+    const modal = document.getElementById('ticTacToeModal');
+    const board = document.getElementById('tttBoard');
+    const status = document.getElementById('tttStatus');
+    const restart = document.getElementById('tttRestart');
+    const close = document.getElementById('tttClose');
+    const difficulty = document.getElementById('tttDifficulty');
+    if (!logo || !modal || !board) return;
+
+    let clickCount = 0, clickTimer = null, robotTimer = null;
+    let cells = Array(9).fill('');
+    let gameOver = false;
+    let robotThinking = false;
+    const human = 'X', robot = 'O';
+    const wins = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+
+    const winner = b => {
+        for (const [a,c,d] of wins) if (b[a] && b[a] === b[c] && b[a] === b[d]) return b[a];
+        return b.every(Boolean) ? 'draw' : null;
+    };
+    const setStatus = t => { if (status) status.textContent = t; };
+
+    const render = () => {
+        board.innerHTML = '';
+        cells.forEach((value, i) => {
+            const button = document.createElement('button');
+            button.className = 'ttt-cell';
+            button.type = 'button';
+            button.textContent = value;
+            // IMPORTANT : aucune case n'est cliquable pendant le tour du robot.
+            button.disabled = Boolean(value) || gameOver || robotThinking;
+            button.setAttribute('aria-disabled', String(button.disabled));
+            button.addEventListener('click', () => humanMove(i));
+            board.appendChild(button);
+        });
+    };
+
+    const endGame = result => {
+        robotThinking = false;
+        gameOver = true;
+        clearTimeout(robotTimer);
+        if (result === human) setStatus('🎉 Tu as gagné !');
+        else if (result === robot) setStatus('🤖 Le robot a gagné !');
+        else setStatus('Égalité !');
+        render();
+    };
+
+    const minimax = (b, maximizing) => {
+        const result = winner(b);
+        if (result === robot) return 10;
+        if (result === human) return -10;
+        if (result === 'draw') return 0;
+        const empty = b.map((v,i) => v ? null : i).filter(i => i !== null);
+        if (maximizing) {
+            let best = -Infinity;
+            for (const i of empty) { b[i] = robot; best = Math.max(best, minimax(b, false)); b[i] = ''; }
+            return best;
+        }
+        let best = Infinity;
+        for (const i of empty) { b[i] = human; best = Math.min(best, minimax(b, true)); b[i] = ''; }
+        return best;
+    };
+
+    const robotMove = () => {
+        if (gameOver || !robotThinking) return;
+        const empty = cells.map((v,i) => v ? null : i).filter(i => i !== null);
+        if (!empty.length) { endGame('draw'); return; }
+        const mode = difficulty?.value || 'medium';
+        let bestMove;
+
+        if (mode === 'easy') {
+            // Mode facile : le robot choisit au hasard, sans stratégie.
+            bestMove = empty[Math.floor(Math.random() * empty.length)];
+        } else if (mode === 'medium') {
+            // Mode moyen : gagne s'il peut, bloque le joueur, sinon joue au hasard.
+            const findImmediateMove = mark => {
+                for (const i of empty) {
+                    cells[i] = mark;
+                    const result = winner(cells);
+                    cells[i] = '';
+                    if (result === mark) return i;
+                }
+                return null;
+            };
+            bestMove = findImmediateMove(robot);
+            if (bestMove === null) bestMove = findImmediateMove(human);
+            if (bestMove === null) {
+                const preferred = empty.filter(i => [4,0,2,6,8].includes(i));
+                const pool = preferred.length ? preferred : empty;
+                bestMove = pool[Math.floor(Math.random() * pool.length)];
+            }
+        } else {
+            // Mode difficile : minimax, le robot joue de façon optimale.
+            let bestScore = -Infinity;
+            bestMove = empty[0];
+            for (const i of empty) {
+                cells[i] = robot;
+                const score = minimax(cells, false);
+                cells[i] = '';
+                if (score > bestScore) { bestScore = score; bestMove = i; }
+            }
+        }
+
+        cells[bestMove] = robot;
+        const result = winner(cells);
+        if (result) { endGame(result); return; }
+        robotThinking = false;
+        setStatus('À toi !');
+        render();
+    };
+
+    const humanMove = i => {
+        // Double sécurité : même un clic déjà en file d'attente ne peut jouer.
+        if (gameOver || robotThinking || cells[i]) return;
+        cells[i] = human;
+        const result = winner(cells);
+        if (result) { endGame(result); return; }
+        robotThinking = true;
+        setStatus('🤖 Le robot réfléchit…');
+        render();
+        clearTimeout(robotTimer);
+        robotTimer = setTimeout(robotMove, 450);
+    };
+
+    const newGame = () => {
+        clearTimeout(robotTimer);
+        robotTimer = null;
+        cells = Array(9).fill('');
+        gameOver = false;
+        robotThinking = false;
+        setStatus('À toi de jouer !');
+        render();
+    };
+    const openGame = () => { modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); newGame(); };
+    const closeGame = () => { clearTimeout(robotTimer); robotThinking = false; modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); };
+
+    // ===== MODE EASTER EGG =====
+    // Variable principale : un double-clic désactive les animations du site.
+    const DISABLE_ANIMATIONS_ON_DOUBLE_CLICK = true;
+    let easterEggAnimationsDisabled = false;
+
+    const disableAnimationsForEasterEggs = () => {
+        if (!DISABLE_ANIMATIONS_ON_DOUBLE_CLICK || easterEggAnimationsDisabled) return;
+        easterEggAnimationsDisabled = true;
+        document.querySelectorAll('.reveal, .reveal-on-scroll').forEach(el => {
+            el.classList.remove('animate', 'reveal-on-scroll');
+            el.classList.add('show', 'is-visible');
+            el.style.setProperty('opacity', '1', 'important');
+            el.style.setProperty('transform', 'none', 'important');
+            el.style.setProperty('transition', 'none', 'important');
+            el.style.setProperty('animation', 'none', 'important');
+        });
+        document.documentElement.classList.add('easter-egg-no-animations');
+    };
+
+    // 2 clics rapprochés : on coupe les animations pour faciliter les easter eggs.
+    document.addEventListener('dblclick', () => {
+        disableAnimationsForEasterEggs();
+    }, { passive: true });
+
+    // ===== EASTER EGGS =====
+    // Les clics doivent être rapides, mais on laisse 3 secondes entre deux clics.
+    const setupEasterEgg = (element, required, action) => {
+        if (!element) return;
+        let clicks = 0;
+        let timer = null;
+        element.addEventListener('click', e => {
+            clicks++;
+            clearTimeout(timer);
+            if (clicks >= required) {
+                e.preventDefault();
+                clicks = 0;
+                action(e);
+                return;
+            }
+            timer = setTimeout(() => { clicks = 0; }, 3000);
+        });
+    };
+
+    // ===== EASTER EGGS =====
+    const makeEgg = (selector, count, action) => {
+        const el = document.querySelector(selector);
+        if (!el) return;
+        let clicks = 0, timer = null;
+        el.style.cursor = 'pointer';
+        el.addEventListener('click', e => {
+            e.stopPropagation();
+            clicks++;
+            clearTimeout(timer);
+            if (clicks >= count) { clicks = 0; action(); return; }
+            timer = setTimeout(() => clicks = 0, 3000);
+        });
+    };
+
+    // 3 clics sur le titre de l'agenda -> morpion
+    makeEgg('#agenda .section-title', 3, openGame);
+
+    // 4 clics sur la première carte de l'agenda -> message secret
+    makeEgg('#agenda .agenda-card:first-of-type', 4, () => alert('evann le zgueg'));
+
+    // 5 clics sur la carte Projet -> blague qui vide la page (actualise pour revenir)
+    makeEgg('#agenda .agenda-grid .agenda-card:nth-child(2)', 5, () => {
+        document.documentElement.innerHTML = '';
+        document.title = 'Fermé 😈';
+        try { window.close(); } catch (err) {}
+    });
+
+    // Nouvel easter egg : 7 clics sur le petit nom en bas de page -> Rickroll
+    makeEgg('#footerBrand', 7, () => {
+        window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank', 'noopener,noreferrer');
+    });
+
+    // 6 clics sur la carte Événement -> rappel
+    makeEgg('#agenda .agenda-grid .agenda-card:nth-child(3)', 6, () => {
+        alert("Tape 3 fois sur le titre de l'agenda pour lancer le morpion !");
+    });
+
+    restart?.addEventListener('click', newGame);
+    close?.addEventListener('click', closeGame);
+    modal.addEventListener('click', e => { if (e.target === modal) closeGame(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('open')) closeGame(); });
+})();
+</script>
+
+<style>
+/* ===== PREMIUM REDESIGN / VERSION 2 : ATELIER CONTEMPORAIN ===== */
+:root{--bg:#081211;--panel:#101f1d;--panel2:#172a27;--brown:#b9e56a;--accent:#d7f59b;--cream:#f3f4e9;--muted:#a9b9b3;--line:rgba(230,255,241,.14);--radius:8px;--max:1320px;--acid:#d7f59b}
+body{background:#081211;color:#f3f4e9;font-family:Inter,Arial,sans-serif;letter-spacing:-.012em}
+body:before{background:radial-gradient(ellipse at 78% 8%,rgba(156,207,88,.12),transparent 36%),linear-gradient(90deg,transparent 49.95%,rgba(255,255,255,.025) 50%,transparent 50.05%)}
+nav{top:18px;height:66px;border-radius:5px;background:rgba(8,18,17,.76);border-color:rgba(215,245,155,.22);backdrop-filter:blur(22px)}nav.scrolled{background:rgba(8,18,17,.96)}.logo-icon{border-radius:4px;background:var(--acid);color:#0a1713;box-shadow:none}.logo-icon:after{content:'ED';font-size:12px;font-weight:950;letter-spacing:-.08em}.logo span{color:var(--acid)}.nav-links a{border-radius:3px;text-transform:uppercase;letter-spacing:.075em;font-size:10px}.nav-links a:hover{background:rgba(215,245,155,.11);color:var(--acid)}.nav-button{background:var(--acid)!important;color:#0a1713!important}.theme-toggle{border-radius:3px;border-color:rgba(215,245,155,.3);color:var(--cream)}
+.hero-premium{position:relative;isolation:isolate;min-height:850px;height:min(100svh,1000px);max-height:1040px;padding:160px max(6vw,32px) 150px;display:flex;align-items:center;overflow:hidden;background:#0b1715;border-radius:0 0 4px 4px}
+.hero-photo{position:absolute;inset:0;z-index:-3;overflow:hidden}.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 46%;filter:saturate(.65) contrast(1.08);transform:scale(1.025);animation:heroDrift 20s ease-in-out infinite alternate}.hero-shade{position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(4,14,12,.96) 0%,rgba(4,14,12,.82) 34%,rgba(4,14,12,.32) 72%,rgba(4,14,12,.1) 100%),linear-gradient(0deg,rgba(4,14,12,.85),transparent 32%,rgba(4,14,12,.12))}.hero-premium:after{content:'';position:absolute;inset:108px 28px 28px;border:1px solid rgba(231,255,240,.25);pointer-events:none;z-index:-1}.hero-grid{display:none}.hero-content{position:relative;z-index:2;width:min(760px,76%);margin:0;animation:heroEnter .9s cubic-bezier(.2,.8,.2,1) both}.hero-badge{display:inline-flex;align-items:center;gap:10px;padding:9px 0;margin-bottom:32px;background:none;border:0;border-radius:0;color:#d7f59b;font-size:10px;font-weight:800;letter-spacing:.19em}.status-dot{width:7px;height:7px;border-radius:50%;background:var(--acid);box-shadow:0 0 0 5px rgba(215,245,155,.12)}.hero h1{font-size:clamp(58px,8.6vw,132px);line-height:.91;letter-spacing:-.085em;font-weight:780;max-width:900px;text-wrap:balance}.hero h1 em{font-family:Georgia,'Times New Roman',serif;font-weight:400;color:var(--acid);letter-spacing:-.075em}.hero-description{max-width:510px;color:rgba(243,244,233,.83);font-size:clamp(15px,1.35vw,19px);line-height:1.75;margin:30px 0 32px}.hero-actions{display:flex;align-items:center;gap:28px;flex-wrap:wrap}.btn{border-radius:3px;font-size:12px;letter-spacing:.04em;text-transform:uppercase;padding:16px 21px;transition:transform .25s,background .25s,border-color .25s}.btn-primary{background:var(--acid);color:#0a1713;box-shadow:none}.btn-primary:hover{background:#e8ffbd;transform:translateY(-3px)}.hero-text-link{font-size:12px;text-transform:uppercase;letter-spacing:.1em;border-bottom:1px solid rgba(243,244,233,.4);padding:12px 0;color:#f3f4e9}.hero-text-link span{color:var(--acid);margin-left:8px}.hero-index{position:absolute;top:126px;left:6vw;right:6vw;display:flex;justify-content:space-between;color:rgba(243,244,233,.72);font-size:9px;letter-spacing:.18em;font-weight:800}.hero-caption{position:absolute;bottom:140px;left:6vw;display:flex;align-items:center;gap:12px;color:rgba(243,244,233,.72);font-size:10px;letter-spacing:.1em;text-transform:uppercase}.caption-line{display:inline-block;width:42px;height:1px;background:var(--acid)}.caption-number{margin-left:24px;color:var(--acid)}.hero-side-note{position:absolute;right:4.5vw;top:43%;writing-mode:vertical-rl;transform:rotate(180deg);font-size:9px;letter-spacing:.22em;color:rgba(243,244,233,.7)}.premium-stats{position:absolute;right:6vw;bottom:0;width:min(610px,50%);display:grid;grid-template-columns:repeat(3,1fr);padding:22px 0 24px;border-top:1px solid rgba(243,244,233,.35);background:transparent;gap:0}.premium-stats .hero-stat{display:flex;align-items:center;gap:13px;padding:0 16px;border:0;border-right:1px solid rgba(243,244,233,.2);text-align:left}.premium-stats .hero-stat:first-child{padding-left:0}.premium-stats .hero-stat:last-child{border-right:0}.premium-stats strong{font-size:26px;color:var(--acid);font-weight:700}.premium-stats span{font-size:9px;line-height:1.5;color:rgba(243,244,233,.7)}
+.section{padding:124px 0}.section-header{max-width:760px;margin-bottom:58px}.section-header.center{text-align:left;margin-left: max(5vw,20px);margin-right:auto}.eyebrow{font-size:10px;letter-spacing:.19em;text-transform:uppercase;color:var(--acid);font-weight:850}.section-title{font-size:clamp(40px,5.5vw,76px);line-height:.98;letter-spacing:-.065em;font-weight:760}.section-title span{color:var(--acid);font-family:Georgia,serif;font-weight:400}.section-description{max-width:630px;color:var(--muted);font-size:16px;line-height:1.8}.featured-intro{display:grid;grid-template-columns:1.15fr .85fr;align-items:end;gap:50px;padding:28px 0 42px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.featured-intro h3{font-size:clamp(24px,3vw,40px);line-height:1.12;letter-spacing:-.04em}.featured-intro p{color:var(--muted);max-width:400px}.formation-tools{background:var(--panel);border:1px solid var(--line);border-radius:5px;padding:14px;margin:26px 0 34px;gap:12px}.search-box,.select-box{border-radius:3px;background:var(--bg);border:1px solid var(--line)}.formation-card{position:relative;border-radius:5px;background:linear-gradient(145deg,#142522,#0d1917);border:1px solid rgba(215,245,155,.12);overflow:hidden;transition:transform .35s,border-color .35s,box-shadow .35s}.formation-card:before{content:'';position:absolute;top:0;left:0;width:3px;height:0;background:var(--acid);transition:height .35s}.formation-card:hover{transform:translateY(-7px);border-color:rgba(215,245,155,.42);box-shadow:0 22px 60px rgba(0,0,0,.22)}.formation-card:hover:before{height:100%}.formation-number{font-variant-numeric:tabular-nums;color:rgba(215,245,155,.6)}.formation-icon{background:rgba(215,245,155,.09);color:var(--acid);border-radius:4px}.formation-tag{border-radius:2px;background:rgba(215,245,155,.08);border-color:rgba(215,245,155,.16);color:#d7f59b}.agenda-card,.why-card,.contact-card,.doc-card,.internat-feature{border-radius:5px;transition:transform .3s,border-color .3s,background .3s}.agenda-card:hover,.why-card:hover,.contact-card:hover{transform:translateY(-5px);border-color:rgba(215,245,155,.35)}.numbers{background:var(--acid);color:#0a1713}.numbers .number strong{color:#0a1713}.reading-progress{position:fixed;top:0;left:0;right:0;height:2px;z-index:1200;background:transparent}.reading-progress span{display:block;width:0;height:100%;background:var(--acid)}
+body.light-mode{--bg:#f1f3eb;--panel:#fff;--panel2:#e5e9de;--cream:#17221c;--muted:#5e6b62;--line:rgba(14,42,29,.15);background:#f1f3eb;color:#17221c}body.light-mode:before{background:radial-gradient(ellipse at 78% 8%,rgba(130,174,65,.13),transparent 36%)}body.light-mode nav{background:rgba(248,250,243,.88);border-color:rgba(20,48,32,.14)}body.light-mode nav.scrolled{background:rgba(248,250,243,.97)}body.light-mode .nav-links a{color:#34453a}body.light-mode .nav-links a:hover{color:#18261d;background:rgba(70,105,55,.1)}body.light-mode .theme-toggle{color:#1c2d21}body.light-mode .section-dark,body.light-mode .section-brown{background:#f1f3eb;color:#17221c}body.light-mode .section-description,body.light-mode .featured-intro p{color:#5e6b62}body.light-mode .formation-card,body.light-mode .agenda-card,body.light-mode .why-card,body.light-mode .contact-card,body.light-mode .doc-card{background:#fff;color:#17221c;border-color:rgba(14,42,29,.14)}body.light-mode .formation-card p,body.light-mode .agenda-card p,body.light-mode .why-card p{color:#5e6b62}body.light-mode .formation-tag{color:#36511f}body.light-mode .formation-tools{background:#e5e9de}body.light-mode .search-box,body.light-mode .select-box{background:#fff;color:#17221c}body.light-mode .numbers{background:#d7f59b;color:#17221c}body.light-mode footer{background:#dfe5d8;color:#17221c}
+@keyframes heroEnter{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}@keyframes heroDrift{from{transform:scale(1.025) translateX(-.3%)}to{transform:scale(1.08) translateX(.3%)}}
+@media(max-width:1000px){.hero-premium{min-height:820px;padding-inline:5vw}.hero-content{width:min(760px,90%)}.hero-side-note{display:none}.premium-stats{right:5vw;width:65%}.hero-caption{left:5vw}.hero-index{left:5vw;right:5vw}.nav-links{gap:2px}.nav-links a{padding:9px 7px;font-size:9px}}
+@media(max-width:760px){nav{top:8px;width:calc(100% - 16px);height:58px;padding:0 10px}.logo{font-size:12px}.logo-icon{width:34px;height:34px}.theme-toggle{font-size:10px;padding:7px 8px}.menu-button{display:block}.nav-links{top:65px;border-radius:4px}.hero-premium{height:auto;min-height:880px;max-height:none;padding:150px 24px 210px;align-items:flex-start}.hero-premium:after{inset:82px 9px 10px}.hero-index{top:88px;left:24px;right:24px;font-size:8px}.hero-content{width:100%;margin-top:55px}.hero h1{font-size:clamp(54px,14vw,88px)}.hero-description{font-size:15px;max-width:440px}.hero-caption{bottom:168px;left:24px;right:24px;flex-wrap:wrap}.caption-number{margin-left:0}.premium-stats{left:24px;right:24px;width:auto;bottom:0;grid-template-columns:repeat(3,1fr);padding:18px 0}.premium-stats .hero-stat{padding:0 8px;gap:7px;align-items:flex-start;flex-direction:column}.premium-stats strong{font-size:21px}.premium-stats span{font-size:8px}.section{padding:80px 0}.section-header.center{margin-left:20px;margin-right:20px}.featured-intro{grid-template-columns:1fr;gap:15px}.formation-tools{display:grid}.reading-progress{height:3px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+
+
+</style>
 </body></html>
