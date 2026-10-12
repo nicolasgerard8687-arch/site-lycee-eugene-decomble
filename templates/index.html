@@ -1,4 +1,12 @@
-<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="color-scheme" content="dark"><title>Lycée Eugène Decomble | Chaumont — Version 2 — Atelier contemporain</title><meta name="description" content="Découvrez le Lycée Eugène Decomble à Chaumont : formations, internat, vie scolaire et établissement."><style>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark light">
+<title>Lycée Eugène Decomble | Chaumont</title>
+<meta name="description" content="Découvrez le Lycée Eugène Decomble à Chaumont : formations, internat, vie scolaire et établissement.">
+<style>
 :root{--bg:#090909;--panel:#121212;--panel2:#181818;--brown:#8f5d3e;--accent:#c89a78;--cream:#f5eee8;--muted:#a7a19c;--line:rgba(255,255,255,.09);--radius:24px;--max:1240px}
 *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:#fff;line-height:1.6;overflow-x:hidden}a{text-decoration:none;color:inherit}button,input,select{font:inherit}.container,.section>div{width:min(calc(100% - 40px),var(--max));margin-inline:auto}
 body:before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at 80% 10%,rgba(143,93,62,.12),transparent 30%),radial-gradient(circle at 10% 70%,rgba(200,154,120,.05),transparent 28%);z-index:-1}
@@ -2594,16 +2602,6 @@ body{background:#101a1d;color:#eaf5f2;font-family:Inter,Arial,sans-serif;line-he
 
     // 3 clics sur le titre de l'agenda -> morpion
     makeEgg('#agenda .section-title', 3, openGame);
-
-    // 4 clics sur la première carte de l'agenda -> message secret
-    makeEgg('#agenda .agenda-card:first-of-type', 4, () => alert('evann le zgueg'));
-
-    // 5 clics sur la carte Projet -> blague qui vide la page (actualise pour revenir)
-    makeEgg('#agenda .agenda-grid .agenda-card:nth-child(2)', 5, () => {
-        document.documentElement.innerHTML = '';
-        document.title = 'Fermé 😈';
-        try { window.close(); } catch (err) {}
-    });
 
     // Nouvel easter egg : 7 clics sur le petit nom en bas de page -> Rickroll
     makeEgg('#footerBrand', 7, () => {
