@@ -1,33 +1,33 @@
-# Lycée Eugène Decomble — version corrigée
+# Portail Lycée Eugène Decomble — évolution Flask/PostgreSQL
 
-## Ce qui est corrigé
-- Le HTML a été remis dans `templates/index.html`, à l'emplacement attendu par Flask.
-- Le document HTML démarre désormais par un doctype et possède un `head` cohérent.
-- Ajout de SQLAlchemy et d'une base PostgreSQL sur Render (SQLite en local si `DATABASE_URL` n'est pas défini).
-- Les tables sont créées au démarrage et les 20 formations du site sont insérées une seule fois.
-- `/health` vérifie aussi la connexion à la base, pour que le contrôle de santé Render détecte les erreurs.
-- `/api/formations` renvoie le catalogue depuis la base de données.
+## Fonctionnalités ajoutées
+- Espace admin : `/admin/login`, `/admin`
+- CRUD du catalogue : `/admin/formations`
+- Gestion des actualités : `/admin/actualites`
+- Gestion des événements : `/admin/evenements`
+- Pages publiques : `/actualites`, `/agenda`
+- API : `/api/formations`, `/api/news`, `/api/events`
+- Contrôle de santé : `/health`
 
-## Déploiement sur Render
-1. Décompressez ce dossier et envoyez **tous les fichiers** dans le dépôt Git relié à Render.
-2. Vérifiez que `render.yaml` est à la racine du dépôt.
-3. Dans Render, créez ou mettez à jour le service via le Blueprint (Infrastructure as Code) afin que le service web **et** la base `lycee-decomble-db` soient créés.
-4. Acceptez la création de la base et le déploiement. Render renseignera `DATABASE_URL` depuis la base liée.
-5. Ouvrez `https://VOTRE-SITE.onrender.com/health`. La réponse attendue est `{"database":"connected","status":"ok"}`.
-6. Ouvrez `https://VOTRE-SITE.onrender.com/api/formations`. Vous devez voir les 20 formations.
+## Important avant le déploiement
+1. Faire une sauvegarde de PostgreSQL.
+2. Vérifier que le `render.yaml` correspond aux ressources existantes. Les noms de service et de base ne doivent pas être modifiés à l'aveugle.
+3. Dans Render > service Web > Environment, configurer `ADMIN_EMAIL` et `ADMIN_PASSWORD` avec un compte réservé à l'administration. Ne jamais mettre ces secrets dans GitHub.
+4. Conserver `DATABASE_URL` reliée à la base existante. Ne pas créer une nouvelle base pour ce projet.
+5. Déployer d'abord sur un environnement de test si possible, puis vérifier `/health`, `/api/formations` et `/admin/login`.
 
-## Test local
+## Données et schéma
+`db.create_all()` crée les tables manquantes `news` et `school_events`; il ne supprime pas les tables existantes. Il ne remplace pas un outil de migration pour des changements futurs de colonnes. Les formations initiales sont ajoutées uniquement si leur titre n'existe pas déjà.
+
+## Lancer en local
 ```bash
 python -m venv .venv
-# Windows : .venv\\Scripts\\activate
-# macOS/Linux :
-source .venv/bin/activate
+# Windows: .venv\\Scripts\\activate
+# macOS/Linux: source .venv/bin/activate
+# En local HTTP seulement : COOKIE_SECURE=false
 pip install -r requirements.txt
+# Configure ADMIN_EMAIL et ADMIN_PASSWORD avant de tester l'administration
 python app.py
 ```
-Visitez `http://127.0.0.1:5000/health` et `http://127.0.0.1:5000/api/formations`.
 
-Sans `DATABASE_URL`, le développement local utilise `instance/lycee_decomble.db` (SQLite). Ne mettez jamais de mot de passe ou de chaîne de connexion dans Git.
-
-## Important
-Le catalogue visible sur la page est toujours rendu depuis le HTML existant; l'API permet de vérifier que les données sont enregistrées et disponibles dans la base. La base n'est pas un panneau d'administration. Le plan gratuit de Render peut avoir des limites ou une politique d'expiration propres à Render : vérifiez les conditions affichées dans votre compte.
+Pour le déploiement Render, `SECRET_KEY` doit être une valeur secrète stable gérée dans les variables d'environnement. Définis `ADMIN_EMAIL` et `ADMIN_PASSWORD` dans Render avant de tenter la connexion.

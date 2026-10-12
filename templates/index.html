@@ -2637,4 +2637,42 @@ body.light-mode{--bg:#f1f3eb;--panel:#fff;--panel2:#e5e9de;--cream:#17221c;--mut
 
 
 </style>
+
+<style>
+.portal-shortcuts{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;padding:24px 16px;background:rgba(200,154,120,.05)}.portal-shortcuts a{display:inline-flex;align-items:center;gap:8px;padding:10px 15px;border:1px solid rgba(200,154,120,.25);border-radius:999px;color:var(--accent,#c89a78);text-decoration:none;font-size:12px;font-weight:800}.portal-shortcuts a:hover{background:rgba(200,154,120,.12)}
+</style>
+<nav class="portal-shortcuts" aria-label="Services du portail"><a href="/actualites">Actualités du lycée ↗</a><a href="/agenda">Agenda et événements ↗</a></nav>
+<script>
+/* Le catalogue public lit maintenant les formations depuis l'API PostgreSQL. */
+document.addEventListener('DOMContentLoaded', async () => {
+  const container = document.querySelector('.formations');
+  if (!container) return;
+  try {
+    const response = await fetch('/api/formations', {headers: {'Accept': 'application/json'}});
+    if (!response.ok) return;
+    const formations = await response.json();
+    if (!Array.isArray(formations) || !formations.length) return;
+    const icons = {cap:'🛠️', seconde:'🎓', bac:'⚙️', bts:'🏅', dispositif:'🤝'};
+    const label = {cap:'CAP', seconde:'SECONDE PROFESSIONNELLE', bac:'BAC PROFESSIONNEL', bts:'BTS', dispositif:'DISPOSITIF'};
+    container.replaceChildren(...formations.map((f, i) => {
+      const article = document.createElement('article');
+      article.className = 'formation-card';
+      article.dataset.category = f.category;
+      const number = document.createElement('span'); number.className = 'formation-number'; number.textContent = String(i + 1).padStart(2, '0');
+      const icon = document.createElement('div'); icon.className = 'formation-icon'; icon.textContent = icons[f.category] || '🎓';
+      const content = document.createElement('div'); content.className = 'formation-content';
+      const eyebrow = document.createElement('span'); eyebrow.className = 'eyebrow'; eyebrow.textContent = label[f.category] || f.category.toUpperCase();
+      const title = document.createElement('h3'); title.textContent = f.title;
+      const desc = document.createElement('p'); desc.textContent = f.description || '';
+      const meta = document.createElement('div'); meta.className = 'formation-meta';
+      const tag = document.createElement('span'); tag.className = 'formation-tag'; tag.textContent = label[f.category] || f.category;
+      meta.append(tag); content.append(eyebrow, title, desc, meta); article.append(number, icon, content); return article;
+    }));
+    container.classList.add('expanded');
+    const summary = document.querySelector('.formation-summary strong');
+    if (summary) summary.textContent = formations.length + ' formations disponibles';
+  } catch (error) { console.warn('Catalogue API indisponible : affichage HTML conservé.', error); }
+});
+</script>
+
 </body></html>
