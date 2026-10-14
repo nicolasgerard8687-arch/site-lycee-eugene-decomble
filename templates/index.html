@@ -537,6 +537,17 @@ body.light-mode footer{background:#c5cdc5;color:#24302d}
     </ul>
 
 
+    {% if session.get('user_id') %}
+    <span class="nav-button" aria-label="Compte connecté">Bonjour, {{ session.get('username', 'utilisateur') }}</span>
+    <form method="post" action="{{ url_for('user_logout') }}" style="display:inline-flex;margin:0">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <button class="nav-button" type="submit">Déconnexion</button>
+    </form>
+    {% else %}
+    <a class="nav-button" href="{{ url_for('user_login') }}">Connexion</a>
+    <a class="nav-button" href="{{ url_for('register') }}">Créer un compte</a>
+    {% endif %}
+
     <button id="themeToggle" class="theme-toggle" type="button" aria-label="Activer le mode clair">☀ Mode clair</button>
 
     <button

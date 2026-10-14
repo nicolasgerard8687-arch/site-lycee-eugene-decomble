@@ -9,6 +9,7 @@ from flask import (Flask, abort, flash, jsonify, redirect, render_template,
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import text
 from sqlalchemy.exc import SQLAlchemyError
+from werkzeug.security import check_password_hash, generate_password_hash
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY") or secrets.token_hex(32)
@@ -26,6 +27,24 @@ elif url.startswith("postgresql://"):
 app.config["SQLALCHEMY_DATABASE_URI"] = url
 
 db = SQLAlchemy(app)
+
+
+class User(db.Model):
+    __tablename__ = "users"
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(40), nullable=False, unique=True, index=True)
+    email = db.Column(db.String(254), nullable=False, unique=True, index=True)
+    password_hash = db.Column(db.String(255), nullable=False)
+    created_at = db.Column(db.DateTime(timezone=True), nullable=False, default=lambda: datetime.now(timezone.utc))
+    last_login_at = db.Column(db.DateTime(timezone=True), nullable=True)
+
+
+class UserLogin(db.Model):
+    __tablename__ = "user_logins"
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False, index=True)
+    logged_in_at = db.Column(db.DateTime(timezone=True), nullable=False, default=lambda: datetime.now(timezone.utc), index=True)
+    user = db.relationship("User", backref=db.backref("login_events", lazy=True))
 
 
 class Formation(db.Model):
@@ -127,6 +146,70 @@ def accueil():
     return render_template("index.html")
 
 
+@app.route("/inscription", methods=["GET", "POST"])
+def register():
+    if session.get("user_id"):
+        return redirect(url_for("accueil"))
+    error = None
+    if request.method == "POST":
+        username = request.form.get("username", "").strip()
+        email = request.form.get("email", "").strip().lower()
+        password = request.form.get("password", "")
+        if len(username) < 3 or len(username) > 40:
+            error = "Le nom d’utilisateur doit contenir entre 3 et 40 caractères."
+        elif "@" not in email or len(email) > 254:
+            error = "Saisis une adresse e-mail valide."
+        elif len(password) < 10:
+            error = "Le mot de passe doit contenir au moins 10 caractères."
+        elif User.query.filter(db.or_(db.func.lower(User.username) == username.lower(), db.func.lower(User.email) == email)).first():
+            error = "Ce nom d’utilisateur ou cette adresse e-mail est déjà utilisé."
+        else:
+            user = User(username=username, email=email, password_hash=generate_password_hash(password))
+            user.last_login_at = datetime.now(timezone.utc)
+            db.session.add(user)
+            db.session.flush()
+            db.session.add(UserLogin(user_id=user.id))
+            db.session.commit()
+            session.clear()
+            session["user_id"] = user.id
+            session["username"] = user.username
+            session["csrf_token"] = secrets.token_urlsafe(32)
+            flash("Ton compte a été créé.", "success")
+            return redirect(url_for("accueil"))
+    return render_template("register.html", error=error)
+
+
+@app.route("/connexion", methods=["GET", "POST"])
+def user_login():
+    if session.get("user_id"):
+        return redirect(url_for("accueil"))
+    error = None
+    if request.method == "POST":
+        login = request.form.get("login", "").strip()
+        password = request.form.get("password", "")
+        user = User.query.filter(db.or_(db.func.lower(User.username) == login.lower(), db.func.lower(User.email) == login.lower())).first()
+        if user and check_password_hash(user.password_hash, password):
+            session.clear()
+            session["user_id"] = user.id
+            session["username"] = user.username
+            session["csrf_token"] = secrets.token_urlsafe(32)
+            user.last_login_at = datetime.now(timezone.utc)
+            db.session.add(UserLogin(user_id=user.id))
+            db.session.commit()
+            flash("Connexion réussie.", "success")
+            return redirect(url_for("accueil"))
+        error = "Identifiant ou mot de passe incorrect."
+    return render_template("user_login.html", error=error)
+
+
+@app.route("/deconnexion", methods=["POST"])
+def user_logout():
+    if session.get("user_id"):
+        session.clear()
+        flash("Tu es déconnecté.", "success")
+    return redirect(url_for("accueil"))
+
+
 @app.route("/health")
 def health():
     try:
@@ -202,6 +285,14 @@ def admin_logout():
     session.clear()
     flash("Tu es déconnecté.", "success")
     return redirect(url_for("accueil"))
+
+
+@app.route("/admin/utilisateurs")
+@admin_required
+def admin_users():
+    users = User.query.order_by(User.created_at.desc()).all()
+    logins = UserLogin.query.order_by(UserLogin.logged_in_at.desc()).limit(200).all()
+    return render_template("admin/users.html", users=users, logins=logins)
 
 
 @app.route("/admin")

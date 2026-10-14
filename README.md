@@ -17,3 +17,8 @@
 
 ## Notes
 Les identifiants ne sont volontairement pas fournis dans les fichiers. Si la connexion admin échoue, vérifie que `ADMIN_EMAIL` et `ADMIN_PASSWORD` sont bien définis dans l'environnement d'exécution.
+
+## Comptes utilisateurs
+- Les visiteurs peuvent créer un compte via `/inscription` puis se connecter via `/connexion`.
+- L’administration peut consulter les comptes et l’historique des connexions sur `/admin/utilisateurs`.
+- Les mots de passe sont stockés sous forme de hachage sécurisé et ne sont jamais visibles par l’administrateur.
