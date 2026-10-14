@@ -392,6 +392,41 @@ body.light-mode .btn-primary{background:linear-gradient(135deg,#25877c,#17665f)}
 .ttt-difficulty-label{display:block;margin:0 0 6px;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted,#aaa)}
 .ttt-difficulty{display:block;width:100%;margin:0 auto 14px;padding:10px 12px;border:1px solid var(--line,rgba(255,255,255,.16));border-radius:8px;background:var(--panel,#18201e);color:inherit;font:inherit;font-size:13px;outline-offset:3px}
 body.light-mode .ttt-difficulty{background:#e8e3da;color:#292b28;border-color:#d0c8bc}
+
+/* Refonte UI — finitions responsive et lisibilité */
+:root{--accent:#d6a783;--brown:#986548;--line:rgba(255,255,255,.11)}
+body{letter-spacing:.005em}
+::selection{background:#d6a783;color:#17110e}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #e6bd9e;outline-offset:3px}
+nav{box-shadow:0 12px 40px rgba(0,0,0,.18)}
+.hero{min-height:min(780px,100svh)}
+.hero-description{max-width:640px}
+.section{scroll-margin-top:100px}
+.formation-card,.why-card,.contact-card,.life-card,.discovery-card,.agenda-card,.doc-card{box-shadow:0 8px 28px rgba(0,0,0,.10)}
+.formation-card:hover,.life-card:hover,.discovery-card:hover,.agenda-card:hover{transform:translateY(-4px)}
+.formation-card p,.life-card p,.discovery-card p,.agenda-card p{color:#aaa39d}
+.btn,.feature-btn,.reset-filter{transition:background .2s ease,border-color .2s ease,transform .2s ease}
+.btn-primary{background:linear-gradient(135deg,#a87655,#795038)}
+.btn-primary:hover{filter:brightness(1.08)}
+input,select,textarea{accent-color:#d6a783}
+@media(max-width:700px){
+  nav{height:60px;padding-inline:12px;border-radius:16px}
+  .logo{font-size:12px;gap:8px}
+  .logo-icon{width:36px;height:36px;border-radius:11px}
+  .hero{min-height:650px;padding:120px 16px 70px}
+  .hero-content{width:100%}
+  .hero h1{font-size:clamp(48px,14vw,76px);letter-spacing:-2px;line-height:.98}
+  .hero-description{font-size:15px}
+  .hero-stats{margin-top:38px;gap:18px}
+  .hero-stat strong{font-size:23px}
+  .section{padding:68px 16px}
+  .section-title{font-size:clamp(36px,10vw,52px);letter-spacing:-1px}
+  .formation-card{min-height:unset;padding:22px}
+  .gallery-item{min-height:180px}
+  .contact-info{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important}}
+
 </style>
 <style id="comfort-and-school-photo-refinement">
 
