@@ -1,1 +1,32 @@
-{% extends 'admin/base.html' %}{% block title %}Utilisateurs{% endblock %}{% block content %}<section class="hero"><p class="muted">COMPTES DU SITE</p><h1>Utilisateurs et connexions</h1><p class="muted">Les mots de passe ne sont jamais affichés ni enregistrés en clair.</p></section><div class="card"><h2>Comptes créés ({{ users|length }})</h2>{% if users %}<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;text-align:left"><thead><tr><th style="padding:10px">Identifiant</th><th style="padding:10px">E-mail</th><th style="padding:10px">Créé le</th><th style="padding:10px">Dernière connexion</th></tr></thead><tbody>{% for user in users %}<tr><td style="padding:10px;border-top:1px solid #29364a">{{ user.username }}</td><td style="padding:10px;border-top:1px solid #29364a">{{ user.email }}</td><td style="padding:10px;border-top:1px solid #29364a">{{ user.created_at.strftime('%d/%m/%Y %H:%M') }}</td><td style="padding:10px;border-top:1px solid #29364a">{{ user.last_login_at.strftime('%d/%m/%Y %H:%M') if user.last_login_at else 'Jamais' }}</td></tr>{% endfor %}</tbody></table></div>{% else %}<p class="muted">Aucun compte créé pour le moment.</p>{% endif %}</div><div class="card"><h2>Historique des connexions récentes</h2>{% if logins %}<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;text-align:left"><thead><tr><th style="padding:10px">Identifiant</th><th style="padding:10px">E-mail</th><th style="padding:10px">Date et heure</th></tr></thead><tbody>{% for event in logins %}<tr><td style="padding:10px;border-top:1px solid #29364a">{{ event.user.username }}</td><td style="padding:10px;border-top:1px solid #29364a">{{ event.user.email }}</td><td style="padding:10px;border-top:1px solid #29364a">{{ event.logged_in_at.strftime('%d/%m/%Y %H:%M UTC') }}</td></tr>{% endfor %}</tbody></table></div>{% else %}<p class="muted">Aucune connexion enregistrée pour le moment.</p>{% endif %}</div>{% endblock %}
+{% extends 'admin/base.html' %}
+{% block title %}Utilisateurs{% endblock %}
+{% block content %}
+<style>
+.users-panel{background:linear-gradient(145deg,#172337,#111b2b);border:1px solid #29364a;border-radius:17px;overflow:hidden;margin:12px 0 22px;box-shadow:0 12px 30px rgba(0,0,0,.1)}
+.users-heading{padding:22px 22px 8px}.users-heading h2{margin:0 0 6px}.users-heading p{margin:0;color:#aab5c7;font-size:14px}
+.users-table-wrap{overflow-x:auto}table.users-table{width:100%;border-collapse:collapse;text-align:left;min-width:760px} .users-table thead{background:#253650;color:#f8fafc}.users-table th,.users-table td{padding:14px 16px;border-bottom:1px solid #29364a}.users-table th{font-size:12px;letter-spacing:.06em;text-transform:uppercase}.users-table tbody tr:nth-child(even){background:rgba(255,255,255,.025)}.users-table tbody tr:hover{background:rgba(214,167,131,.07)}.password-cell{display:flex;align-items:center;gap:8px}.password-mask{font-family:monospace;letter-spacing:2px;color:#d7deea}.password-help{font-size:12px;color:#aab5c7;max-width:190px}.status-badge{display:inline-flex;align-items:center;gap:7px;font-size:12px;padding:5px 10px;border-radius:50px;color:#bdf4dc;background:#173d34;white-space:nowrap}.status-badge:before{content:"";width:7px;height:7px;border-radius:50%;background:#4ade80}.empty-state{padding:24px;color:#aab5c7}.section-title{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.count-pill{background:#26364c;color:#e7c6ab;padding:5px 10px;border-radius:999px;font-size:12px}
+@media(max-width:700px){.users-heading{padding:18px 16px 8px}.users-table th,.users-table td{padding:12px}}
+</style>
+<section class="hero"><p class="muted">ESPACE ADMINISTRATEUR</p><h1>Utilisateurs</h1><p class="muted">Consulte les comptes du site et les connexions enregistrées.</p></section>
+<section class="users-panel">
+  <div class="users-heading section-title"><div><h2>Comptes créés</h2><p>Informations issues des comptes réellement enregistrés sur le site.</p></div><span class="count-pill">{{ users|length }} compte(s)</span></div>
+  {% if users %}
+  <div class="users-table-wrap"><table class="users-table"><thead><tr><th>Identifiant</th><th>Email</th><th>Dernière connexion</th><th>Mot de passe</th><th>État</th></tr></thead><tbody>
+  {% for user in users %}<tr>
+    <td><strong>{{ user.username }}</strong></td>
+    <td>{{ user.email }}</td>
+    <td>{{ user.last_login_at.strftime('%d/%m/%Y à %H:%M UTC') if user.last_login_at else 'Jamais connecté' }}</td>
+    <td><div class="password-cell"><span class="password-mask" id="pwd-{{ user.id }}">••••••••</span><button type="button" class="secondary" aria-label="Pourquoi le mot de passe est masqué" onclick="explainPassword(this)">👁</button></div><div class="password-help" hidden>Le mot de passe n’est pas consultable : seul son hachage sécurisé est enregistré.</div></td>
+    <td><span class="status-badge">Compte créé</span></td>
+  </tr>{% endfor %}
+  </tbody></table></div>
+  {% else %}<div class="empty-state">Aucun compte créé pour le moment.</div>{% endif %}
+</section>
+<section class="users-panel">
+  <div class="users-heading section-title"><div><h2>Historique des connexions</h2><p>Les connexions réussies les plus récentes.</p></div><span class="count-pill">{{ logins|length }} événement(s)</span></div>
+  {% if logins %}<div class="users-table-wrap"><table class="users-table"><thead><tr><th>Identifiant</th><th>Email</th><th>Date et heure</th><th>État</th></tr></thead><tbody>
+  {% for event in logins %}<tr><td><strong>{{ event.user.username }}</strong></td><td>{{ event.user.email }}</td><td>{{ event.logged_in_at.strftime('%d/%m/%Y à %H:%M UTC') }}</td><td><span class="status-badge">Connexion réussie</span></td></tr>{% endfor %}
+  </tbody></table></div>{% else %}<div class="empty-state">Aucune connexion enregistrée pour le moment.</div>{% endif %}
+</section>
+<script>function explainPassword(button){const help=button.parentElement.nextElementSibling;help.hidden=!help.hidden;button.textContent=help.hidden?'👁':'🔒';button.setAttribute('aria-expanded',String(!help.hidden));}</script>
+{% endblock %}
